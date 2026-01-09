@@ -22,7 +22,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | .owner.login + "/" + .name' | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | .name' | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
 
   scrape-repository:
     needs: list-repositories
@@ -35,7 +35,7 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /repos/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id }' -r > assets.json
+          gh api /repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id }' -r > assets.json
       - uses: actions/upload-artifact@v6.0.0
         with:
           name: 'assets-${{ matrix.repository }}'
@@ -58,7 +58,7 @@ jobs:
       matrix: ${{ fromJSON(needs.setup-generate-entries.outputs.matrix) }}
     steps:
       - run: |
-          url="${GITHUB_API_URL:-https://api.github.com}"/repos/${{ matrix.repository }}/releases/assets/${{ matrix.asset_id }}
+          url="${GITHUB_API_URL:-https://api.github.com}"/repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases/assets/${{ matrix.asset_id }}
           wget --header 'Authorization: Bearer ${{ github.token }}' --header 'Accept: application/octet-stream' -nc -o ./package.deb "$url"
           url="$(curl -s --fail "$url" | jq '.browser_download_url' -r)"
           dpkg-scanpackages --multiversion ./package.deb | grep -vF Filename: > Packages.part
