@@ -21,7 +21,7 @@ jobs:
       - id: dynamic
         run: |
           curl -s --fail --retry 16 --header "Authorization: Bearer ${{ github.token }}" https://api.github.com/users/plengauer/repos \
-            | jq '.[] | .name' | jq -s | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+            | jq '.[] | .name' | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
 
   scrape-repository:
     runs-on: ubuntu-slim
