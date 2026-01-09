@@ -112,7 +112,8 @@ jobs:
           do_hash "MD5Sum" "md5sum" >> Release
           do_hash "SHA1" "sha1sum" >> Release
           do_hash "SHA256" "sha256sum" >> Release
-      - run: git status && git diff && git add apt && git status && git diff
+      - run: cat apt/dists/stable/Release
+      - run: cat apt/dists/stable/main/binary-all/Packages
       - uses: peter-evans/create-pull-request@v8.0.0
         id: open-pr
         with:
