@@ -45,7 +45,7 @@ jobs:
     needs: scrape-repository
     runs-on: ubuntu-slim
     outputs:
-      repositories: ${{ steps.dynamic.outputs.matrix }}
+      matrix: ${{ steps.dynamic.outputs.matrix }}
     steps:
       - uses: actions/download-artifact@v7.0.0
         with:
