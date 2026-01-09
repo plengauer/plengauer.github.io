@@ -35,7 +35,7 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id }' -r > assets.json
+          gh api /repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id }' -rc > assets.json
       - uses: actions/upload-artifact@v6.0.0
         with:
           name: 'assets-${{ matrix.repository }}'
@@ -45,21 +45,20 @@ jobs:
     needs: scrape-repository
     runs-on: ubuntu-slim
     outputs:
-      matrix: ${{ steps.dynamic.outputs.matrix }}
+      jobs: ${{ steps.dynamic.outputs.jobs }}
     steps:
       - uses: actions/download-artifact@v7.0.0
         with:
           pattern: 'assets-*'
       - id: dynamic
-        run: |
-          find . -name 'assets.json' -exec cat '{}' + | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo matrix='{}' >> "$GITHUB_OUTPUT"
+        run: find . -name 'assets.json' -exec cat '{}' + | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo jobs='{}' | tee /dev/stderr >> "$GITHUB_OUTPUT"
 
   generate-entry:
     needs: setup-generate-entries
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include: ${{ fromJSON(needs.setup-generate-entries.outputs.matrix) }}
+        include: ${{ fromJSON(needs.setup-generate-entries.outputs.jobs) }}
     steps:
       - run: |
           url="${GITHUB_API_URL:-https://api.github.com}"/repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases/assets/${{ matrix.id }}
