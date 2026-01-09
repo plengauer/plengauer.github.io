@@ -64,7 +64,12 @@ jobs:
           url="${GITHUB_API_URL:-https://api.github.com}"/repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases/assets/${{ matrix.id }}
           wget --header 'Authorization: Bearer ${{ github.token }}' --header 'Accept: application/octet-stream' -nc -O ./${{ matrix.id }}.deb "$url"
           url="$(curl -s --fail --header "Authorization: Bearer ${{ github.token }}" "$url" | jq '.browser_download_url' -r)"
-          ls | grep -E '*.deb$' | xargs dpkg-scanpackages --multiversion | grep -vF Filename: > Packages.part
+          dpkg-scanpackages --multiversion ./${{ matrix.id }}.deb | while read -r line; do
+            case "$line" do
+              'Filename:'*) echo "Filename: $url";;
+              *) echo "$line";;
+            esac
+          done > Packages.part
           echo "Filename: $url" >> Packages.part
       - uses: actions/upload-artifact@v6.0.0
         with:
@@ -80,7 +85,7 @@ jobs:
         with:
           pattern: 'packages.part-*'
       - run: mkdir -p apt/dists/stable/main/binary-all/
-      - run: find . -name Packages.part -exec cat '{}' + >> apt/dists/stable/main/binary-all/Packages && ls | grep -F '^packages.part-' | xargs rm -rf
+      - run: find . -name Packages.part -exec cat '{}' + >> apt/dists/stable/main/binary-all/Packages && ls | grep '^packages.part-' | xargs rm -rf
       - run: gzip -9 < apt/dists/stable/main/binary-all/Packages > apt/dists/stable/main/binary-all/Packages.gz
       - run: |
           cd apt/dists/stable
