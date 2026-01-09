@@ -59,7 +59,7 @@ jobs:
   generate-entry:
     needs: setup-generate-entries
     if: ${{ needs.setup-generate-entries.outputs.jobs != '[]' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     strategy:
       matrix:
         include: ${{ fromJSON(needs.setup-generate-entries.outputs.jobs) }}
