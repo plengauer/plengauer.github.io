@@ -44,11 +44,14 @@ jobs:
   setup-generate-entries:
     needs: scrape-repository
     runs-on: ubuntu-slim
+    outputs:
+      repositories: ${{ steps.dynamic.outputs.matrix }}
     steps:
       - uses: actions/download-artifact@v7.0.0
         with:
           pattern: 'assets-*'
-      - run: |
+      - id: dynamic
+        run: |
           find . -name 'assets.json' -exec cat '{}' + | sort -R | head -n 256 | jq '{ "include": { "repository": .repository, "asset_id": .id }}' | jq -sc | xargs -0 -I '{}' echo matrix='{}' >> "$GITHUB_OUTPUT"
 
   generate-entry:
