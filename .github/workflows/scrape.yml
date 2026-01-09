@@ -22,7 +22,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | .name' | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | .owner.login + "/" + .name' | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
 
   scrape-repository:
     needs: list-repositories
