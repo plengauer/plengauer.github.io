@@ -35,4 +35,25 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /repos/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | .browser_download_url' -r
+          gh api /repos/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | .url' -r > assets.list
+      - uses: actions/upload-artifact@v6.0.0
+        with:
+          name: 'assets-${{ matrix.repository }}'
+          path: assets.list
+
+  generate:
+    needs: scrape-repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v7.0.0
+        with:
+          pattern: 'assets-*'
+      - run: |
+          find . -name 'assets.list' -exec cat '{}' + \
+            | while read -r url; do
+              temporary="$(mktemp -d)"
+              wget --header 'Authorization: Bearer ${{ github.token }}' -nc -o "$temporary"/package.deb
+              dpkg-scanpackages --multiversion "$temporary"/package.deb \
+                | sed "s/Filename: .*/Filename: pool\/main\/$owner\/$repo\/$file/" \
+                | flock dists/stable/main/binary-all/Packages tee -a dists/stable/main/binary-all/Packages > /dev/null
+            done
