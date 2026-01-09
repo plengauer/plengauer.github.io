@@ -24,6 +24,7 @@ jobs:
             | jq '.[] | .name' | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
 
   scrape-repository:
+    needs: list-repositories
     runs-on: ubuntu-slim
     strategy:
       matrix:
