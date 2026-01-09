@@ -22,7 +22,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | .owner.login + "/" + .name' | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | .owner.login + "/" + .name' | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
 
   scrape-repository:
     needs: list-repositories
@@ -35,25 +35,35 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /repos/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | .url' -r > assets.list
+          gh api /repos/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id }' -r > assets.json
       - uses: actions/upload-artifact@v6.0.0
         with:
           name: 'assets-${{ matrix.repository }}'
-          path: assets.list
+          path: assets.json
 
-  generate:
-    needs: scrape-repository
-    runs-on: ubuntu-latest
+  setup-generate-entries:
+    needs: scrape-repositories
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/download-artifact@v7.0.0
         with:
           pattern: 'assets-*'
       - run: |
-          find . -name 'assets.list' -exec cat '{}' + \
-            | while read -r url; do
-              temporary="$(mktemp -d)"
-              wget --header 'Authorization: Bearer ${{ github.token }}' -nc -o "$temporary"/package.deb
-              dpkg-scanpackages --multiversion "$temporary"/package.deb \
-                | sed "s/Filename: .*/Filename: pool\/main\/$owner\/$repo\/$file/" \
-                | flock dists/stable/main/binary-all/Packages tee -a dists/stable/main/binary-all/Packages > /dev/null
-            done
+          find . -name 'assets.json' -exec cat '{}' + | sort -R | head -n 256 | jq '{ "include": { "repository": .repository, "asset_id": .id }}' | jq -sc | xargs -0 -I '{}' echo matrix='{}' >> "$GITHUB_OUTPUT"
+
+  generate-entries:
+    needs: setup-generate-entries
+    runs-on: ubuntu-latest
+    matrix
+      strategy: ${{ fromJSON(needs.setup-generate-entries.outputs.matrix) }}
+    steps:
+      - run: |
+          url="${GITHUB_API_URL:-https://api.github.com}"/repos/${{ matrix.repository }}/releases/assets/${{ matrix.asset_id }}
+          wget --header 'Authorization: Bearer ${{ github.token }}' --header 'Accept: application/octet-stream' -nc -o ./package.deb "$url"
+          url="$(curl -s --fail "$url" | jq '.browser_download_url' -r)"
+          dpkg-scanpackages --multiversion ./package.deb | grep -vF Filename: > Packages.part
+          echo "Filename: $url" >> Packages.part
+      - uses: actions/upload-artifact@v6.0.0
+        with:
+          name: 'packages.part-${{ matrix.repository }}-${{ matrix.asset_id }}'
+          path: Packages.part
