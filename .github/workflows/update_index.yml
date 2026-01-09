@@ -51,7 +51,7 @@ jobs:
         with:
           pattern: 'assets-*'
       - id: dynamic
-        run: find . -name 'assets.json' -exec cat '{}' + | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo jobs='{}' | tee /dev/stderr >> "$GITHUB_OUTPUT"
+        run: find . -name 'assets.json' -exec cat '{}' + | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo jobs='{}' >> "$GITHUB_OUTPUT"
 
   generate-entry:
     needs: setup-generate-entries
@@ -62,9 +62,9 @@ jobs:
     steps:
       - run: |
           url="${GITHUB_API_URL:-https://api.github.com}"/repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases/assets/${{ matrix.id }}
-          wget --header 'Authorization: Bearer ${{ github.token }}' --header 'Accept: application/octet-stream' -nc -o ./package.deb "$url"
-          url="$(curl -s --fail "$url" | jq '.browser_download_url' -r)"
-          dpkg-scanpackages --multiversion ./package.deb | grep -vF Filename: > Packages.part
+          wget --header 'Authorization: Bearer ${{ github.token }}' --header 'Accept: application/octet-stream' -nc -O ./${{ matrix.id }}.deb "$url"
+          url="$(curl -s --fail --header "Authorization: Bearer ${{ github.token }}" "$url" | jq '.browser_download_url' -r)"
+          ls | grep -E '*.deb$' | xargs dpkg-scanpackages --multiversion | grep -vF Filename: > Packages.part
           echo "Filename: $url" >> Packages.part
       - uses: actions/upload-artifact@v6.0.0
         with:
