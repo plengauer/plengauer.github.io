@@ -1,0 +1,41 @@
+name: 'Update Index'
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    paths:
+      - .github/workflows/scrape.yml
+  workflow_dispatch:
+
+concurrency:
+  group: scrape
+
+jobs:
+
+  list-repositories:
+    runs-on: ubuntu-slim
+    outputs:
+      repositories: ${{ steps.dynamic.outputs.repositories }}
+    steps:
+      - id: dynamic
+        run: |
+          curl -s --fail --retry 16 --header "Authorization: Bearer ${{ github.token }}" https://api.github.com/users/plengauer/repos \
+            | jq '.[] | .name' | jq -s | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+
+  scrape-repository:
+    runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+      fail-fast: false
+    steps:
+      - run: |
+          per_page=100
+          printf "HEAD /repos/${{ matrix.repository }}/releases?per_page=$per_page\r\nConnection: close\r\nUser-Agent: plengauer.github.io\r\nHost: ${GITHUB_API_URL#https://}\r\nAuthorization: ${{ github.token }}" \
+            | ncat --ssl --no-shutdown "${GITHUB_API_URL#https://}" 443 | tr '[:upper:]' '[:lower:]' \
+            | grep '^link: ' | cut -d ' '  -f 2- | tr -d ' <>' | tr ',' '\n' \
+            | grep 'rel="last"' | cut -d ';' -f 1 | cut -d '?' -f 2- | tr '&' '\n' \
+            | grep '^page=' | cut -d = -f 2 \
+            | xargs seq 1 | xargs curl -s --fail --retry 16 --retry-all-errors --header "Authorization: Bearer ${{ github.token }}" "${GITHUB_API_URL:-https://api.github.com}"/repos/${{ matrix.repository}}/releases'?'per-page$per_page=$per_page'&'page='{}' \
+            | jq '.[] | .assets[] | select(.name | endswith(".deb")) | .browser_download_url' -r
