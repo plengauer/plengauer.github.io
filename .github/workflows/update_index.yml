@@ -35,7 +35,7 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id, "name": .name }' -rc > assets.json
+          gh api /repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id, "digest": .digest }' -rc > assets.json
       - uses: actions/upload-artifact@v6.0.0
         with:
           name: 'assets-${{ matrix.repository }}'
@@ -53,8 +53,8 @@ jobs:
           pattern: 'assets-*'
       - id: dynamic
         run: |
-          grep < apt/dists/stable/main/binary-all/Packages '^Filename:' | rev | cut -d / -f 1 | rev | tr -d ' ' > index.list || true
-          find . -name 'assets.json' -exec cat '{}' + | grep -v -f index.list | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo jobs='{}' >> "$GITHUB_OUTPUT"
+          grep < apt/dists/stable/main/binary-all/Packages '^SHA|^MD5sum' | tr '[:upper:]' '[:lower:]' | tr -d ' ' > index.list || true
+          find . -name 'assets.json' -exec cat '{}' + | jq -c | grep -v -f index.list | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo jobs='{}' >> "$GITHUB_OUTPUT"
 
   generate-entry:
     needs: setup-generate-entries
