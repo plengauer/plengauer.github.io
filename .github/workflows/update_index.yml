@@ -37,7 +37,7 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | { "repository": "${{ matrix.repository }}", "id": .id, "digest": .digest }' -rc > assets.json
+          gh api /repos/${{ github.repository_owner }}/${{ matrix.repository }}/releases --paginate | jq '.[] | .assets[] | select(.name | endswith(".deb")) | select(.digest != null) | { "repository": "${{ matrix.repository }}", "id": .id, "digest": .digest }' -rc > assets.json
       - uses: actions/upload-artifact@v6.0.0
         with:
           name: 'assets-${{ matrix.repository }}'
