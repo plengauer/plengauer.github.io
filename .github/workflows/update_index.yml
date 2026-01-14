@@ -109,7 +109,7 @@ jobs:
           }
           
           cat > Release << EOF
-          Origin: GitHub ${{ github.repository_owner }} Repistory
+          Origin: GitHub ${{ github.repository_owner }} Repository
           Label: GitHub plengauer
           Suite: stable
           Codename: stable
