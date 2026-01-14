@@ -1,0 +1,18 @@
+Origin: GitHub plengauer Repistory
+Label: GitHub plengauer
+Suite: stable
+Codename: stable
+Version: 1.0
+Architectures: all
+Components: main
+Description: A software repository hosting packages from github
+Date: Wed, 14 Jan 2026 09:16:16 +0000
+MD5Sum:
+ ba62fd4803f8c7eef52556343356bcd3 6908 main/binary-all/Packages.gz
+ 75fb8bdf95def44558579e677553a4e8 42668 main/binary-all/Packages
+SHA1:
+ 9fe314abad826aea24f8e283f6a746c879509232 6908 main/binary-all/Packages.gz
+ 252aaa2b17aebe382294ac6915782a3407b7882b 42668 main/binary-all/Packages
+SHA256:
+ 65f73b718a66c52c1334ac0882a4c19ddbcf0708498dc667b1f0e6c2b038ea93 6908 main/binary-all/Packages.gz
+ 479352b71bacf0cb0c9dcb24250acc00c3db4f22b02042ce77de461b56e31e90 42668 main/binary-all/Packages
