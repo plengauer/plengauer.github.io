@@ -6,13 +6,13 @@ Version: 1.0
 Architectures: all
 Components: main
 Description: A software repository hosting packages from github
-Date: Wed, 14 Jan 2026 09:25:20 +0000
+Date: Wed, 14 Jan 2026 20:05:28 +0000
 MD5Sum:
- 4468c4a053799aded5d84f26c237d14f 85336 main/binary-all/Packages
- e434739167be687be12acfe60a36de13 13325 main/binary-all/Packages.gz
+ 9da7b9ad08fc87d5cdb3044d20266453 19738 main/binary-all/Packages.gz
+ c865726ad2c6b1b2fbdfa24d8320a277 128004 main/binary-all/Packages
 SHA1:
- e4c33dd3465182d9fe957eaa70dd8e8099f3d7b0 85336 main/binary-all/Packages
- d7bab0a2adc667e8b536284eac9971ddb9fb1302 13325 main/binary-all/Packages.gz
+ e3496dfac070812f6a4147aca70c0fcb85a9f251 19738 main/binary-all/Packages.gz
+ 597047a1d27282f587d6d0bf38ff3cc579a7f379 128004 main/binary-all/Packages
 SHA256:
- 4a9989bf24d185c920ef64b274f798bfb0b5477fba2c8214f2cd250600a1a5cb 85336 main/binary-all/Packages
- 2deda970b59a653d64c938bd8e76172437bb459454086ca7bb164dfbe53b5670 13325 main/binary-all/Packages.gz
+ 406897f62c36ee60899bad337f87d533af94145c6e7a3788bdcb0520f92dfb4e 19738 main/binary-all/Packages.gz
+ 446c65d456ebf979e8704bd91b1b0ee0afb8edf8d21099c9c2ac8a62e783d12f 128004 main/binary-all/Packages
