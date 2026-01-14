@@ -1,0 +1,16 @@
+name: Autorerun
+
+on:
+  workflow_run:
+    types: completed
+
+concurrency:
+  group: rerun-${{ github.event.workflow_run.id }}
+
+jobs:
+  rerun:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: plengauer/autorerun@v0.35.0
+        with:
+          github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
