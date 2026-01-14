@@ -23,7 +23,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | .name' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
-      - uses: plengauer/create-deb-repository@v0.0.11
+      - uses: plengauer/create-deb-repository@v0.0.12
         with:
           directory: apt
           source: ${{ steps.list-repositories.outputs.repositories }}
