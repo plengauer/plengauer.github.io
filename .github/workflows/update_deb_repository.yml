@@ -1,0 +1,46 @@
+name: 'Update Debian Repository'
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/update_deb_repository.yml
+
+concurrency:
+  group: update
+
+jobs:
+
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-checkout@v6.0.1
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | .name' | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+      - uses: plengauer/create-deb-repository@v0.0.11
+        with:
+          directory: apt
+      - run: exit 1
+      - id: open-pr
+        uses: peter-evans/create-pull-request@v8.0.0
+        with:
+          token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+          commit-message: "Update Debian Repository"
+          base: main
+          branch: "update-debian-repository"
+          title: "Update Debian Repository"
+          body: |
+            (this PR is automatically generated)
+          delete-branch: true
+      - if: steps.open-pr.outputs.pull-request-number != null
+        run: sleep 60 # make sure PR state is updated and API can catch up
+      - if: steps.open-pr.outputs.pull-request-number != null
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+        run: gh pr merge --squash --auto ${{ steps.open-pr.outputs.pull-request-number }}
+          
