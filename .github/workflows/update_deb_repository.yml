@@ -18,13 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-checkout@v6.0.1
-      - env:
+      - id: list-repositories
+        env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | .name' | sort -R | head -n 256 | jq -sc | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | .name' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - uses: plengauer/create-deb-repository@v0.0.11
         with:
           directory: apt
+          source: ${{ steps.list-repositories.outputs.repositories }}
       - run: exit 1
       - id: open-pr
         uses: peter-evans/create-pull-request@v8.0.0
