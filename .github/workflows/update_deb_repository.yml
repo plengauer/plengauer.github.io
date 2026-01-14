@@ -17,7 +17,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-checkout@v6.0.1
+      - uses: actions/checkout@v6.0.1
       - id: list-repositories
         env:
           GH_TOKEN: ${{ github.token }}
