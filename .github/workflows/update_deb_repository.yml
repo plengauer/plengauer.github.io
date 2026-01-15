@@ -17,6 +17,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.41.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: '["${{ github.token }}","${{ secrets.ACTIONS_GITHUB_TOKEN }}"]'
       - uses: actions/checkout@v6.0.1
       - id: list-repositories
         env:
@@ -53,4 +59,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         run: gh pr merge --squash --auto ${{ steps.open-pr.outputs.pull-request-number }}
-          
+    permissions:
+      actions: read
