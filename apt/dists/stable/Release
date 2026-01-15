@@ -1,18 +1,18 @@
-Origin: GitHub plengauer Repository
-Label: GitHub plengauer
+Origin: GitHub plengauer
+Label: plengauer
 Suite: stable
 Codename: stable
 Version: 1.0
 Architectures: all
 Components: main
 Description: A software repository hosting packages from github
-Date: Wed, 14 Jan 2026 09:25:20 +0000
+Date: Thu, 15 Jan 2026 00:09:15 +0000
 MD5Sum:
- 4468c4a053799aded5d84f26c237d14f 85336 main/binary-all/Packages
- e434739167be687be12acfe60a36de13 13325 main/binary-all/Packages.gz
+ d0aa054c97f4f9cc84ec1b1dfda46f2e 420035 main/binary-all/Packages
+ b97434f17c425853ef81433c5ca6135a 75408 main/binary-all/Packages.gz
 SHA1:
- e4c33dd3465182d9fe957eaa70dd8e8099f3d7b0 85336 main/binary-all/Packages
- d7bab0a2adc667e8b536284eac9971ddb9fb1302 13325 main/binary-all/Packages.gz
+ d8e20dc0ee7b5d1d68d053e299149eddce1af372 420035 main/binary-all/Packages
+ 2aff4a9f902b85ca3851ab266b0cc29bd3598b2f 75408 main/binary-all/Packages.gz
 SHA256:
- 4a9989bf24d185c920ef64b274f798bfb0b5477fba2c8214f2cd250600a1a5cb 85336 main/binary-all/Packages
- 2deda970b59a653d64c938bd8e76172437bb459454086ca7bb164dfbe53b5670 13325 main/binary-all/Packages.gz
+ abcd2be247b0c45a8f18da376dca2e7f8c4bf6c032bc8f255abecba2ea095ce4 420035 main/binary-all/Packages
+ 8039a02d57a65c7856d2cd66baa20aaf02b36f45a511963c4a26ff7fd1dd724b 75408 main/binary-all/Packages.gz
