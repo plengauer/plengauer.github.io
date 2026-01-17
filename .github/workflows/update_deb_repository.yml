@@ -29,19 +29,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | "${{ github.repository_owner }}" + "/" + .name' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
-      - uses: plengauer/create-deb-repository@v0.0.13
-        with:
-          directory: apt
-          source: ${{ steps.list-repositories.outputs.repositories }}
       - run: |
-          find apt -iname '*.deb' | while read -r file; do
-            dpkg --control "$file"
-            repository="$(cat DEBIAN/control | grep Homepage | cut -d : -f 2- | rev | cut -d / -f -2 | rev)"
-            if ! curl --fail --retry 16 --header "Authorization: Bearer ${{ github.token }}" https://"${repository%%/*}".github.io/"${repository#*/}"/dists/stable/main/binary-all/Packages --head &> /dev/null; then
-              sed -i 's~'"$file"'~"${repository%%/*}"/"$file"~g' apt/dists/stable/main/binary-all/Packages
-            fi
-            rm -rf DEBIAN "$file"
-          done
+          tr <<< "${{ steps.list-repositories.outputs.repositories }} ' ' '\n' | cut -d / -f 2 | xargs -I '{}' curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/'{}'/dists/stable/main/binary-all/Packages > apt/dists/stable/main/binary-all/Packages
+      - uses: plengauer/create-deb-repository@v0.0.14
+        with:
+          mode: append
+          directory: apt
+          source: ''
       - id: open-pr
         uses: peter-evans/create-pull-request@v8.0.0
         with:
