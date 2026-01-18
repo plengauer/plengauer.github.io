@@ -30,7 +30,7 @@ jobs:
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | "${{ github.repository_owner }}" + "/" + .name' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - run: |
-          tr <<< "${{ steps.list-repositories.outputs.repositories }} ' ' '\n' | cut -d / -f 2 | xargs -I '{}' curl --retry 16 https://${{ github.repository_owner }}.github.io/'{}'/dists/stable/main/binary-all/Packages > apt/dists/stable/main/binary-all/Packages
+          tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | cut -d / -f 2 | xargs -I '{}' curl --retry 16 https://${{ github.repository_owner }}.github.io/'{}'/dists/stable/main/binary-all/Packages > apt/dists/stable/main/binary-all/Packages
       - uses: plengauer/create-deb-repository@v0.0.13
         with:
           mode: append
