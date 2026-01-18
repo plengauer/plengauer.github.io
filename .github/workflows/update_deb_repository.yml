@@ -16,6 +16,8 @@ jobs:
 
   update:
     runs-on: ubuntu-latest
+    permissions:
+      actions: read
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.42.0
         env:
@@ -53,5 +55,3 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         run: gh pr merge --squash --auto ${{ steps.open-pr.outputs.pull-request-number }}
-    permissions:
-      actions: read
