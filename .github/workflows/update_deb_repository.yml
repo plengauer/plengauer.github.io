@@ -35,6 +35,8 @@ jobs:
           tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | cut -d / -f 2 | while read -r repository; do
             curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-all/Packages | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
           done > apt/dists/stable/main/binary-all/Packages
+      - run: |
+          [ "$(git status --porcelain -- apt/dists/stable/main/binary-all/Packages | wc -l)" -gt 0 ]
       - uses: plengauer/create-deb-repository@v0.0.17
         with:
           mode: append
