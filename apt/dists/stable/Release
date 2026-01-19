@@ -6,13 +6,13 @@ Version: 1.0
 Architectures: all
 Components: main
 Description: A software repository hosting packages from github
-Date: Sun, 18 Jan 2026 14:34:11 +0000
+Date: Mon, 19 Jan 2026 17:19:00 +0000
 MD5Sum:
  6e2bffa223c96f8c4c0f46bcdc052664 421268 main/binary-all/Packages
- e5eba153fc755d289d0ec29ad4ede956 74703 main/binary-all/Packages.gz
+ f8cfc928ab51c26b5816e67d7782b464 74703 main/binary-all/Packages.gz
 SHA1:
  1e73f7c6549106d1c69d043b5103595cbb5989b4 421268 main/binary-all/Packages
- e13793e3db0c7c9e76ac613f8286d65f99d52a2d 74703 main/binary-all/Packages.gz
+ 992d4bdd0b34675c06bc564c2be8e344c8636c9a 74703 main/binary-all/Packages.gz
 SHA256:
  18f89a4b0f79e97983aa8f5b0b77d3b5be292c6544d1fd09d423c82b2c260271 421268 main/binary-all/Packages
- 355efd2e37df16755a5ac5392df44e4a04c5d92f91ce9149c0222bd2e6bdfaad 74703 main/binary-all/Packages.gz
+ 40c8c7196eaf6d646e01038569c7f9bb13b3b3f352c9841b9cf396555a98df9d 74703 main/binary-all/Packages.gz
