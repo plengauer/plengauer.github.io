@@ -8,6 +8,7 @@ on:
       - Autoversion
       - CodeQL
       - Copilot coding agent
+      - Onboard
       - Renovate
       - Update Debian Repository
       - pages-build-deployment
