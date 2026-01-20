@@ -32,9 +32,10 @@ jobs:
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public") | "${{ github.repository_owner }}" + "/" + .name' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - run: |
+          mkdir -p dists/stable/main/binary-all
           tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | cut -d / -f 2 | while read -r repository; do
             curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-all/Packages | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
-          done > apt/dists/stable/main/binary-all/Packages
+          done > dists/stable/main/binary-all/Packages
       - id: check
         run: |
           [ "$(git status --porcelain -- apt/dists/stable/main/binary-all/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
@@ -42,7 +43,6 @@ jobs:
         uses: plengauer/create-deb-repository@v0.0.17
         with:
           mode: append
-          directory: apt
           source: ''
       - id: open-pr
         uses: peter-evans/create-pull-request@v8.0.0
