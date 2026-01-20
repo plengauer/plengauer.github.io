@@ -74,8 +74,8 @@ jobs:
           openai_api_token: ${{ secrets.OPENAI_TOKEN }}
       - if: ${{ steps.check.outputs.initialize == 'true' }}
         run: |
-          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }} -d @./template/settings.json -X PATCH
-          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets -d @./template/rulesets.json
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }} -d @./.github/template/settings.json -X PATCH
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets -d @./.github/template/rulesets.json
     permissions:
       actions: read
   adjust-settings:
@@ -171,7 +171,7 @@ jobs:
           secrets_to_redact: '["${{ github.token }}"]'
       - uses: actions/checkout@v6.0.1
       - run: |
-          ls template | while read -r automation; do [ -d template/"$automation" ] && echo "$automation" || true; done | jq -R | jq -cs | xargs -0 -I {} echo 'actions={}' >> "$GITHUB_OUTPUT"
+          ls template | while read -r automation; do [ -d .github/template/"$automation" ] && echo "$automation" || true; done | jq -R | jq -cs | xargs -0 -I {} echo 'actions={}' >> "$GITHUB_OUTPUT"
         id: dynamic
     permissions:
       actions: read
@@ -200,9 +200,9 @@ jobs:
           path: ./other
           repository: ${{ matrix.repository }}
       - run: |
-          find "$(pwd)"/self/template/${{ matrix.action }} | while read -r file; do
+          find "$(pwd)"/self/.github/template/${{ matrix.action }} | while read -r file; do
             if [ -d "$file" ]; then continue; fi
-            new_file=./other/"${file#*/self/template/${{ matrix.action }}/}"
+            new_file=./other/"${file#*/self/.github/template/${{ matrix.action }}/}"
             [ -f "$new_file" ] || [ -f "${new_file//yml/yaml}" ] || (mkdir -p "${new_file%/*}" && cp "$file" "$new_file")
           done
       - uses: peter-evans/create-pull-request@v8.0.0
@@ -252,8 +252,8 @@ jobs:
           token_name="${token_name:0:40}"
           token_name="${token_name// /%20}"
           echo token_name="$token_name" >> "$GITHUB_OUTPUT"
-          jq < template/token_permissions.json 'to_entries | .[] | .key + "=" + .value' -r | perl -p -e 'chomp if eof' | tr '\n' ',' | xargs -I '{}' echo token_permissions='{}' >> "$GITHUB_OUTPUT"
-          xargs < template/token_retention.days -I '{}' echo token_retention='{}' >> "$GITHUB_OUTPUT"
+          jq < .github/template/token_permissions.json 'to_entries | .[] | .key + "=" + .value' -r | perl -p -e 'chomp if eof' | tr '\n' ',' | xargs -I '{}' echo token_permissions='{}' >> "$GITHUB_OUTPUT"
+          xargs < .github/template/token_retention.days -I '{}' echo token_retention='{}' >> "$GITHUB_OUTPUT"
       - id: resolve
         run: |
           created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/ACTIONS_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
