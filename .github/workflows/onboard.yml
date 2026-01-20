@@ -24,7 +24,9 @@ jobs:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
-          secrets_to_redact: '["${{ github.token }}"]'
+          secrets_to_redact: '${{ github.token }}
+
+            ${{ secrets.BOT_GITHUB_TOKEN }}'
       - id: dynamic
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
