@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - .github/workflows/onboard.yaml
+      - .github/workflows/onboard.yml
   schedule:
     - cron: '0 0 * * *'
 
