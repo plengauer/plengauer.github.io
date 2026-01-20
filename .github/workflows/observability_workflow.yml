@@ -6,6 +6,7 @@ on:
       - .github/workflows/copilot-setup-steps.yml
       - Autorerun
       - Autoversion
+      - CodeQL
       - Copilot coding agent
       - Renovate
       - Update Debian Repository
