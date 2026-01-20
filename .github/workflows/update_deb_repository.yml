@@ -38,7 +38,7 @@ jobs:
           done > dists/stable/main/binary-all/Packages
       - id: check
         run: |
-          [ "$(git status --porcelain -- apt/dists/stable/main/binary-all/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
+          [ "$(git status --porcelain -- dists/stable/main/binary-all/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
       - if: ${{ steps.check.outputs.create == 'true' }}
         uses: plengauer/create-deb-repository@v0.0.17
         with:
