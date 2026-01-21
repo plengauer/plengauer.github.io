@@ -30,7 +30,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public" and .owner.login == "${{ github.repository_owner }}" and .name != "${{ github.repository }}") | .owner.login + "/" + .name' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
+          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .owner.login + "/" + .name | select(. != "${{ github.repository }}")' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - run: |
           mkdir -p dists/stable/main/binary-all
           tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | cut -d / -f 2 | while read -r repository; do
