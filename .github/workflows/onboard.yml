@@ -138,7 +138,7 @@ jobs:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
       - run: |
           [ -r .github/CODEOWNERS ] || ( mkdir -p .github && echo '* @${{ github.repository_owner }}' ) > .github/CODEOWNERS
-      - uses: peter-evans/create-pull-request@v8.0.0
+      - uses: peter-evans/create-pull-request@v8.1.0
         id: open-pr
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
@@ -205,7 +205,7 @@ jobs:
             new_file=./other/"${file#*/self/.github/template/${{ matrix.action }}/}"
             [ -f "$new_file" ] || [ -f "${new_file//yml/yaml}" ] || (mkdir -p "${new_file%/*}" && cp "$file" "$new_file")
           done
-      - uses: peter-evans/create-pull-request@v8.0.0
+      - uses: peter-evans/create-pull-request@v8.1.0
         id: open-pr
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
