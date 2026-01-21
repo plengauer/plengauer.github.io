@@ -34,7 +34,7 @@ jobs:
       - run: |
           mkdir -p dists/stable/main/binary-all
           tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | cut -d / -f 2 | while read -r repository; do
-            curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-all/Packages | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
+            curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-all/Packages -L | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
           done > dists/stable/main/binary-all/Packages
       - id: check
         run: |
