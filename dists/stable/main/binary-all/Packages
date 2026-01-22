@@ -4616,6 +4616,22 @@ Homepage: https://github.com/plengauer/Philbot
 Description: Philbot as containerized installation, bot will auto-update
 
 Package: philbot-containerized
+Version: 2.14.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/344382770.deb
+Size: 4336
+MD5sum: dd91d4e7fb4f01486f5508e147d98a08
+SHA1: b727581600ab01099de0f03950acba9f49294247
+SHA256: e1faca2a658ff5ba097a6addc0a3449592f708420d822efcdf2e326e0cb21422
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
 Version: 2.2.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
