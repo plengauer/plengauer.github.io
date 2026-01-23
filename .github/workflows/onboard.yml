@@ -137,7 +137,7 @@ jobs:
           repository: ${{ matrix.repository }}
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
       - run: |
-          [ -r .github/CODEOWNERS ] || ( mkdir -p .github && echo '* @${{ github.repository_owner }}' ) > .github/CODEOWNERS
+          [ -r .github/CODEOWNERS ] || ( mkdir -p .github && echo '* @${{ github.repository_owner }}' > .github/CODEOWNERS )
       - uses: peter-evans/create-pull-request@v8.1.0
         id: open-pr
         with:
