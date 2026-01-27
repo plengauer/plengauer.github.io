@@ -1,0 +1,2 @@
+#!/bin/sh -eu
+[ -r "$1"/action.yml ] || [ -r "$1"/action.yaml ]
