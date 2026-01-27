@@ -199,7 +199,13 @@ jobs:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
           path: ./other
           repository: ${{ matrix.repository }}
-      - run: |
+      - id: check
+        run: |
+          path="$(pwd)"/self/.github/template/${{ matrix.action }}.check
+          [ -x "$path" ] || ! [ -r "$path" ]
+          ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ github.token }}" eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT" || true
+      - if: steps.check.outputs.deploy == 'true'
+        run: |
           find "$(pwd)"/self/.github/template/${{ matrix.action }} | while read -r file; do
             if [ -d "$file" ]; then continue; fi
             new_file=./other/"${file#*/self/.github/template/${{ matrix.action }}/}"
