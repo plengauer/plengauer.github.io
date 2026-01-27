@@ -202,7 +202,7 @@ jobs:
       - id: check
         run: |
           path="$(pwd)"/self/.github/template/${{ matrix.action }}.check
-          ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ github.token }} eval "$path" ) && echo deploy=true >> "$GITHUB_OUTPUT"
+          ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ github.token }} eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT"
           rm -rf "$path"
       - if: steps.check.outputs.deploy == 'true'
         run: |
