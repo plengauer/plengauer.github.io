@@ -202,6 +202,7 @@ jobs:
       - run: |
           find "$(pwd)"/self/.github/template/${{ matrix.action }} | while read -r file; do
             if [ -d "$file" ]; then continue; fi
+            if [ "${file##*/}" = check.sh ]; then continue; fi
             new_file=./other/"${file#*/self/.github/template/${{ matrix.action }}/}"
             [ -f "$new_file" ] || [ -f "${new_file//yml/yaml}" ] || (mkdir -p "${new_file%/*}" && cp "$file" "$new_file")
           done
