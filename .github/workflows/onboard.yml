@@ -201,7 +201,7 @@ jobs:
           repository: ${{ matrix.repository }}
       - id: check
         run: |
-          path="$(pwd)"/self/.github/template/${{ matrix.action }}/check
+          path="$(pwd)"/self/.github/template/${{ matrix.action }}.check
           ( ! [ -x "$path" ] || eval "$path" ) && echo deploy=true >> "$GITHUB_OUTPUT"
           rm -rf "$path"
       - if: steps.check.outputs.deploy == 'true'
