@@ -202,7 +202,6 @@ jobs:
       - id: check
         run: |
           path="$(pwd)"/self/.github/template/${{ matrix.action }}.check
-          chmod -x "$path"
           ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ github.token }} eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT"
       - if: steps.check.outputs.deploy == 'true'
         run: |
