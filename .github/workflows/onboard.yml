@@ -171,7 +171,7 @@ jobs:
           secrets_to_redact: '["${{ github.token }}"]'
       - uses: actions/checkout@v6.0.2
       - run: |
-          ls template | while read -r automation; do [ -d .github/template/"$automation" ] && echo "$automation" || true; done | jq -R | jq -cs | xargs -0 -I {} echo 'actions={}' >> "$GITHUB_OUTPUT"
+          ls .github/template | while read -r automation; do [ -d .github/template/"$automation" ] && echo "$automation" || true; done | jq -R | jq -cs | xargs -0 -I {} echo 'actions={}' >> "$GITHUB_OUTPUT"
         id: dynamic
     permissions:
       actions: read
