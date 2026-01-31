@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/onboard.yml
+      - .github/template/**
   schedule:
     - cron: '0 0 * * *'
 
