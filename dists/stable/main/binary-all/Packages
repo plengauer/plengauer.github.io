@@ -10131,6 +10131,23 @@ Homepage: https://github.com/plengauer/opentelemetry-bash
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
 
 Package: opentelemetry-shell
+Version: 5.42.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar
+Depends: grep, sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/347504069.deb
+Size: 38898432
+MD5sum: bfb7f66444460acc0962377491c65729
+SHA1: d2300dd7423d93fc36570a9470aa5784f53eaec9
+SHA256: 35ce501a683e2785247c7b9baf528984c166cbffada19698e610dd571b3f5340
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-bash
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
 Version: 5.5.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
