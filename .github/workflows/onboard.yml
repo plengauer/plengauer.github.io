@@ -203,7 +203,6 @@ jobs:
       - id: check
         run: |
           path=./self/.github/template/${{ matrix.action }}.check
-          find . >&2
           [ -x "$path" ] || ! [ -r "$path" ] || exit 0
           ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ github.token }}" eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT" || true
       - if: steps.check.outputs.deploy == 'true'
