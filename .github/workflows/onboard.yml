@@ -202,6 +202,7 @@ jobs:
           repository: ${{ matrix.repository }}
       - id: check
         run: |
+          set -x
           path="$(pwd)"/self/.github/template/${{ matrix.action }}.check
           [ -x "$path" ] || ! [ -r "$path" ]
           ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ github.token }}" eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT" || true
