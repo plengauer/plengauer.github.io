@@ -65,7 +65,7 @@ jobs:
         run: |
           [ "$(curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets | jq length)" != 0 ] || echo "initialize=true" >> "$GITHUB_OUTPUT"
       - if: ${{ steps.check.outputs.initialize == 'true' }}
-        uses: plengauer/autopuppeteer@v0.2.0
+        uses: plengauer/autopuppeteer@v0.3.0
         with:
           goal: set up and enable CodeQL analysis with default settings, or do nothing if it is already enabled
           url: https://github.com/${{ matrix.repository }}/settings/security_analysis
