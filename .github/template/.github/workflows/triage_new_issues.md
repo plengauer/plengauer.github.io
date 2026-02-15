@@ -36,7 +36,7 @@ When a new issue is created, you should:
    - Priority or severity indicators
    - Any other relevant categorization
 5. **Apply the labels**: Apply all fitting labels to the issue
-6. **Ask followup questions**: If there are open questions, put them ask comment onto the issue and mention the original author.
+6. **Ask followup questions**: If there are open questions, put them as a comment on the issue and mention the original author.
 
 ## Guidelines
 
