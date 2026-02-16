@@ -19,9 +19,8 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         run: |
-          cd .github/workflows
           gh extension install github/gh-aw
-          ls | grep -E '\.md$' | xargs -r -n 1 gh aw compile
+          gh aw compile
       - id: open-pr
         uses: peter-evans/create-pull-request@v8.1.0
         with:
