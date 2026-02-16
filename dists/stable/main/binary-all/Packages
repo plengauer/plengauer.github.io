@@ -1618,6 +1618,21 @@ Priority: optional
 Homepage: https://github.com/plengauer/openai
 Description: A commandline interface to the OpenAI API for text-based input and output
 
+Package: openai
+Version: 0.8.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, findutils, curl, jq
+Provides: ai
+Filename: openai/pool/main/356459841.deb
+Size: 1416
+MD5sum: ec17a391e7e404a712271df453ad36b4
+SHA1: de0631391b03b4cbc85f66bd60624e1a27ed7f2a
+SHA256: b232699b75357c5dd3b7ac4525c8312ee6206f104171c757062845bfea08e9c7
+Priority: optional
+Homepage: https://github.com/plengauer/openai
+Description: A commandline interface to the OpenAI API for text-based input and output
+
 Package: philbot
 Version: 2.3.0
 Architecture: all
@@ -10143,6 +10158,40 @@ Size: 38898432
 MD5sum: bfb7f66444460acc0962377491c65729
 SHA1: d2300dd7423d93fc36570a9470aa5784f53eaec9
 SHA256: 35ce501a683e2785247c7b9baf528984c166cbffada19698e610dd571b3f5340
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-bash
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.43.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar
+Depends: grep, sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/354898698.deb
+Size: 38097082
+MD5sum: 2acaf1349f99ba00aa715bf6bfe21083
+SHA1: 6b433f218dba43232591799187de59dc5058d8aa
+SHA256: fdbf8371d1a1d1f986e5910e412a961a393d9dceff1851df71de908834032d60
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-bash
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.43.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar
+Depends: grep, sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/355068482.deb
+Size: 38971818
+MD5sum: 213360f43d3a7458174a0d344b52b194
+SHA1: 13e217330c254882b9649b8fad0a534fa8631d89
+SHA256: b8059f35486f146df9a4a7ae15334d6c906a6ff4adbb433289da82a10998182d
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-bash
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
