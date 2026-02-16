@@ -4,5 +4,6 @@
   "actions": "write",
   "pull_requests": "write",
   "issues": "write",
-  "security_events": "write"
+  "security_events": "write",
+  "models": "read"
 }
