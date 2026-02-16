@@ -5,5 +5,5 @@
   "pull_requests": "write",
   "issues": "write",
   "security_events": "write",
-  "models": "read"
+  "user_models": "read"
 }
