@@ -281,6 +281,7 @@ jobs:
         run: |
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
+          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set    GH_AW_AGENT_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
     permissions:
       actions: read
 
