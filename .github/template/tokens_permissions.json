@@ -5,5 +5,6 @@
   "pull_requests": "write",
   "issues": "write",
   "security_events": "write",
+  "user_models": "read",
   "copilot_requests": "write"
 }

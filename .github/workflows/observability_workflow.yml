@@ -7,6 +7,7 @@ on:
       - Autorerun
       - Autoversion
       - CodeQL
+      - Copilot code review
       - Copilot coding agent
       - Onboard
       - Renovate
@@ -18,7 +19,7 @@ jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/workflow@v5.43.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/workflow@v5.43.1
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
