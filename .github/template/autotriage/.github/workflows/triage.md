@@ -1,5 +1,5 @@
 ---
-name: Triage
+name: Autotriage
 description: Automatically applies appropriate labels to newly created issues based on their content
 on:
   issues:
