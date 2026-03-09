@@ -299,10 +299,11 @@ jobs:
       - run: |
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_ENDPOINT && exit 0
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} <<< "${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}"
+          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} --env copilot <<< "${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}"
       - run: |
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS && exit 0
           endpoint=${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' "${endpoint%%.com/*}".com/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}
+          curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' "${endpoint%%.com/*}".com/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | tee >(GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}) >(GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env copilot) > /dev/null
           {
             "name": "${{ matrix.repository }} GitHub",
             "personalAccessToken": false,
