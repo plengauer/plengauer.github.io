@@ -6,5 +6,5 @@
   "issues": "write",
   "security_events": "write",
   "user_models": "read",
-  "copilot_requests": "write"
+  "user_copilot_requests": "read"
 }
