@@ -315,7 +315,7 @@ jobs:
               "metrics.ingest",
               "openTelemetryTrace.ingest"
             ],
-            "expiresIn": "${retention_days}d"
+            "expirationDate": "now+${retention_days}d"
           }
           EOF
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
@@ -329,7 +329,7 @@ jobs:
               "metrics.ingest",
               "openTelemetryTrace.ingest"
             ],
-            "expiresIn": "${retention_days}d"
+            "expirationDate": "now+${retention_days}d"
           }
           EOF
           done
