@@ -33,7 +33,7 @@ jobs:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.fork == false and .visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .name' -r \
-            | sort -R | head -n 256 | jq -R | jq '"plengauer/" + .' | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
+            | sort -R | head -n 256 | jq -R | jq '"${{ github.repository_owner }}/" + .' | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
     permissions:
       actions: read
 
