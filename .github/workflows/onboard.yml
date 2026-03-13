@@ -264,7 +264,7 @@ jobs:
       - id: resolve
         run: |
           created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/ACTIONS_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-          ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 95 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
+          ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 80 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
       - if: ${{ steps.resolve.outputs.rotate == 'true' }}
         id: create
         uses: plengauer/create-github-finegrained-pat@v0.5.0
@@ -306,7 +306,7 @@ jobs:
           retention_days="$(cat .github/template/token_retention.days)"
           endpoint=${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-          [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 95 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' "${endpoint%%.com/*}".com/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}
+          [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' "${endpoint%%.com/*}".com/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}
           {
             "name": "GitHub ${{ matrix.repository }}",
             "personalAccessToken": false,
@@ -320,7 +320,7 @@ jobs:
           EOF
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
             created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-            [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 95 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' "${endpoint%%.com/*}".com/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment"
+            [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' "${endpoint%%.com/*}".com/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment"
           {
             "name": "GitHub ${{ matrix.repository }} $environment",
             "personalAccessToken": false,
