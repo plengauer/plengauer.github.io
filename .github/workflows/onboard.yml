@@ -40,6 +40,9 @@ jobs:
   deploy-codescanning:
     needs: list-repositories
     runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.47.3
         env:
