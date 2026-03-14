@@ -3,11 +3,13 @@
   "languages": [
     "actions",
     "c-cpp",
+    "csharp",
+    "go",
     "java-kotlin",
-    "javascript",
     "javascript-typescript",
     "python",
-    "typescript"
+    "ruby",
+    "swift"
   ],
   "query_suite": "extended",
   "threat_model": "remote_and_local",
