@@ -56,9 +56,10 @@ jobs:
       - run: |
           curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/analyses'?per_page=1' > /dev/null && exit 0 || true
           [ "$(curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/default-setup | jq .state -r)" = not-configured ] || exit 0
-          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/default-setup -d @./.github/template/code_scanning.json
+          curl -v -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/default-setup -d @./.github/template/code_scanning.json
     permissions:
       actions: read
+
   deploy-ruleset:
     needs: [ list-repositories, deploy-codescanning ]
     runs-on: ubuntu-slim
