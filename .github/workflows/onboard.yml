@@ -344,6 +344,14 @@ jobs:
       matrix:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
     steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.47.3
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: |-
+            ${{ github.token }}
+            ${{ secrets.BOT_GITHUB_TOKEN }}
       - env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
         run: |
@@ -354,3 +362,5 @@ jobs:
             gh secret delete OTEL_EXPORTER_OTLP_ENDPOINT --env "$environment"
             gh secret delete OTEL_EXPORTER_OTLP_HEADERS --env "$environment"
           done
+    permissions:
+      actions: read
