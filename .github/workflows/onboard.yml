@@ -234,7 +234,7 @@ jobs:
       actions: read
 
   deploy-gh-token:
-    needs: [ list-repositories, nuke-secrets ]
+    needs: list-repositories
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -284,7 +284,7 @@ jobs:
       actions: read
 
   deploy-otel-token:
-    needs: [ list-repositories, nuke-secrets ]
+    needs: list-repositories
     runs-on: ubuntu-slim
     strategy:
       matrix:
@@ -332,35 +332,6 @@ jobs:
             "expirationDate": "now+${retention_days}d"
           }
           EOF
-          done
-    permissions:
-      actions: read
-
-  nuke-secrets:
-    if: false
-    needs: list-repositories
-    runs-on: ubuntu-slim
-    strategy:
-      matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
-    steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.47.3
-        env:
-          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
-        with:
-          secrets_to_redact: |-
-            ${{ github.token }}
-            ${{ secrets.BOT_GITHUB_TOKEN }}
-      - env:
-          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
-        run: |
-          gh secret delete ACTIONS_GITHUB_TOKEN
-          gh secret delete OTEL_EXPORTER_OTLP_ENDPOINT
-          gh secret delete OTEL_EXPORTER_OTLP_HEADERS
-          curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
-            gh secret delete OTEL_EXPORTER_OTLP_ENDPOINT --env "$environment"
-            gh secret delete OTEL_EXPORTER_OTLP_HEADERS --env "$environment"
           done
     permissions:
       actions: read
