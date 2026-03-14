@@ -9,6 +9,7 @@ on:
       - CodeQL
       - Copilot code review
       - Copilot coding agent
+      - Nuke Secrets
       - Onboard
       - Renovate
       - Update Debian Repository
