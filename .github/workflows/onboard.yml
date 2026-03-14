@@ -177,7 +177,7 @@ jobs:
     permissions:
       actions: read
   deploy-action:
-    needs: [ list-repositories, list-actions, init-settings, deploy-gh-token, deploy-dt-token ]
+    needs: [ list-repositories, list-actions, init-settings, deploy-gh-token, deploy-otel-token ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
