@@ -41,12 +41,21 @@ jobs:
     needs: list-repositories
     runs-on: ubuntu-slim
     steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.47.3
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: |-
+            ${{ github.token }}
+            ${{ secrets.BOT_GITHUB_TOKEN }}
       - uses: actions/checkout@v6.0.2
       - run: |
           curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/analyses'?per_page=1' > /dev/null && exit 0 || true
           [ "$(curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/default-setup | jq .state -r)" = not-configured ] || exit 0
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/default-setup -d @./.github/template/code_scanning.json
-
+    permissions:
+      actions: read
   deploy-ruleset:
     needs: [ list-repositories, deploy-codescanning ]
     runs-on: ubuntu-slim
