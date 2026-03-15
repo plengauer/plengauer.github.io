@@ -8,11 +8,11 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     concurrency:
       group: deploy-otel-job
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/deploy@v5.43.1
+      - uses: plengauer/opentelemetry-github/actions/instrument/deploy@v5.47.3
         with:
           github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         env:

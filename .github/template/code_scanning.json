@@ -1,0 +1,18 @@
+{
+  "state": "configured",
+  "languages": [
+    "actions",
+    "c-cpp",
+    "csharp",
+    "go",
+    "java-kotlin",
+    "javascript-typescript",
+    "python",
+    "ruby",
+    "swift"
+  ],
+  "query_suite": "extended",
+  "threat_model": "remote_and_local",
+  "runner_type": "standard",
+  "runner_label": ""
+}

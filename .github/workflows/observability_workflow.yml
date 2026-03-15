@@ -9,6 +9,7 @@ on:
       - CodeQL
       - Copilot code review
       - Copilot coding agent
+      - Nuke Secrets
       - Onboard
       - Renovate
       - Update Debian Repository
@@ -19,9 +20,10 @@ jobs:
   export:
     runs-on: ubuntu-latest
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/workflow@v5.43.1
+      - uses: plengauer/opentelemetry-github/actions/instrument/workflow@v5.47.3
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
     permissions:
       actions: read
+    container: ghcr.io/plengauer/opentelemetry-github-workflow-instrumentation-runner:v5.47.3
