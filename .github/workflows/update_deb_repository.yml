@@ -41,8 +41,8 @@ jobs:
           done
       - id: check
         run: |
-          # [ "$(ls dists/stable/main/ | while read -r directory; do echo "${directory#binary-}"; done | xargs -I '{}' git status --porcelain -- dists/stable/main/binary-'{}'/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
-      - if: ${{ steps.check.outputs.create == 'true' }}
+          [ "$(ls dists/stable/main/ | while read -r directory; do echo "${directory#binary-}"; done | xargs -I '{}' git status --porcelain -- dists/stable/main/binary-'{}'/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
+      - # if: ${{ steps.check.outputs.create == 'true' }}
         uses: plengauer/create-deb-repository@v0.1.0
         with:
           mode: append
