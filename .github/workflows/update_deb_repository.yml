@@ -32,13 +32,15 @@ jobs:
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .owner.login + "/" + .name | select(. != "${{ github.repository }}")' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - run: |
-          mkdir -p dists/stable/main/binary-all
-          tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | grep -v '^$' | cut -d / -f 2 | while read -r repository; do
-            curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-all/Packages -L | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
-          done > dists/stable/main/binary-all/Packages
+          for arch in all i386 amd64 armhf arm64 mips64el ppc64el riscv64 s390x; do
+            mkdir -p dists/stable/main/binary-"$arch"
+            tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | grep -v '^$' | cut -d / -f 2 | while read -r repository; do
+              curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-"$arch"/Packages -L | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
+            done > dists/stable/main/binary-"$arch"/Packages
+          done
       - id: check
         run: |
-          [ "$(git status --porcelain -- dists/stable/main/binary-all/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
+          [ "$(ls dists/stable/main/ | while read -r directory; do echo "${directory#binary-}"; done | xargs -I '{}' git status --porcelain -- dists/stable/main/binary-'{}'/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
       - if: ${{ steps.check.outputs.create == 'true' }}
         uses: plengauer/create-deb-repository@v0.1.0
         with:
