@@ -6,13 +6,61 @@ Version: 1.0
 Architectures: all
 Components: main
 Description: A software repository hosting packages from github
-Date: Tue, 10 Mar 2026 07:43:04 +0000
+Date: Mon, 16 Mar 2026 09:48:19 +0000
 MD5Sum:
- edf9b2c765e656aa1bbfa09d5c419c46 75867 main/binary-all/Packages.gz
+ 4a41ff6d96f78ee24365458c88102f17 20 main/binary-armhf/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-armhf/Packages
+ 0d85eaa5091544100b028fc6961e2cf6 20 main/binary-s390x/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-s390x/Packages
+ a882e585651fb930a7ccfbd2ce885f31 20 main/binary-arm64/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arm64/Packages
+ 3a0051df07b06040b91222ddf7254206 75867 main/binary-all/Packages.gz
  be8aff35aba65fd7a4dd901ceac52834 429511 main/binary-all/Packages
+ 124601a3390c64a076c76706221f46ab 20 main/binary-riscv64/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-riscv64/Packages
+ c1d9281129539941a91cbb143a1e128c 20 main/binary-amd64/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-amd64/Packages
+ 39f0a61ab80fa6893dd876b302820115 20 main/binary-mips64el/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mips64el/Packages
+ 2ce2598254a55f5b80ee7c0f662b9ea9 20 main/binary-i386/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-i386/Packages
+ 845c4483820f563cc65cd44a15c7186a 20 main/binary-ppc64el/Packages.gz
+ d41d8cd98f00b204e9800998ecf8427e 0 main/binary-ppc64el/Packages
 SHA1:
- 4c7be5c46f8c31c961ea21b66059d44f34efdcdc 75867 main/binary-all/Packages.gz
+ df22927b180062b3959480fd1793d56aa1254594 20 main/binary-armhf/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-armhf/Packages
+ b63453b2dc18c725f22563ab217db658ef81c111 20 main/binary-s390x/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-s390x/Packages
+ a4a331e22da24be706de8c6400cb763ad2e2e786 20 main/binary-arm64/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arm64/Packages
+ 7ededb57914237faa79d3df4e47cc769cb72c5d1 75867 main/binary-all/Packages.gz
  b965f179f16b4a6a5ad4e7e7f7307ab6750a9657 429511 main/binary-all/Packages
+ 61c2fc2398318c99b75bda930642fe1e846e9f00 20 main/binary-riscv64/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-riscv64/Packages
+ 239dfc79f056fbfdec5449e219a94d9c07e4f71c 20 main/binary-amd64/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-amd64/Packages
+ 29d7dc15453b55c63a447355f1f0d5d65ec6517b 20 main/binary-mips64el/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mips64el/Packages
+ 306b5b82a30daf9648fc655f86586505f0373b2b 20 main/binary-i386/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-i386/Packages
+ a084ca1f8d2769eacaa6d6d3bcff7056da2aaca3 20 main/binary-ppc64el/Packages.gz
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-ppc64el/Packages
 SHA256:
- 1f87eac94b5aa5fdfe8c7cf6efa6b67b49cca3223ea29df63ad907219f4be5a6 75867 main/binary-all/Packages.gz
+ f02f771bba7356cf7b2315bbc0d60a6b13b1393d3dc034188a7e9daa33ce7f45 20 main/binary-armhf/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-armhf/Packages
+ 97d36797b9e2e8d700628954a0c9b4ac969ab3ce2c94f2fce8f55233df1a450e 20 main/binary-s390x/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-s390x/Packages
+ a2b53e3353a0e3a4fbc1f6affe1bf45a9944a3be98cbc47c94c35da792376ee9 20 main/binary-arm64/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arm64/Packages
+ 32f67e46e02ec5a2a1bb268b7e686cb099de5b16c8950def8af53f6d8c50ea58 75867 main/binary-all/Packages.gz
  fbb4336ff2fad3a8b45a666c96c7bb6b250753ce7a3a1ac7e4311e92ce0ea9cd 429511 main/binary-all/Packages
+ 3fd92debd585bcec55a1d3df97ea72cd5f9aec0abd36e5497a4ee43d9d39a8ef 20 main/binary-riscv64/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-riscv64/Packages
+ c4dc754e8177108397b487229a206ef1dbaeffa144b6e205643aaf0781fe4f46 20 main/binary-amd64/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-amd64/Packages
+ ac4269d064b7e0997790d8e89bcca56f988a9cfd8e0fe6c0da9e536ba211e600 20 main/binary-mips64el/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mips64el/Packages
+ 148c9017bc9a1202a6ed5dca15931a75d58ee8d3ff99b8936c82fcbd86ae0465 20 main/binary-i386/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-i386/Packages
+ 76f478ec12dd1841f15f156d7991243ca57767b303c114b363bbbbaf5fcb7d07 20 main/binary-ppc64el/Packages.gz
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-ppc64el/Packages
