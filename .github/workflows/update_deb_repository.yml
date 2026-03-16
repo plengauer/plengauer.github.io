@@ -32,13 +32,11 @@ jobs:
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .owner.login + "/" + .name | select(. != "${{ github.repository }}")' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - run: |
-          { echo all; dpkg-architecture -L | grep -v -- -; } | while read -r arch; do
-            mkdir -p dists/stable/main/binary-"$arch"
-            tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | grep -v '^$' | cut -d / -f 2 | while read -r repository; do
-              if curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/Release > /dev/null 2> /dev/null; then
-                curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-"$arch"/Packages -L 2> /dev/null | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
-              fi
-            done > dists/stable/main/binary-"$arch"/Packages
+          tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | grep -v '^$' | cut -d / -f 2 | while read -r repository; do
+            curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/Release | grep -E '/Packages$' | cut -d ' ' -f 4 | cut -d / -f 2 | cut -d - -f 2 | sort -u | tee /dev/stderr | while read -r arch; do
+              mkdir -p dists/stable/main/binary-"$arch"
+              curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-"$arch"/Packages -L | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' >> dists/stable/main/binary-"$arch"/Packages
+            done
           done
       - id: check
         run: |
