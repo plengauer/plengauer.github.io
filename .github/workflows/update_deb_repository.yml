@@ -32,7 +32,7 @@ jobs:
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .owner.login + "/" + .name | select(. != "${{ github.repository }}")' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - run: |
-          for arch in all i386 amd64 armhf arm64 mips64el ppc64el riscv64 s390x; do
+          { echo all; dpkg-architecture -L; } | while read -r arch; do
             mkdir -p dists/stable/main/binary-"$arch"
             tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | grep -v '^$' | cut -d / -f 2 | while read -r repository; do
               curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-"$arch"/Packages -L | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' || true
