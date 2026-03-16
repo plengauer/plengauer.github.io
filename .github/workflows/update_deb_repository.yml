@@ -33,7 +33,7 @@ jobs:
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .owner.login + "/" + .name | select(. != "${{ github.repository }}")' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
       - run: |
           tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | grep -v '^$' | cut -d / -f 2 | while read -r repository; do
-            curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/Release | grep -E '/Packages$' | cut -d ' ' -f 4 | cut -d / -f 2 | cut -d - -f 2 | sort -u | tee /dev/stderr | while read -r arch; do
+            curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/Release 2> /dev/null | grep -E '/Packages$' | cut -d ' ' -f 4 | cut -d / -f 2 | cut -d - -f 2 | sort -u | while read -r arch; do
               mkdir -p dists/stable/main/binary-"$arch"
               curl --fail --retry 16 https://${{ github.repository_owner }}.github.io/"$repository"/dists/stable/main/binary-"$arch"/Packages -L | sed 's~^Filename: pool/main/~Filename: '"${repository#*/}"'/pool/main/~g' >> dists/stable/main/binary-"$arch"/Packages
             done
