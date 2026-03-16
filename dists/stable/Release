@@ -6,18 +6,18 @@ Version: 1.0
 Architectures: all
 Components: main
 Description: A software repository hosting packages from github
-Date: Mon, 16 Mar 2026 21:02:05 +0000
+Date: Mon, 16 Mar 2026 21:11:19 +0000
 MD5Sum:
- 5454c2ba5a30ddaaede8fd2166a76795 20 main/binary-armhf/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-armhf/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-armhf/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mips/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arm/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mips64r6el/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-powerpcspe/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arc/Packages
- 69e68785ea11dde5479a170ada0e219e 20 main/binary-s390x/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-s390x/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-s390x/Packages
- 977af06bdabe610c4f74aede55ea449a 20 main/binary-arm64/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-arm64/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-arm64/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mips64/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mips64r6/Packages
@@ -30,12 +30,12 @@ MD5Sum:
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-powerpc/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mipsn32/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-armel/Packages
- 80edd53d14cf1636e11de462a5fff15c 75867 main/binary-all/Packages.gz
- be8aff35aba65fd7a4dd901ceac52834 429511 main/binary-all/Packages
+ d61cbf90375016fc6b61b3990c822a9b 151515 main/binary-all/Packages.gz
+ bf5182011299ec5ebdafab2b0ad936b2 859022 main/binary-all/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-powerpcel/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-nios2/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-alpha/Packages
- 45d90f06993be9d2db2da5d972f694f9 20 main/binary-riscv64/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-riscv64/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-riscv64/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-sh3/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-sparc/Packages
@@ -45,32 +45,32 @@ MD5Sum:
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-armeb/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-sh3eb/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mipsn32r6/Packages
- a093746f447c8b4f935e0185e2fdf5a0 20 main/binary-amd64/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-amd64/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-amd64/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-sh4/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-x32/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-hppa/Packages
- d87d9c4fdd0780298220db55a24355e4 20 main/binary-mips64el/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-mips64el/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mips64el/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mipsr6/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-or1k/Packages
- 29f2b50ce7c848b50278869a13ef7d39 20 main/binary-i386/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-i386/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-i386/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-sparc64/Packages
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-mipsn32r6el/Packages
- 773d73c901bf302ccfc23ee23d74acec 20 main/binary-ppc64el/Packages.gz
+ 28831de48d1d36ba35736343e55e404e 20 main/binary-ppc64el/Packages.gz
  d41d8cd98f00b204e9800998ecf8427e 0 main/binary-ppc64el/Packages
 SHA1:
- 6b8e5df10fccc28190c0a8b4469682878120cc9b 20 main/binary-armhf/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-armhf/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-armhf/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mips/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arm/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mips64r6el/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-powerpcspe/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arc/Packages
- 0ded14a1591475fbec0417740b9f1e0f735e54a7 20 main/binary-s390x/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-s390x/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-s390x/Packages
- 4850a0c08f69791e1cbd83c7370fb1fac2a69232 20 main/binary-arm64/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-arm64/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-arm64/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mips64/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mips64r6/Packages
@@ -83,12 +83,12 @@ SHA1:
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-powerpc/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mipsn32/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-armel/Packages
- 46bbe55eb6887b9febd34128bdf65941b38f5ab0 75867 main/binary-all/Packages.gz
- b965f179f16b4a6a5ad4e7e7f7307ab6750a9657 429511 main/binary-all/Packages
+ 6687a688814d756bde7a7b8eacedf4e0a217617b 151515 main/binary-all/Packages.gz
+ cc493cecbf51ed16775f3ef1f19fd75df6f07ecc 859022 main/binary-all/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-powerpcel/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-nios2/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-alpha/Packages
- a5092126e24c600eb27b025a48b4acf37e461bce 20 main/binary-riscv64/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-riscv64/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-riscv64/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-sh3/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-sparc/Packages
@@ -98,32 +98,32 @@ SHA1:
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-armeb/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-sh3eb/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mipsn32r6/Packages
- d73c0938bc3e7d2d5c835f61430be6f14b4f3ff2 20 main/binary-amd64/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-amd64/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-amd64/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-sh4/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-x32/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-hppa/Packages
- 5859cd206cf7637e9d14e9363946e6f532f2ca9e 20 main/binary-mips64el/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-mips64el/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mips64el/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mipsr6/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-or1k/Packages
- 83f5f7fd38cdf91957652d11fc55e22cf991af8d 20 main/binary-i386/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-i386/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-i386/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-sparc64/Packages
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-mipsn32r6el/Packages
- 40aa2ba845612e12d2379e6bfca906cf12179598 20 main/binary-ppc64el/Packages.gz
+ 6a7a8b9398922fc422fe69fabdefac1e920c6afe 20 main/binary-ppc64el/Packages.gz
  da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/binary-ppc64el/Packages
 SHA256:
- 302e83bb1db44e506fefd13f87c1fa8a3dd1a870cef07a25b82b83981ee1a41d 20 main/binary-armhf/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-armhf/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-armhf/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mips/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arm/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mips64r6el/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-powerpcspe/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arc/Packages
- 7098dc38772d47adad83b802c1dda1ae70bd8044399c1a18a6fe1f64cb68f633 20 main/binary-s390x/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-s390x/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-s390x/Packages
- 4bf079ec653ac27e32f976c6956250ff73d1a5cc5566e785d48762d0ae35e179 20 main/binary-arm64/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-arm64/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-arm64/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mips64/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mips64r6/Packages
@@ -136,12 +136,12 @@ SHA256:
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-powerpc/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mipsn32/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-armel/Packages
- 482ad577b2b6f790fd7c5fabc710da6bcce66da63e8b18e252400b0d7de6c925 75867 main/binary-all/Packages.gz
- fbb4336ff2fad3a8b45a666c96c7bb6b250753ce7a3a1ac7e4311e92ce0ea9cd 429511 main/binary-all/Packages
+ 600b480372010d93b429517ae10aea6498100301c735834e2f23416179ed5fbf 151515 main/binary-all/Packages.gz
+ 7aa1beb7d8c258666f5e71cd1cb068627443a72c71851849c561a035cd2d55d9 859022 main/binary-all/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-powerpcel/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-nios2/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-alpha/Packages
- 639587570043fb9943162c05851bb6cedb3608797f6fba8570d3368379fcc32c 20 main/binary-riscv64/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-riscv64/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-riscv64/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-sh3/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-sparc/Packages
@@ -151,18 +151,18 @@ SHA256:
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-armeb/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-sh3eb/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mipsn32r6/Packages
- 999f32155826bb47b37adaedb171508428c1c82b9237fd7ba05ad96cd3bcbde9 20 main/binary-amd64/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-amd64/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-amd64/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-sh4/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-x32/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-hppa/Packages
- d04fee22ce4512d0f4343b103f5a53413299a8f87b89d2796cfeb1928273d508 20 main/binary-mips64el/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-mips64el/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mips64el/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mipsr6/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-or1k/Packages
- 017e545676864110d4ac1804c3c1c1c3ae741b15a1294696d2f2f77e2c9b1bdc 20 main/binary-i386/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-i386/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-i386/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-sparc64/Packages
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-mipsn32r6el/Packages
- 1d86dd00c57b61adb19b146d45daaa0d8e8bcd92187848af7c085461371efd1e 20 main/binary-ppc64el/Packages.gz
+ e8ea03381671feea1c0924333711a477c9800719eb8ced5c74c45a99a5150202 20 main/binary-ppc64el/Packages.gz
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/binary-ppc64el/Packages
