@@ -34,7 +34,7 @@ jobs:
           git push && echo "pushed=true" >> "$GITHUB_OUTPUT" || echo "pushed=false" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
-      - f: steps.push.outputs.pushed == 'false'
+      - if: steps.push.outputs.pushed == 'false'
         id: open-pr
         uses: peter-evans/create-pull-request@v8.1.0
         with:
