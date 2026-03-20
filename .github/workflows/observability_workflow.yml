@@ -6,11 +6,13 @@ on:
       - .github/workflows/copilot-setup-steps.yml
       - Autorerun
       - Autoversion
+      - Claude
       - CodeQL
       - Copilot code review
       - Copilot coding agent
       - Nuke Secrets
       - Onboard
+      - OpenAI Codex
       - Renovate
       - Update Debian Repository
       - pages-build-deployment
