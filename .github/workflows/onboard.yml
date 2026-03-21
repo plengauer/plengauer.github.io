@@ -267,7 +267,6 @@ jobs:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
-          __kill_switch: 1
           secrets_to_redact: |-
             ${{ github.token }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
