@@ -281,7 +281,7 @@ jobs:
           ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 80 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
       - if: ${{ steps.resolve.outputs.rotate == 'true' }}
         id: create
-        uses: plengauer/create-github-finegrained-pat@v0.7.5
+        uses: plengauer/create-github-finegrained-pat@v0.7.6
         with:
           name: ${{ steps.metadata.outputs.token_name }}
           expiration: ${{ steps.metadata.outputs.token_retention }}
@@ -293,6 +293,8 @@ jobs:
           openai_api_token: ${{ secrets.OPENAI_TOKEN }}
         env:
           OPENAI_MODEL: gpt-5.3-codex
+          OPENAI_SERVICE_TIER: default
+          OPENAI_REASONING_EFFORT: xhigh
       - if:  ${{ success() && steps.resolve.outputs.rotate == 'true' }}
         run: |
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
