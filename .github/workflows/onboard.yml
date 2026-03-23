@@ -269,10 +269,7 @@ jobs:
       - id: metadata
         run: |
           repository='${{ matrix.repository }}'
-          token_name="GitHub Actions $(echo "${repository#*/} ${{ github.run_id }} ${{ github.run_attempt }}" | md5sum | cut -d - -f 1 | tr -d ' ')"
-          token_name="${token_name:0:40}"
-          token_name="${token_name// /%20}"
-          echo token_name="$token_name" >> "$GITHUB_OUTPUT"
+          echo token_name="GitHub Actions $(echo "${repository#*/} ${{ github.run_id }} ${{ github.run_attempt }}" | md5sum | cut -d - -f 1 | tr -d ' ')" >> "$GITHUB_OUTPUT"
           jq < .github/template/token_permissions.json 'to_entries | .[] | .key + "=" + .value' -r | perl -p -e 'chomp if eof' | tr '\n' ',' | xargs -I '{}' echo token_permissions='{}' >> "$GITHUB_OUTPUT"
           xargs < .github/template/token_retention.days -I '{}' echo token_retention='{}' >> "$GITHUB_OUTPUT"
       - id: resolve
