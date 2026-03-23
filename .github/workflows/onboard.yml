@@ -295,7 +295,7 @@ jobs:
           OPENAI_MODEL: gpt-5.3-codex
           OPENAI_SERVICE_TIER: default
           OPENAI_REASONING_EFFORT: xhigh
-      - if:  ${{ success() && steps.resolve.outputs.rotate == 'true' }}
+      - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
         run: |
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
