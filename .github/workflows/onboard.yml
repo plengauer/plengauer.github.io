@@ -289,7 +289,7 @@ jobs:
           cookie: ${{ secrets.GH_COOKIE }}
           openai_api_token: ${{ secrets.OPENAI_TOKEN }}
         env:
-          OPENAI_MODEL: gpt-5.3-codex
+          OPENAI_MODEL: gpt-5.2-codex # gpt-5.3-codex
           OPENAI_SERVICE_TIER: default
           OPENAI_REASONING_EFFORT: xhigh
       - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
