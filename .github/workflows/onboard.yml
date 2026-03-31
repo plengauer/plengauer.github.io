@@ -256,6 +256,15 @@ jobs:
   maintain-gh-cookie:
     runs-on: ubuntu-slim
     steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@v5.49.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: |-
+            ${{ github.token }}
+            ${{ secrets.BOT_GITHUB_TOKEN }}
+            ${{ secrets.GH_COOKIE }}
       - run: |
           tr <<< '${{ secrets.GH_COOKIE }}' -d ' ' | tr ';' '\n' > cookie
           curl -v https://github.com/ --header 'cookie: ${{ secrets.GH_COOKIE }}' 2>&1 1> /dev/null \
@@ -264,7 +273,8 @@ jobs:
             done
           tr < cookie '\n' ';' | sed 's/;/; /g' | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set GH_COOKIE --repo ${{ github.repository }}
           rm cookie
-
+    permissions:
+      actions: read
   deploy-gh-token:
     needs: [ list-repositories, maintain-gh-cookie ]
     runs-on: ubuntu-latest
