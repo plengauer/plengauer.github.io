@@ -253,8 +253,20 @@ jobs:
     permissions:
       actions: read
 
+  maintain-gh-cookie:
+    runs-on: ubuntu-slim
+    steps:
+      - run: |
+          tr <<< '${{ secrets.GH_COOKIE }}' -d ' ' | tr ';' '\n' > cookie
+          curl -v https://github.com/ --header 'cookie: ${{ secrets.GH_COOKIE }}' 2>&1 1> /dev/null \
+            | grep -E '^< set-cookie: ' | cut -d ' ' 3- | cut -d ';' -f 1 | while read -r cookie; do
+              sed -i 's/^'"${cookie%%=*}"'=.*$/'"$cookie"'/g' cookie
+            done
+          tr < cookie '\n' ';' | sed 's/;/; /g' | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set GH_COOKIE --repo ${{ github.repository }}
+          rm cookie
+
   deploy-gh-token:
-    needs: list-repositories
+    needs: [ list-repositories, maintain-gh-cookie ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
