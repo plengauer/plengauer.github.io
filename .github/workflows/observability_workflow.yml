@@ -13,6 +13,7 @@ on:
       - Nuke Secrets
       - Onboard
       - OpenAI Codex
+      - Recompile Agentic Workflows
       - Renovate
       - Update Debian Repository
       - pages-build-deployment
