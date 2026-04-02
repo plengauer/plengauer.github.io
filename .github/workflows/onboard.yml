@@ -265,15 +265,17 @@ jobs:
             ${{ github.token }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
             ${{ secrets.GH_COOKIE }}
-      - if: false
-        run: |
-          tr <<< '${{ secrets.GH_COOKIE }}' -d ' ' | tr ';' '\n' > cookie
+      - run: |
+          tr <<< '${{ secrets.GH_COOKIE }}' -d ' ' | tr ';' '\n' > cookies
           curl -v https://github.com/ --header 'cookie: ${{ secrets.GH_COOKIE }}' 2>&1 1> /dev/null \
-            | grep -E '^< set-cookie: ' | cut -d ' ' 3- | cut -d ';' -f 1 | while read -r cookie; do
-              sed -i 's/^'"${cookie%%=*}"'=.*$/'"$cookie"'/g' cookie
+            | grep -E '^< set-cookie: ' | cut -d ' ' -f 3- | cut -d ';' -f 1 | while read -r cookie; do
+              sed -i 's/^'"${cookie%%=*}"'=.*$/'"$cookie"'/g' cookies
+              touch modified
             done
-          tr < cookie '\n' ';' | sed 's/;/; /g' | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set GH_COOKIE --repo ${{ github.repository }}
-          rm cookie
+          if [ -r modified ]; then
+            tr < cookies '\n' ';' | sed 's/;/; /g' | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set GH_COOKIE --repo ${{ github.repository }}
+          fi
+          rm cookies
     permissions:
       actions: read
   deploy-gh-token:
