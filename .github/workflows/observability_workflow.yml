@@ -15,7 +15,7 @@ on:
       - OpenAI Codex
       - Recompile Agentic Workflows
       - Renovate
-      - Update Debian Repository
+      - Update Package Repository
       - pages-build-deployment
     types:
       - completed
