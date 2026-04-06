@@ -20,7 +20,7 @@ jobs:
       id-token: write
       actions: read
     steps:
-      - uses: plengauer/create-package-repository@3ca1c804ae666ba5de1efb2f3ce0ca77c5969140 # v0.2.0
+      - uses: plengauer/create-package-repository@c401159b44862c87c28cb38a3e9f9fdcfc6c4cb3 # v0.3.0
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         with:
           path: .
