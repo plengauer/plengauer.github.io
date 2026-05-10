@@ -8,6 +8,7 @@ on:
       - Autoversion
       - Claude
       - CodeQL
+      - Copilot cloud agent
       - Copilot code review
       - Copilot coding agent
       - Nuke Secrets
