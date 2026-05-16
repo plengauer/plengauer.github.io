@@ -12,7 +12,6 @@ on:
       - Copilot
       - Copilot cloud agent
       - Copilot code review
-      - Copilot coding agent
       - Nuke Secrets
       - Onboard
       - OpenAI Codex
