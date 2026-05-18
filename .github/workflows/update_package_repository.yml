@@ -19,7 +19,7 @@ jobs:
     permissions:
       actions: read
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@215271fe54efbdffbece78b02493f7ecd73678f8 # v5.50.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@edc52fb91829fdeee2e8a04b745d8f4fee33157d # v5.53.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -43,7 +43,7 @@ jobs:
         run: |
           [ "$(ls dists/stable/main/ | while read -r directory; do echo "${directory#binary-}"; done | xargs -I '{}' git status --porcelain -- dists/stable/main/binary-'{}'/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
       - # if: ${{ steps.check.outputs.create == 'true' }}
-        uses: plengauer/create-package-repository@c401159b44862c87c28cb38a3e9f9fdcfc6c4cb3 # v0.3.0
+        uses: plengauer/create-package-repository@4c4d6b8caa90be4e0fb24b331c2f6419d62fc88a # v0.3.1
         with:
           mode: append
           source: ''

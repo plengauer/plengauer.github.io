@@ -14,8 +14,8 @@ jobs:
       contents: read
       actions: read
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/repository@215271fe54efbdffbece78b02493f7ecd73678f8 # v5.50.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/repository@edc52fb91829fdeee2e8a04b745d8f4fee33157d # v5.53.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
-    container: ghcr.io/plengauer/opentelemetry-github-workflow-instrumentation-runner:v5.50.0
+    container: ghcr.io/plengauer/opentelemetry-github-workflow-instrumentation-runner:v5.54.0
