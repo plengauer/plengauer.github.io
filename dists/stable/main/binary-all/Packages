@@ -4,7 +4,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, ai
 Enhances: bash
-Filename: bash-ai/pool/main/142375842
+Filename: bash-ai/pool/main/142375842_all.deb
 Size: 1068
 MD5sum: b11cba6c831c6f05e8e4fc3a788578ff
 SHA1: 2550a28570b195fd05c1bac5bc72d0d07d50dee1
@@ -19,7 +19,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, ai
 Enhances: bash
-Filename: bash-ai/pool/main/142378120
+Filename: bash-ai/pool/main/142378120_all.deb
 Size: 1070
 MD5sum: f43dac4d0488cc132c9594a7bfe6a274
 SHA1: f5457f50b28fbcc2eb1f3dae28526757d8b7e6cb
@@ -34,7 +34,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, ai
 Enhances: bash
-Filename: bash-ai/pool/main/142464824
+Filename: bash-ai/pool/main/142464824_all.deb
 Size: 1130
 MD5sum: 2ce7c8481e6a7d4d01a6cec25d4c6a81
 SHA1: 0484e4c34605d88fd3970e23a397127e3f8481ce
@@ -49,7 +49,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, ai
 Enhances: bash
-Filename: bash-ai/pool/main/142643177
+Filename: bash-ai/pool/main/142643177_all.deb
 Size: 1190
 MD5sum: 62a2e2aacf621ec572b2509715b20ad2
 SHA1: 5b4ed1417a113b92e235e2d484feac8c44edae2f
@@ -64,7 +64,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, ai
 Enhances: bash
-Filename: bash-ai/pool/main/155820260
+Filename: bash-ai/pool/main/155820260_all.deb
 Size: 1196
 MD5sum: 20904d6073513a8bc918b168cbfa0c8d
 SHA1: 9a00c22dc7fbd65ad2f3511c8b942d508251bf46
@@ -79,7 +79,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, coreutils, findutils, ai
 Enhances: bash
-Filename: bash-ai/pool/main/158034676
+Filename: bash-ai/pool/main/158034676_all.deb
 Size: 1206
 MD5sum: ac345979d3f117d305911b799e17d4e2
 SHA1: a175a2df3b1cfafab13ab74f74813ef442d99893
@@ -94,7 +94,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, coreutils, findutils, ai
 Enhances: bash
-Filename: bash-ai/pool/main/161897823
+Filename: bash-ai/pool/main/161897823_all.deb
 Size: 1260
 MD5sum: 93947e82294b350c5205ce182bceaef3
 SHA1: 972b1d7a850a251db6bd5567fece4317fa38ed3b
@@ -109,7 +109,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, coreutils, findutils, ai
 Enhances: bash
-Filename: bash-ai/pool/main/161898308
+Filename: bash-ai/pool/main/161898308_all.deb
 Size: 1252
 MD5sum: fb69a106e30cbb84fb1b9d516b2804c8
 SHA1: b29af3759b8e597ddd2f52bc4db5220ee9d5e10d
@@ -125,7 +125,7 @@ Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, awk, ai
 Enhances: bash
 Replaces: thefuck-ai
-Filename: dafuq/pool/main/142641702
+Filename: dafuq/pool/main/142641702_all.deb
 Size: 1818
 MD5sum: 3e24152f2c7296235fecc2705a4e507e
 SHA1: 29bbcc373a1152c5a082529a830395ebbade79f2
@@ -141,7 +141,7 @@ Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, awk, ai
 Enhances: bash
 Replaces: thefuck-ai
-Filename: dafuq/pool/main/147760221
+Filename: dafuq/pool/main/147760221_all.deb
 Size: 1816
 MD5sum: e5171a4740420d2ab51814061d6c3083
 SHA1: dfeb0c9e35a69e3b37a95690afef40ecf51241e2
@@ -157,7 +157,7 @@ Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, awk, ai
 Enhances: bash
 Replaces: thefuck-ai
-Filename: dafuq/pool/main/155820499
+Filename: dafuq/pool/main/155820499_all.deb
 Size: 1814
 MD5sum: 5fa6220c7d8d696966f3b67a55556992
 SHA1: f9c086eaaaec5f75358e29b7260631aa66ad433a
@@ -173,7 +173,7 @@ Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, debconf, coreutils, util-linux, ai
 Enhances: bash
 Replaces: thefuck-ai
-Filename: dafuq/pool/main/158034876
+Filename: dafuq/pool/main/158034876_all.deb
 Size: 1832
 MD5sum: 899d014c5841c3947689372651e9bac1
 SHA1: acd31a0043cbae590972b6bb2f0370a6a23df35c
@@ -188,7 +188,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, awk, ai
 Enhances: bash
-Filename: dafuq/pool/main/142372787
+Filename: dafuq/pool/main/142372787_all.deb
 Size: 1738
 MD5sum: db99a5be17a7d12ac305946838401a53
 SHA1: 88596609217e406565494b1a07058b50f00be4f2
@@ -203,7 +203,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, awk, ai
 Enhances: bash
-Filename: dafuq/pool/main/142373676
+Filename: dafuq/pool/main/142373676_all.deb
 Size: 1798
 MD5sum: 259f04ac41a01f7ff4033e3ed3bacdef
 SHA1: 7d2d4e60d61b5c5645a115921a8a41d9ba8199a2
@@ -218,7 +218,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, awk, ai
 Enhances: bash
-Filename: dafuq/pool/main/142378367
+Filename: dafuq/pool/main/142378367_all.deb
 Size: 1792
 MD5sum: fe5aaffd1b40a90c563b293ca72871e0
 SHA1: e08cd3d6d21d1b8cdd097aff6e6c2e698864b6f8
@@ -233,7 +233,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: debconf, bash, curl, jq
 Provides: ai
-Filename: openai/pool/main/142372713
+Filename: openai/pool/main/142372713_all.deb
 Size: 1364
 MD5sum: 85df4dfb6f91e9191a20ce1355c591cd
 SHA1: 2572306a9fff4890e627ca86bbb69bf7ef5c626a
@@ -248,7 +248,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: debconf, bash, curl, jq
 Provides: ai
-Filename: openai/pool/main/142465244
+Filename: openai/pool/main/142465244_all.deb
 Size: 1364
 MD5sum: 5ada03715a90d7522cd349e8a0bf798a
 SHA1: 538579a944bd6100dfa424ab43ca8229b6fa0a2b
@@ -263,7 +263,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: debconf, bash, curl, jq
 Provides: ai
-Filename: openai/pool/main/142465644
+Filename: openai/pool/main/142465644_all.deb
 Size: 1362
 MD5sum: bef48282934ef1a5866b090bf10b881c
 SHA1: 645657a03326147eebafc15c6dc4bdcd9666e7e8
@@ -278,7 +278,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: debconf, bash, curl, jq
 Provides: ai
-Filename: openai/pool/main/155820063
+Filename: openai/pool/main/155820063_all.deb
 Size: 1366
 MD5sum: 9595e795a8a3d20c91db65f246ed892f
 SHA1: feab33acae5e2c101218293619bc054d17e9b0b3
@@ -293,7 +293,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: debconf, bash, curl, jq
 Provides: ai
-Filename: openai/pool/main/157019917
+Filename: openai/pool/main/157019917_all.deb
 Size: 1362
 MD5sum: e000e1d298a34023b7fce211a0c8af97
 SHA1: 3dd233d69f89e0a79abe67b13e7ef388d1d01e22
@@ -308,7 +308,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: debconf, bash, curl, jq
 Provides: ai
-Filename: openai/pool/main/157332944
+Filename: openai/pool/main/157332944_all.deb
 Size: 1368
 MD5sum: 9c9ce85d68edd0d51a9330a83d903e02
 SHA1: 05cec94a7797e10c5b5c6960e018a72050593091
@@ -323,7 +323,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, debconf, findutils, curl, jq
 Provides: ai
-Filename: openai/pool/main/158034471
+Filename: openai/pool/main/158034471_all.deb
 Size: 1372
 MD5sum: 7803624be0f35691d3806f1b73174968
 SHA1: fa07942fec066b7d05d3c21f7ae89a1eb93a6ed2
@@ -338,7 +338,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, debconf, findutils, curl, jq
 Provides: ai
-Filename: openai/pool/main/161399830
+Filename: openai/pool/main/161399830_all.deb
 Size: 1382
 MD5sum: 0f62758d840a68330a3550918436560e
 SHA1: 98ce7a82183b409a734418611a87137161ae9275
@@ -353,7 +353,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, debconf, findutils, curl, jq
 Provides: ai
-Filename: openai/pool/main/167907198
+Filename: openai/pool/main/167907198_all.deb
 Size: 1378
 MD5sum: 76bd0db9a40955f1d8001ee4a8984de6
 SHA1: ac410352a5b89654c162a2cf09550eccf27951e7
@@ -368,7 +368,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, debconf, findutils, curl, jq
 Provides: ai
-Filename: openai/pool/main/283482631
+Filename: openai/pool/main/283482631_all.deb
 Size: 1394
 MD5sum: 321b907cd7c48fd8758bfd69c275ec08
 SHA1: 022119c06b7d505dfc8da19358b723baf036082c
@@ -383,7 +383,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, debconf, findutils, curl, jq
 Provides: ai
-Filename: openai/pool/main/300895050
+Filename: openai/pool/main/300895050_all.deb
 Size: 1420
 MD5sum: f988f5d00cf1f127dac3dfe9ecd93efe
 SHA1: 07792e9413ddedba4a0329ecef2b4b431cc0a6d9
@@ -398,7 +398,7 @@ Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: bash, debconf, findutils, curl, jq
 Provides: ai
-Filename: openai/pool/main/356459841
+Filename: openai/pool/main/356459841_all.deb
 Size: 1416
 MD5sum: ec17a391e7e404a712271df453ad36b4
 SHA1: de0631391b03b4cbc85f66bd60624e1a27ed7f2a
@@ -5599,6 +5599,23 @@ Size: 48851366
 MD5sum: dc861f2883c76ba348e8b1b4ca5c31d9
 SHA1: 2f047d0e5d3b59b4dc6092f6bb7015fcae294661
 SHA256: 4b5efc6237bad169240e0084d0d33e6bed174bf3a830853f8688001e59221a65
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.53.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/423595117
+Size: 48945682
+MD5sum: aaa0e6255b58c7ec504b8854a765176c
+SHA1: b9ab6168c9a67f39aa580b6c7005880c7aa23cc9
+SHA256: 6aba2d23ed4e51254f094d6356bc3e5ccc9b940aa30006fe56b8498542278891
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
