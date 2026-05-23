@@ -1,0 +1,166 @@
+name: Autobackport
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  backport:
+    needs: setup
+    strategy:
+      matrix:
+        ref: ${{ fromJSON(needs.setup.outputs.refs) }}
+    runs-on: ubuntu-slim
+    permissions:
+      contents: write
+      pull-requests: read
+      issues: read
+      actions: read
+    steps:
+      - id: autoversion
+        uses: plengauer/autoversion@c52ec7d4869f199d2b1706059fb4f9d15eb672b9 # v3.1.1
+        with:
+          github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+          openai_token: ${{ secrets.OPENAI_TOKEN }}
+          dry_run: true
+          ref: ${{ github.sha }}
+          incremenets: 'patch'
+          depth: 1
+      - id: check_patch
+        run: |
+          if git diff --quiet; then
+            echo "should_backport=true"
+          else
+            echo "should_backport=false"
+          fi >> "$GITHUB_OUTPUT"
+          git checkout .
+      
+      - id: prepare_branch
+        if: steps.check_patch.outputs.should_backport == 'true'
+        run: |
+          set -e
+          
+          current_version=$(cat VERSION) # TODO
+          major=$(echo "$current_version" | cut -d . -f 1)
+          minor=$(echo "$current_version" | cut -d . -f 2)
+          branch_name="release/v${major}.${minor}"
+          echo name="$branch_name" >> "$GITHUB_OUTPUT"
+          
+          if git ls-remote --exit-code --heads origin "$branch_name"; then
+            git fetch origin "$branch_name"
+            git checkout "$branch_name"
+          else
+            git checkout -b "$branch_name" "v${major}.${minor}.0"
+            git push -u origin "$branch_name"
+          fi
+      
+      - if: steps.check_patch.outputs.should_backport == 'true'
+        run: |
+          set -e
+          
+          git format-patch -1 "${{ matrix.ref }}" --stdout > /tmp/commit.patch
+          
+          if grep -q "diff --git a/VERSION b/VERSION" /tmp/commit.patch; then
+            if command -v filterdiff; then
+              filterdiff -x 'VERSION' /tmp/commit.patch > /tmp/commit_filtered.patch
+              mv /tmp/commit_filtered.patch /tmp/commit.patch
+            else
+              awk '
+                /^diff --git a\/VERSION b\/VERSION$/ { skip=1; next }
+                /^diff --git / { skip=0 }
+                !skip { print }
+              ' /tmp/commit.patch > /tmp/commit_filtered.patch
+              if [ -s /tmp/commit_filtered.patch ]; then
+                mv /tmp/commit_filtered.patch /tmp/commit.patch
+              fi
+            fi
+          fi
+          
+          if [ -s /tmp/commit.patch ] && git apply --check /tmp/commit.patch; then
+            git apply /tmp/commit.patch
+          elif [ -s /tmp/commit.patch ]; then
+            original_version=$(cat VERSION)
+            if git cherry-pick -n "${{ matrix.ref }}"; then
+              echo "$original_version" > VERSION
+              git add VERSION
+            else
+              git cherry-pick --abort || true
+              echo "::error::Cherry-pick failed - conflicts need manual resolution for commit ${{ matrix.ref }}"
+              exit 1
+            fi
+          else
+            exit 0
+          fi
+      
+      - id: prepare_pr
+        if: steps.check_patch.outputs.should_backport == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+        run: |
+          set -e
+          
+          commit_title=$(git log -1 --pretty=%s "${{ matrix.ref }}")
+          echo "commit_title=$commit_title" >> "$GITHUB_OUTPUT"
+          
+          pr_number=$(gh pr list --state merged --search "${{ matrix.ref }}" --json number --jq '.[0].number' 2>/dev/null)
+          
+          reviewers=""
+          author=""
+          
+          if [ -n "$pr_number" ] && [ "$pr_number" != "null" ]; then
+            author=$(gh pr view "$pr_number" --json author --jq '.author.login' 2>/dev/null || echo "")
+            pr_reviewers=$(gh pr view "$pr_number" --json reviews --jq '.reviews[].author.login' 2>/dev/null | sort -u | tr '\n' ',' || echo "")
+            reviewers="${pr_reviewers%,}"
+          fi
+          
+          if [ -z "$author" ]; then
+            author=$(git log -1 --pretty=%an "${{ matrix.ref }}" 2>/dev/null || echo "")
+          fi
+          
+          author_email=$(git log -1 --pretty=%ae "${{ matrix.ref }}" 2>/dev/null || echo "")
+          author_name=$(git log -1 --pretty=%an "${{ matrix.ref }}" 2>/dev/null || echo "")
+          
+          if [ -n "$author" ]; then
+            if [ -n "$reviewers" ]; then
+              reviewers="${author},${reviewers}"
+            else
+              reviewers="$author"
+            fi
+          fi
+          
+          if [ -f .github/renovate.json ]; then
+            renovate_reviewers=$(jq -r '.reviewers | join(",")' .github/renovate.json 2>/dev/null || echo "")
+            if [ -n "$renovate_reviewers" ]; then
+              if [ -n "$reviewers" ]; then
+                reviewers="${reviewers},${renovate_reviewers}"
+              else
+                reviewers="$renovate_reviewers"
+              fi
+            fi
+          fi
+          
+          echo "reviewers=$reviewers" >> "$GITHUB_OUTPUT"
+          echo "author_name=$author_name" >> "$GITHUB_OUTPUT"
+          echo "author_email=$author_email" >> "$GITHUB_OUTPUT"
+      
+      - id: open-pr
+        if: steps.check_patch.outputs.should_backport == 'true'
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+          commit-message: |
+            ${{ steps.prepare_pr.outputs.commit_title }}
+            Co-authored-by: ${{ steps.prepare_pr.outputs.author_name }} <${{ steps.prepare_pr.outputs.author_email }}>
+          base: ${{ steps.prepare_branch.outputs.name }}
+          branch: backport/${{ matrix.ref }}
+          title: "${{ steps.prepare_pr.outputs.commit_title }}"
+          body: Automated backport of commit ${{ matrix.ref }}
+          # reviewers: ${{ steps.prepare_pr.outputs.reviewers }}
+          delete-branch: true
+      - run: sleep 60 # let API catch up
+        if: steps.open-pr.outputs.pull-request-number != null
+      - run: gh pr merge --squash --auto ${{ steps.open-pr.outputs.pull-request-number }}
+        if: steps.open-pr.outputs.pull-request-number != null
+        env:
+          GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
