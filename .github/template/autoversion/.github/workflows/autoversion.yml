@@ -3,6 +3,13 @@ name: Autoversion
 on:
   schedule:
     - cron: '0 0 * * 1'
+  push:
+    branches:
+      - 'release/v*.*'
+
+concurrency:
+  group: bump-version-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   bump:
@@ -11,3 +18,5 @@ jobs:
       - uses: plengauer/autoversion@c52ec7d4869f199d2b1706059fb4f9d15eb672b9 # v3.1.1
         with:
           github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+          increments: ${{ github.ref_name == 'main' && 'major;minor' || 'patch' }}
+          
