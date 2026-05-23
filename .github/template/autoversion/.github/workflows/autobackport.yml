@@ -8,9 +8,6 @@ on:
 jobs:
   backport:
     needs: setup
-    strategy:
-      matrix:
-        ref: ${{ fromJSON(needs.setup.outputs.refs) }}
     runs-on: ubuntu-slim
     permissions:
       contents: write
@@ -40,58 +37,25 @@ jobs:
         if: steps.check_patch.outputs.should_backport == 'true'
         run: |
           set -e
-          
-          current_version=$(cat VERSION) # TODO
-          major=$(echo "$current_version" | cut -d . -f 1)
-          minor=$(echo "$current_version" | cut -d . -f 2)
-          branch_name="release/v${major}.${minor}"
+
+          current_tag=$(git describe --tags --abbrev=0 ${{ github.sha }})
+          branch_name="release/$current_tag"
           echo name="$branch_name" >> "$GITHUB_OUTPUT"
           
           if git ls-remote --exit-code --heads origin "$branch_name"; then
             git fetch origin "$branch_name"
             git checkout "$branch_name"
           else
-            git checkout -b "$branch_name" "v${major}.${minor}.0"
+            git checkout -b "$branch_name" "${current_tag}.0"
             git push -u origin "$branch_name"
           fi
       
       - if: steps.check_patch.outputs.should_backport == 'true'
         run: |
           set -e
-          
-          git format-patch -1 "${{ matrix.ref }}" --stdout > /tmp/commit.patch
-          
-          if grep -q "diff --git a/VERSION b/VERSION" /tmp/commit.patch; then
-            if command -v filterdiff; then
-              filterdiff -x 'VERSION' /tmp/commit.patch > /tmp/commit_filtered.patch
-              mv /tmp/commit_filtered.patch /tmp/commit.patch
-            else
-              awk '
-                /^diff --git a\/VERSION b\/VERSION$/ { skip=1; next }
-                /^diff --git / { skip=0 }
-                !skip { print }
-              ' /tmp/commit.patch > /tmp/commit_filtered.patch
-              if [ -s /tmp/commit_filtered.patch ]; then
-                mv /tmp/commit_filtered.patch /tmp/commit.patch
-              fi
-            fi
-          fi
-          
-          if [ -s /tmp/commit.patch ] && git apply --check /tmp/commit.patch; then
-            git apply /tmp/commit.patch
-          elif [ -s /tmp/commit.patch ]; then
-            original_version=$(cat VERSION)
-            if git cherry-pick -n "${{ matrix.ref }}"; then
-              echo "$original_version" > VERSION
-              git add VERSION
-            else
-              git cherry-pick --abort || true
-              echo "::error::Cherry-pick failed - conflicts need manual resolution for commit ${{ matrix.ref }}"
-              exit 1
-            fi
-          else
-            exit 0
-          fi
+          git format-patch -1 "${{ github.sha }}" --stdout > /tmp/commit.patch
+          [ -s /tmp/commit.patch ] || exit 0
+          git apply /tmp/commit.patch || git cherry-pick -n "${{ github.sha }}"
       
       - id: prepare_pr
         if: steps.check_patch.outputs.should_backport == 'true'
@@ -100,10 +64,10 @@ jobs:
         run: |
           set -e
           
-          commit_title=$(git log -1 --pretty=%s "${{ matrix.ref }}")
+          commit_title=$(git log -1 --pretty=%s "${{ github.sha }}")
           echo "commit_title=$commit_title" >> "$GITHUB_OUTPUT"
           
-          pr_number=$(gh pr list --state merged --search "${{ matrix.ref }}" --json number --jq '.[0].number' 2>/dev/null)
+          pr_number=$(gh pr list --state merged --search "${{ github.sha }}" --json number --jq '.[0].number' 2>/dev/null)
           
           reviewers=""
           author=""
@@ -115,11 +79,11 @@ jobs:
           fi
           
           if [ -z "$author" ]; then
-            author=$(git log -1 --pretty=%an "${{ matrix.ref }}" 2>/dev/null || echo "")
+            author=$(git log -1 --pretty=%an "${{ github.sha }}" 2>/dev/null || echo "")
           fi
           
-          author_email=$(git log -1 --pretty=%ae "${{ matrix.ref }}" 2>/dev/null || echo "")
-          author_name=$(git log -1 --pretty=%an "${{ matrix.ref }}" 2>/dev/null || echo "")
+          author_email=$(git log -1 --pretty=%ae "${{ github.sha }}" 2>/dev/null || echo "")
+          author_name=$(git log -1 --pretty=%an "${{ github.sha }}" 2>/dev/null || echo "")
           
           if [ -n "$author" ]; then
             if [ -n "$reviewers" ]; then
@@ -153,9 +117,9 @@ jobs:
             ${{ steps.prepare_pr.outputs.commit_title }}
             Co-authored-by: ${{ steps.prepare_pr.outputs.author_name }} <${{ steps.prepare_pr.outputs.author_email }}>
           base: ${{ steps.prepare_branch.outputs.name }}
-          branch: backport/${{ matrix.ref }}
+          branch: backport/${{ github.sha }}
           title: "${{ steps.prepare_pr.outputs.commit_title }}"
-          body: Automated backport of commit ${{ matrix.ref }}
+          body: Automated backport of commit ${{ github.sha }}
           # reviewers: ${{ steps.prepare_pr.outputs.reviewers }}
           delete-branch: true
       - run: sleep 60 # let API catch up
