@@ -15,17 +15,3 @@ jobs:
           :
     permissions:
       actions: read
-
-  integration-test-setup-node:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
-        with:
-          node-version: 24
-          package-manager-cache: false
-          check-latest: false
-      - run: |
-          node --version
-          test "$(node -p 'process.versions.node.split(`.`)[0]')" = "24"
