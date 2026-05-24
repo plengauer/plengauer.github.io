@@ -5594,7 +5594,7 @@ Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, py
 Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
 Recommends: strace
 Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/421982496
+Filename: Thoth/pool/main/421982496_ppc64el.deb
 Size: 48856650
 MD5sum: 691562fb30731e31f322be71da2e8c08
 SHA1: 84f50cc8da61e0c68913d4a5f238a4dfd7c24ddb
@@ -5645,11 +5645,45 @@ Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, py
 Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
 Recommends: strace
 Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/423595109
+Filename: Thoth/pool/main/423595109_ppc64el.deb
 Size: 48951106
 MD5sum: e4a0dea9c3a8d69d8496faaf53968dea
 SHA1: e0b6406333e77aa4dcc3d918d14f82b840d3e99a
 SHA256: 765bb904585cfd851f6695933c9957a4075da925e3fa50e8d6103e7b2f8568b5
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.54.0
+Architecture: ppc64el
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/427972230_ppc64el.deb
+Size: 43622166
+MD5sum: edc37e745f2ebf9eb1ac5b639c742e8b
+SHA1: c8a553f21de5589281101d9dec1aeaf187bf0b8e
+SHA256: 0e74bbb0383abd24aa7bb634fb4a8b384fc2af5925b3c9be6253488c6c381f77
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.54.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/427972232_all.deb
+Size: 43615826
+MD5sum: 6ed6d361dd8b11a759cc2c0d5e6c0fbe
+SHA1: 0cd4f82980d2359131bd3cd6ffc9c89f56afa2e6
+SHA256: 29fb22ca92777da09e5c82fa8bd6c63a0a66649a67e46a3695ad4372ebffeee7
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
