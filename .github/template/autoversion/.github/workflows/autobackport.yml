@@ -6,9 +6,32 @@ on:
       - main
 
 jobs:
-  backport:
-    needs: setup
+  setup:
+    if: ${{ !github.event.repository.fork }}
     runs-on: ubuntu-slim
+    outputs:
+      refs: ${{ steps.dynamic.outputs.refs }}
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - id: dynamic
+        run: |
+          cat '${{ github.event_path }}' | jq '.commits[].id' -r | while read -r ref; do
+            if git diff-tree --root --no-commit-id --name-only -r "$ref" | grep -qE '^VERSION$' || git tag --points-at "$ref" | grep -qE '^v'; then continue; fi
+            echo "$ref"
+          done | while read -r ref; do echo \""$ref"\"; done | jq -s | tr -d '\n' | tr -d ' ' | xargs -0 -I {} echo 'refs={}' >> "$GITHUB_OUTPUT"
+  backport:
+    if: ${{ !github.event.repository.fork }}
+    needs: setup
+    strategy:
+      matrix:
+        ref: ${{ fromJSON(needs.setup.outputs.refs) }}
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: read
@@ -19,29 +42,22 @@ jobs:
         uses: plengauer/autoversion@c52ec7d4869f199d2b1706059fb4f9d15eb672b9 # v3.1.1
         with:
           github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
-          openai_token: ${{ secrets.OPENAI_TOKEN }}
           dry_run: true
-          ref: ${{ github.sha }}
-          incremenets: 'patch'
+          ref: ${{ matrix.ref }}
+          increments: 'patch'
           depth: 1
       - id: check_patch
         run: |
-          if git diff --quiet; then
-            echo "should_backport=true"
-          else
-            echo "should_backport=false"
-          fi >> "$GITHUB_OUTPUT"
+          if git diff --quiet; then echo "should_backport=true"; else echo "should_backport=false"; fi >> "$GITHUB_OUTPUT"
           git checkout .
       
       - id: prepare_branch
         if: steps.check_patch.outputs.should_backport == 'true'
         run: |
           set -e
-
-          current_tag=$(git describe --tags --abbrev=0 ${{ github.sha }})
+          current_tag=$(git describe --tags --abbrev=0 ${{ matrix.ref }})
           branch_name="release/$current_tag"
           echo name="$branch_name" >> "$GITHUB_OUTPUT"
-          
           if git ls-remote --exit-code --heads origin "$branch_name"; then
             git fetch origin "$branch_name"
             git checkout "$branch_name"
@@ -53,9 +69,9 @@ jobs:
       - if: steps.check_patch.outputs.should_backport == 'true'
         run: |
           set -e
-          git format-patch -1 "${{ github.sha }}" --stdout > /tmp/commit.patch
+          git format-patch -1 "${{ matrix.ref }}" --stdout > /tmp/commit.patch
           [ -s /tmp/commit.patch ] || exit 0
-          git apply /tmp/commit.patch || git cherry-pick -n "${{ github.sha }}"
+          git apply /tmp/commit.patch || git cherry-pick -n "${{ matrix.ref }}"
       
       - id: prepare_pr
         if: steps.check_patch.outputs.should_backport == 'true'
@@ -63,50 +79,10 @@ jobs:
           GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         run: |
           set -e
-          
-          commit_title=$(git log -1 --pretty=%s "${{ github.sha }}")
-          echo "commit_title=$commit_title" >> "$GITHUB_OUTPUT"
-          
-          pr_number=$(gh pr list --state merged --search "${{ github.sha }}" --json number --jq '.[0].number' 2>/dev/null)
-          
-          reviewers=""
-          author=""
-          
-          if [ -n "$pr_number" ] && [ "$pr_number" != "null" ]; then
-            author=$(gh pr view "$pr_number" --json author --jq '.author.login' 2>/dev/null || echo "")
-            pr_reviewers=$(gh pr view "$pr_number" --json reviews --jq '.reviews[].author.login' 2>/dev/null | sort -u | tr '\n' ',' || echo "")
-            reviewers="${pr_reviewers%,}"
-          fi
-          
-          if [ -z "$author" ]; then
-            author=$(git log -1 --pretty=%an "${{ github.sha }}" 2>/dev/null || echo "")
-          fi
-          
-          author_email=$(git log -1 --pretty=%ae "${{ github.sha }}" 2>/dev/null || echo "")
-          author_name=$(git log -1 --pretty=%an "${{ github.sha }}" 2>/dev/null || echo "")
-          
-          if [ -n "$author" ]; then
-            if [ -n "$reviewers" ]; then
-              reviewers="${author},${reviewers}"
-            else
-              reviewers="$author"
-            fi
-          fi
-          
-          if [ -f .github/renovate.json ]; then
-            renovate_reviewers=$(jq -r '.reviewers | join(",")' .github/renovate.json 2>/dev/null || echo "")
-            if [ -n "$renovate_reviewers" ]; then
-              if [ -n "$reviewers" ]; then
-                reviewers="${reviewers},${renovate_reviewers}"
-              else
-                reviewers="$renovate_reviewers"
-              fi
-            fi
-          fi
-          
-          echo "reviewers=$reviewers" >> "$GITHUB_OUTPUT"
-          echo "author_name=$author_name" >> "$GITHUB_OUTPUT"
-          echo "author_email=$author_email" >> "$GITHUB_OUTPUT"
+          pr_number=$(gh pr list --state merged --search "${{ matrix.ref }}" --json number --jq '.[0].number' 2>/dev/null)
+          echo commit_title="$(git log -1 --pretty=%s "${{ matrix.ref }}")" >> "$GITHUB_OUTPUT"
+          echo author_name="$(git log -1 --pretty=%an "${{ matrix.ref }}" 2>/dev/null || echo "")" >> "$GITHUB_OUTPUT"
+          echo author_email="$(git log -1 --pretty=%ae "${{ matrix.ref }}" 2>/dev/null || echo "")" >> "$GITHUB_OUTPUT"
       
       - id: open-pr
         if: steps.check_patch.outputs.should_backport == 'true'
@@ -117,10 +93,9 @@ jobs:
             ${{ steps.prepare_pr.outputs.commit_title }}
             Co-authored-by: ${{ steps.prepare_pr.outputs.author_name }} <${{ steps.prepare_pr.outputs.author_email }}>
           base: ${{ steps.prepare_branch.outputs.name }}
-          branch: backport/${{ github.sha }}
+          branch: backport/${{ matrix.ref }}
           title: "${{ steps.prepare_pr.outputs.commit_title }}"
-          body: Automated backport of commit ${{ github.sha }}
-          # reviewers: ${{ steps.prepare_pr.outputs.reviewers }}
+          body: Automated backport of commit ${{ matrix.ref }}
           delete-branch: true
       - run: sleep 60 # let API catch up
         if: steps.open-pr.outputs.pull-request-number != null
