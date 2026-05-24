@@ -8,6 +8,6 @@ jobs:
   bump:
     runs-on: ubuntu-slim
     steps:
-      - uses: plengauer/autoversion@80cd28fdbf42e4997553fe6e2d338cb1e2e83286 # v4.0.0
+      - uses: plengauer/autoversion@badee98ba4eb3a38f99cf8acab7f5510e7e8736f # v5.0.0
         with:
           github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
