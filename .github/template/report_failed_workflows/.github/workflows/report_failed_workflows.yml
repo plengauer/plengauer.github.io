@@ -4,9 +4,11 @@ on:
   schedule:
     - cron: '0 8 * * 1'
 
+env:
+  LOOKBACK_DAYS: 7
+
 jobs:
   report:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-slim
     permissions:
       actions: read
@@ -15,8 +17,15 @@ jobs:
       - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh api "/repos/${GITHUB_REPOSITORY}/actions/runs?status=failure&per_page=10" --jq '
-            reduce .workflow_runs[] as $run (
+          gh api "/repos/${GITHUB_REPOSITORY}/actions/runs?per_page=100" | jq --argjson lookback_days "$LOOKBACK_DAYS" '
+            reduce (
+              .workflow_runs
+              | map(select(
+                  .head_branch == "main"
+                  and .conclusion == "failure"
+                  and ((.run_started_at // .created_at | fromdateiso8601) >= (now - ($lookback_days * 86400)))
+                ))[]
+            ) as $run (
               [];
               if any(.[]; .name == $run.name) then
                 .
