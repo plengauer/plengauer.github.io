@@ -13,6 +13,7 @@ concurrency:
 
 jobs:
   bump:
+    if: ${{ !github.event.repository.fork }}
     runs-on: ubuntu-slim
     steps:
       - uses: plengauer/autoversion@c52ec7d4869f199d2b1706059fb4f9d15eb672b9 # v3.1.1
