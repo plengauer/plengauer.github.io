@@ -16,4 +16,4 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - run: |
-          GH_TOKEN=${{ github.token }} gh release create v"$(cat VERSION)" --title v"$(cat VERSION)" --target ${{ github.sha }} --generate-notes
+          GH_TOKEN=${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }} gh release create v"$(cat VERSION)" --title v"$(cat VERSION)" --target ${{ github.sha }} --generate-notes
