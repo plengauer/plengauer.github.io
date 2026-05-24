@@ -1,0 +1,41 @@
+name: Report Failed Workflows
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+
+jobs:
+  report:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-slim
+    permissions:
+      actions: read
+      issues: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "/repos/${GITHUB_REPOSITORY}/actions/runs?status=failure&per_page=10" --jq '
+            reduce .workflow_runs[] as $run (
+              [];
+              if any(.[]; .name == $run.name) then
+                .
+              else
+                . + [{name: $run.name, html_url: $run.html_url}]
+              end
+            )[] | @base64
+          ' | while read -r failed_run; do
+            [ -n "$failed_run" ] || continue
+            workflow_name="$(echo "$failed_run" | base64 --decode | jq -r '.name')"
+            workflow_url="$(echo "$failed_run" | base64 --decode | jq -r '.html_url')"
+            issue_title="Fix workflow ${workflow_name}"
+
+            issue_count="$(
+              gh issue list \
+                --state open \
+                --search "\"${issue_title}\" in:title" \
+                --json title | jq --arg issue_title "$issue_title" '[.[] | select(.title == $issue_title)] | length'
+            )"
+
+            [ "$issue_count" -gt 0 ] || gh issue create --title "$issue_title" --body "$workflow_url"
+          done
