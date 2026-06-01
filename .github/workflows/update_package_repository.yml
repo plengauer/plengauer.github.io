@@ -43,7 +43,7 @@ jobs:
         run: |
           [ "$(ls dists/stable/main/ | while read -r directory; do echo "${directory#binary-}"; done | xargs -I '{}' git status --porcelain -- dists/stable/main/binary-'{}'/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
       - # if: ${{ steps.check.outputs.create == 'true' }}
-        uses: plengauer/create-package-repository@633a11ea69db35f9a34064f643c7763dd768088f # v0.3.4
+        uses: plengauer/create-package-repository@2d3d79460d6c590c0f4e0dac6419d268c7d7a83d # v1.0.0
         with:
           mode: append
           source: ''
