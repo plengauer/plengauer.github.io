@@ -45,7 +45,6 @@ jobs:
         with:
           github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
           openai_token: ${{ secrets.OPENAI_TOKEN }}
-          path_include: ./meta:./src:./actions:./tests:./.github
           dry_run: true
           ref: ${{ matrix.ref }}
           increments: 'patch'
