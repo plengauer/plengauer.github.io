@@ -3,7 +3,7 @@
   "enforcement": "active",
   "conditions": {
     "ref_name": {
-      "include": [ "release/v*.*" ],
+      "include": [ "release/v*" ],
       "exclude": []
     }
   },
