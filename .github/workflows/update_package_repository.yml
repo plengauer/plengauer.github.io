@@ -19,7 +19,7 @@ jobs:
     permissions:
       actions: read
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@8a42906ace6a618a3b91545ef9b655b8c6d2ac23 # v5.54.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@909c7153cce2c6ef916f4fde6958886d9d65af03 # v5.55.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -30,7 +30,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .owner.login + "/" + .name | select(. != "${{ github.repository }}")' -r | tr '\n' ' ' | xargs -0 -I '{}' echo repositories='{}' >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
       - run: rm -rf dists/stable/main/binary-*
       - run: |
           tr <<< "${{ steps.list-repositories.outputs.repositories }}" ' ' '\n' | grep -v '^$' | cut -d / -f 2 | while read -r repository; do
@@ -43,7 +43,7 @@ jobs:
         run: |
           [ "$(ls dists/stable/main/ | while read -r directory; do echo "${directory#binary-}"; done | xargs -I '{}' git status --porcelain -- dists/stable/main/binary-'{}'/Packages | wc -l)" -gt 0 ] && echo create=true >> "$GITHUB_OUTPUT" || true
       - # if: ${{ steps.check.outputs.create == 'true' }}
-        uses: plengauer/create-package-repository@633a11ea69db35f9a34064f643c7763dd768088f # v0.3.4
+        uses: plengauer/create-package-repository@2d3d79460d6c590c0f4e0dac6419d268c7d7a83d # v1.0.0
         with:
           mode: append
           source: ''

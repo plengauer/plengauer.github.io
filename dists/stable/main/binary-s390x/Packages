@@ -5622,6 +5622,23 @@ Description: Generate open telemetry traces, metrics, and logs from shell script
 
 Package: opentelemetry-shell
 Version: 5.53.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/423595117
+Size: 48945682
+MD5sum: aaa0e6255b58c7ec504b8854a765176c
+SHA1: b9ab6168c9a67f39aa580b6c7005880c7aa23cc9
+SHA256: 6aba2d23ed4e51254f094d6356bc3e5ccc9b940aa30006fe56b8498542278891
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.53.1
 Architecture: s390x
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar, grep
@@ -5638,18 +5655,18 @@ Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
 
 Package: opentelemetry-shell
-Version: 5.53.1
+Version: 5.54.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
-Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar, grep
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
 Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
 Recommends: strace
 Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/423595117
-Size: 48945682
-MD5sum: aaa0e6255b58c7ec504b8854a765176c
-SHA1: b9ab6168c9a67f39aa580b6c7005880c7aa23cc9
-SHA256: 6aba2d23ed4e51254f094d6356bc3e5ccc9b940aa30006fe56b8498542278891
+Filename: Thoth/pool/main/427972232
+Size: 43615826
+MD5sum: 6ed6d361dd8b11a759cc2c0d5e6c0fbe
+SHA1: 0cd4f82980d2359131bd3cd6ffc9c89f56afa2e6
+SHA256: 29fb22ca92777da09e5c82fa8bd6c63a0a66649a67e46a3695ad4372ebffeee7
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
@@ -5672,18 +5689,35 @@ Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
 
 Package: opentelemetry-shell
-Version: 5.54.0
+Version: 5.55.0
+Architecture: s390x
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/433003837
+Size: 43607158
+MD5sum: b6b3ff6cda15afd35611e50a8d4db26c
+SHA1: 8aa9bc9e8feba54484a2548141df26b20c701bdd
+SHA256: eee34cdc9b607016d0128b1cbc8055c5da269988a8e1a4547243836b7f6e4bd9
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.55.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
 Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
 Recommends: strace
 Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/427972232
-Size: 43615826
-MD5sum: 6ed6d361dd8b11a759cc2c0d5e6c0fbe
-SHA1: 0cd4f82980d2359131bd3cd6ffc9c89f56afa2e6
-SHA256: 29fb22ca92777da09e5c82fa8bd6c63a0a66649a67e46a3695ad4372ebffeee7
+Filename: Thoth/pool/main/433003836
+Size: 43601376
+MD5sum: d3a8ccdda6ef5ec29a96f9303158a15f
+SHA1: 515e16cc0076c76952937e8aa6ed91bb5bf142c6
+SHA256: 44528e07fc88b8f013be6346c2813cd1306b0811f220f424319f14d3f7880e1d
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
