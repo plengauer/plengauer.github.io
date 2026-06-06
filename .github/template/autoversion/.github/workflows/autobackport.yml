@@ -12,6 +12,7 @@ jobs:
     outputs:
       has_tags: ${{ steps.dynamic.outputs.has_tags }}
       refs: ${{ steps.dynamic.outputs.refs }}
+      has_refs: ${{ steps.dynamic.outputs.has_refs }}
     permissions:
       contents: read
       actions: read
@@ -26,9 +27,10 @@ jobs:
           cat '${{ github.event_path }}' | jq '.commits[].id' -r | while read -r ref; do
             if git tag --points-at "$ref" | grep -qE '^v'; then continue; fi
             echo "$ref"
+            echo "has_refs=true" >>  "$GITHUB_OUTPUT"
           done | while read -r ref; do echo \""$ref"\"; done | jq -s | tr -d '\n' | tr -d ' ' | xargs -0 -I {} echo 'refs={}' >> "$GITHUB_OUTPUT"
   backport:
-    if: ${{ !github.event.repository.fork && needs.setup.outputs.has_tags }}
+    if: ${{ !github.event.repository.fork && needs.setup.outputs.has_tags && needs.setup.outputs.has_refs }}
     needs: setup
     strategy:
       matrix:
