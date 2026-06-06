@@ -6,7 +6,6 @@ on:
       - .github/workflows/copilot-setup-steps.yml
       - Autorerun
       - Autotriage
-      - Autoversion
       - Claude
       - CodeQL
       - Copilot
