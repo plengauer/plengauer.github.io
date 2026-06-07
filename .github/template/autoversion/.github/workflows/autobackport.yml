@@ -94,7 +94,7 @@ jobs:
       - id: prepare_pr
         if: steps.check_patch.outputs.should_backport == 'true'
         env:
-          GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
         run: |
           set -e
           echo commit_title="$(git log -1 --pretty=%s "${{ matrix.ref }}")" >> "$GITHUB_OUTPUT"
