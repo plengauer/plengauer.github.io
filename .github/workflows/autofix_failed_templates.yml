@@ -1,0 +1,111 @@
+name: Autofix Failed Templates
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+
+  list-repositories:
+    runs-on: ubuntu-slim
+    outputs:
+      repositories: ${{ steps.dynamic.outputs.repositories }}
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@af83be0ddf1ec3035230c030f3ab6d10a7040515 # v5.56.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: |-
+            ${{ github.token }}
+            ${{ secrets.BOT_GITHUB_TOKEN }}
+      - id: dynamic
+        env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+        run: |
+          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.fork == false and .visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .name' -r \
+            | sort -R | head -n 256 | jq -R | jq '"${{ github.repository_owner }}/" + .' | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
+    permissions:
+      actions: read
+
+  list-actions:
+    runs-on: ubuntu-slim
+    outputs:
+      actions: ${{ steps.dynamic.outputs.actions }}
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@af83be0ddf1ec3035230c030f3ab6d10a7040515 # v5.56.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: '["${{ github.token }}"]'
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+      - id: dynamic
+        run: |
+          ls .github/template | while read -r automation; do [ -d .github/template/"$automation" ] && echo "$automation" || true; done | jq -R | jq -cs | xargs -0 -I {} echo 'actions={}' >> "$GITHUB_OUTPUT"
+    permissions:
+      actions: read
+
+  check:
+    needs: [list-repositories, list-actions]
+    runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        action: ${{ fromJSON(needs.list-actions.outputs.actions) }}
+      fail-fast: false
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@af83be0ddf1ec3035230c030f3ab6d10a7040515 # v5.56.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: |-
+            ${{ github.token }}
+            ${{ secrets.BOT_GITHUB_TOKEN }}
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          token: ${{ secrets.BOT_GITHUB_TOKEN }}
+          path: ./self
+      - env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+        run: |
+          find "$(pwd)"/self/.github/template/${{ matrix.action }} -type f \( -name "*.yml" -o -name "*.yaml" \) | while read -r template_file; do
+            relative_path="${template_file#$(pwd)/self/.github/template/${{ matrix.action }}/}"
+
+            # Get the remote file content via API; skip if file does not exist
+            remote_content="$(gh api "/repos/${{ matrix.repository }}/contents/$relative_path" --jq '.content' 2>/dev/null | base64 -d 2>/dev/null)" || continue
+            [ -n "$remote_content" ] || continue
+
+            # Only proceed if the remote file content exactly matches the template
+            diff <(printf '%s' "$remote_content") "$template_file" > /dev/null 2>&1 || continue
+
+            # Content matches – check last workflow run for this workflow file
+            last_run_json="$(gh api "/repos/${{ matrix.repository }}/actions/workflows/$(basename "$relative_path")/runs?per_page=1" 2>/dev/null)" || continue
+            conclusion="$(printf '%s' "$last_run_json" | jq -r '.workflow_runs[0].conclusion // empty')"
+            [ "$conclusion" = "failure" ] || continue
+
+            html_url="$(printf '%s' "$last_run_json" | jq -r '.workflow_runs[0].html_url')"
+            workflow_name="$(printf '%s' "$last_run_json" | jq -r '.workflow_runs[0].name')"
+
+            issue_title="Fix template ${{ matrix.action }}"
+            issue_count="$(gh issue list --repo ${{ github.repository }} --state open --search "\"${issue_title}\" in:title" --json title \
+              | jq --arg t "$issue_title" '[.[] | select(.title == $t)] | length')"
+            if [ "$issue_count" -gt 0 ]; then
+              continue
+            fi
+            {
+              printf 'The template `%s` was deployed to repository [%s](%s/%s) and the workflow `%s` has failed.\n\n' \
+                "${{ matrix.action }}" "${{ matrix.repository }}" "${{ github.server_url }}" "${{ matrix.repository }}" "$workflow_name"
+              printf 'Please investigate and fix the template so that the workflow passes.\n\n'
+              printf 'Failed run: %s\n\n' "$html_url"
+              printf 'Template source: %s/%s/tree/main/.github/template/%s\n' \
+                "${{ github.server_url }}" "${{ github.repository }}" "${{ matrix.action }}"
+            } > /tmp/issue_body.md
+            gh issue create \
+              --repo ${{ github.repository }} \
+              --title "$issue_title" \
+              --body-file /tmp/issue_body.md
+          done
+    permissions:
+      actions: read
