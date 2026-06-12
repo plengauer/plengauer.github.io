@@ -97,6 +97,15 @@ jobs:
 
             This PR applies the changes from commit [${{ matrix.sha }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ matrix.sha }}).
           delete-branch: true
+      - if: steps.open-pr.outputs.pull-request-number != null
+        shell: bash
+        run: sleep 60
+      - if: steps.open-pr.outputs.pull-request-number != null
+        shell: bash
+        run: gh pr merge --squash --auto ${{ steps.open-pr.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+        continue-on-error: true
       - if: steps.apply.outputs.applicable == 'false'
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
