@@ -15,8 +15,8 @@ jobs:
   recompile:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      actions: read
+      contents: write
+      pull-requests: write
     env:
       GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
     steps:
