@@ -12,6 +12,8 @@ on:
 
 concurrency:
   group: onboard
+  cancel-in-progress: false
+  queue: max
 
 jobs:
 
@@ -216,6 +218,7 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
           path: ./self
+          fetch-depth: 0
       - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
@@ -233,6 +236,35 @@ jobs:
             new_file=./other/"${file#*/self/.github/template/${{ matrix.action }}/}"
             [ -f "$new_file" ] || [ -f "${new_file//yml/yaml}" ] || (mkdir -p "${new_file%/*}" && cp "$file" "$new_file")
           done
+      - id: check-update
+        if: ${{ steps.check.outputs.deploy == 'true' && github.event_name == 'push' }}
+        run: |
+          ( cd self && git diff --diff-filter=a --relative=".github/template/${{ matrix.action }}" '${{ github.event.before }}'..'${{ github.event.after }}' -- ':(glob).github/template/${{ matrix.action }}/**' > /tmp/template.patch )
+          if [ -s /tmp/template.patch ]; then
+            if ( cd other && git apply --check /tmp/template.patch >&2 ); then
+              ( cd other && git apply /tmp/template.patch )
+            else
+              echo "create_issue=true" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+      - if: ${{ steps.check-update.outputs.create_issue == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+        run: |
+          commit_message=$(cd ./self && git log --format="%B" -n 1 "${{ github.sha }}")
+          {
+            printf "Template workflows have been updated but the diff could not be automatically applied to this repository.\n\n"
+            printf "## Commit\n\n"
+            printf "%s\n\n" "$commit_message"
+            printf "See: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}\n\n"
+            printf "## Diff\n\n\`\`\`diff\n"
+            cat /tmp/template.patch
+            printf "\n\`\`\`\n"
+          } > /tmp/issue_body.md
+          gh issue create \
+            --repo "${{ matrix.repository }}" \
+            --title "Template update requires manual application (${{ github.sha }})" \
+            --body-file /tmp/issue_body.md
       - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         id: open-pr
         with:
