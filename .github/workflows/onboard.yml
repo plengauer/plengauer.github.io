@@ -239,7 +239,7 @@ jobs:
       - id: check-update
         if: ${{ steps.check.outputs.deploy == 'true' && github.event_name == 'push' }}
         run: |
-          ( cd self && git diff '${{ github.event.before }}'..'${{ github.event.after }}' -- ':(glob).github/template/*/**' > /tmp/template.patch )
+          ( cd self && git diff '${{ github.event.before }}'..'${{ github.event.after }}' --relative=".github/template/${{ matrix.action }}" -- ':(glob).github/template/${{ matrix.action }}/**' > /tmp/template.patch )
           if [ -s /tmp/template.patch ]; then
             if ( cd other && git apply --check /tmp/template.patch >&2 ); then
               ( cd other && git apply /tmp/template.patch )
