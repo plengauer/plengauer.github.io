@@ -20,7 +20,6 @@ on:
       - Recompile Agentic Workflows
       - Renovate
       - Report Failed Workflows
-      - Rollout Template Updates
       - Update Package Repository
       - pages-build-deployment
     types:
