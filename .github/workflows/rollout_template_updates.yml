@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - .github/template/**/*.yml
+      - .github/template/**/*.md
 
 concurrency:
   group: rollout-template-updates-${{ github.sha }}
