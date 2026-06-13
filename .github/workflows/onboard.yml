@@ -253,7 +253,7 @@ jobs:
         run: |
           commit_message=$(cd ./self && git log --format="%B" -n 1 "${{ github.sha }}")
           {
-            printf "Template workflows have been updated but the diff could not be automatically applied to this repository.\n\n"
+            printf "Template workflows have been updated but the diff could not be automatically applied to this repository. Apply a change that is semantically equivalent to the patch here.\n\n"
             printf "## Commit\n\n"
             printf "%s\n\n" "$commit_message"
             printf "See: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}\n\n"
