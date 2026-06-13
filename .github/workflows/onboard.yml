@@ -237,7 +237,7 @@ jobs:
             [ -f "$new_file" ] || [ -f "${new_file//yml/yaml}" ] || (mkdir -p "${new_file%/*}" && cp "$file" "$new_file")
           done
       - id: check-update
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ steps.check.outputs.deploy == 'true' && github.event_name == 'push' }}
         run: |
           ( cd self && git diff '${{ github.event.before }}'..'${{ github.event.after }}' -- ':(glob).github/template/*/**' > /tmp/template.patch )
           if [ -s /tmp/template.patch ]; then
