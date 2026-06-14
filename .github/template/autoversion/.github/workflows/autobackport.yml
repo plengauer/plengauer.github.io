@@ -46,7 +46,7 @@ jobs:
         uses: plengauer/autoversion@badee98ba4eb3a38f99cf8acab7f5510e7e8736f # v5.0.0
         with:
           github_token: ${{ github.token }}
-          copilot_token: ${{ secrets.COPILOT_GITHUB_TOKEN }}
+          copilot_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
           openai_token: ${{ secrets.OPENAI_TOKEN }}
           dry_run: true
           ref: ${{ matrix.ref }}
