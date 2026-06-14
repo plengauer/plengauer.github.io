@@ -1,3 +1,87 @@
+Package: abom-http
+Version: 0.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: dash | bash, coreutils, util-linux, ncat
+Filename: abom-http/pool/main/178712475
+Size: 1890
+MD5sum: 8fec240f4aeb2ab4a83a9c41c0c7b5df
+SHA1: 1c37e1602069251990ebc9dad65c394900ec06cf
+SHA256: 9f6a07bd53b91f519146f2e72b4d36dd2c8cb5bae208f25fa785d7a3fab3e770
+Priority: extra
+Homepage: https://github.com/plengauer/abom-http
+Description: A simple http server to both serve a directory and its contents as is as well as to dynamically generate http responses
+
+Package: abom-http
+Version: 0.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: dash | bash, coreutils, util-linux, ncat
+Filename: abom-http/pool/main/179483155
+Size: 1956
+MD5sum: 70a839be2c29cf8c219d7bbe781138cf
+SHA1: 2cb4ef66d66bc8066b2f15d53370ee9a39aee3a9
+SHA256: baddbc0ad17ef69a9778fd8f0473a5c6117f26a23c52365442d7f131825b99a1
+Priority: extra
+Homepage: https://github.com/plengauer/abom-http
+Description: A simple http server to both serve a directory and its contents as is as well as to dynamically generate http responses
+
+Package: abom-http
+Version: 0.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: dash | bash, coreutils, util-linux, ncat
+Filename: abom-http/pool/main/182315866
+Size: 1958
+MD5sum: 161b6e9385d1b9340bba7afae0671dc5
+SHA1: c98ee8e00796bd4499f07e55da46ceaed6975603
+SHA256: f2069970df63daa1ed173504c8855ec7ab8b97b86c91afd3495ec74eafd4b4a0
+Priority: extra
+Homepage: https://github.com/plengauer/abom-http
+Description: A simple http server to both serve a directory and its contents as is as well as to dynamically generate http responses
+
+Package: abom-http
+Version: 0.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: dash | bash, coreutils, util-linux, ncat
+Filename: abom-http/pool/main/183780106
+Size: 1960
+MD5sum: 81c8d34fa5a70af2552e3116fc88fbac
+SHA1: d5b39ff5a4c4b717b3c9338de1cfdfe159ffa815
+SHA256: d57ae559887cfef57dd4b46befeb54552207fc14ee373736eef485743d24095a
+Priority: extra
+Homepage: https://github.com/plengauer/abom-http
+Description: A simple http server to both serve a directory and its contents as is as well as to dynamically generate http responses
+
+Package: abom-http
+Version: 0.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: dash | bash, coreutils, util-linux, ncat
+Filename: abom-http/pool/main/186348017
+Size: 1974
+MD5sum: 156b907ad0f10af14d655332ce07ced4
+SHA1: c04c72e8c68c5eabd768f3b24ebb7ec5917068e4
+SHA256: d7f42364ee77559ea9219443d8bb4cde280477ea9d5f71e7f988cd000fdb19c7
+Priority: extra
+Homepage: https://github.com/plengauer/abom-http
+Description: A simple http server to both serve a directory and its contents as is as well as to dynamically generate http responses
+
+Package: abom-http
+Version: 0.4.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: dash | bash, coreutils, util-linux, ncat
+Filename: abom-http/pool/main/331204920
+Size: 1972
+MD5sum: 49f6eae72990823f8ce7c1ca94b12e22
+SHA1: 10fd5159cd3a17f8781466e876c5c2311eb429fa
+SHA256: 3950117306f19c736bcb8ad6a814735644828293594113a72d0192f35689b3af
+Priority: extra
+Homepage: https://github.com/plengauer/abom-http
+Description: A simple http server to both serve a directory and its contents as is as well as to dynamically generate http responses
+
 Package: bash-ai
 Version: 0.1.0
 Architecture: all
