@@ -331,6 +331,7 @@ jobs:
             ${{ secrets.GH_COOKIE }}
             ${{ secrets.GH_PASSWORD }}
             ${{ secrets.OPENAI_TOKEN }}
+          __kill_switch: 1
       - run: |
           repository="${{ matrix.repository }}"
           [ "${repository%%/*}" = plengauer ] # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
