@@ -11,9 +11,8 @@ jobs:
   report:
     runs-on: ubuntu-slim
     permissions:
-      actions: read
-      issues: write
       actions: write
+      issues: write
     steps:
       - env:
           GH_TOKEN: ${{ github.token }}
