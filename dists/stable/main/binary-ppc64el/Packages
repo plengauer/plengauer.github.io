@@ -491,6 +491,21 @@ Priority: optional
 Homepage: https://github.com/plengauer/openai
 Description: A commandline interface to the OpenAI API for text-based input and output
 
+Package: openai
+Version: 0.9.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, findutils, curl, jq
+Provides: ai
+Filename: openai/pool/main/448083384
+Size: 1416
+MD5sum: 3e093d91fbfc351f1ebf8f31c2208bcc
+SHA1: 649d1383bedcea105313f377c02882fa4948fcd9
+SHA256: 317fbcde58ab27b9197c20b93065830da9338fdc6073f2911508fa860b411f71
+Priority: optional
+Homepage: https://github.com/plengauer/openai
+Description: A commandline interface to the OpenAI API for text-based input and output
+
 Package: philbot
 Version: 2.3.0
 Architecture: all
