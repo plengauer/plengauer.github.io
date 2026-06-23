@@ -320,18 +320,6 @@ jobs:
       fail-fast: true
       max-parallel: 1 # 3
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@af83be0ddf1ec3035230c030f3ab6d10a7040515
-        env:
-          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
-        with:
-          secrets_to_redact: |-
-            ${{ github.token }}
-            ${{ secrets.BOT_GITHUB_TOKEN }}
-            ${{ secrets.GH_COOKIE }}
-            ${{ secrets.GH_PASSWORD }}
-            ${{ secrets.OPENAI_TOKEN }}
-          __kill_switch: 1
       - run: |
           repository="${{ matrix.repository }}"
           [ "${repository%%/*}" = plengauer ] # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
@@ -358,6 +346,7 @@ jobs:
           password: ${{ secrets.GH_PASSWORD }}
           cookie: ${{ secrets.GH_COOKIE }}
           openai_token: ${{ secrets.OPENAI_TOKEN }}
+          openai_api_token: ${{ secrets.OPENAI_TOKEN }}
         env:
           OPENAI_MODEL: gpt-5.3-codex
           OPENAI_SERVICE_TIER: default
