@@ -345,6 +345,11 @@ jobs:
         run: |
           created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/ACTIONS_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
           ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 80 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
+          ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }})) ] && echo true || echo false ) | xargs -0 -I '{}' echo reset='{}' >> "$GITHUB_OUTPUT"
+      - if: ${{ steps.resolve.outputs.reset == 'true' }}
+        run: |
+          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret delete ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }}
+          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret delete COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }}
       - if: ${{ steps.resolve.outputs.rotate == 'true' }}
         id: create
         uses: plengauer/create-github-finegrained-pat@6d641ed19b41a71fa413ac9d1508c1b79a9146a7 # v0.8.1
