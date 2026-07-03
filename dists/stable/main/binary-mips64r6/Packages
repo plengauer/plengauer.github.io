@@ -491,6 +491,3592 @@ Priority: optional
 Homepage: https://github.com/plengauer/openai
 Description: A commandline interface to the OpenAI API for text-based input and output
 
+Package: openai
+Version: 0.9.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, findutils, curl, jq
+Provides: ai
+Filename: openai/pool/main/448083384
+Size: 1416
+MD5sum: 3e093d91fbfc351f1ebf8f31c2208bcc
+SHA1: 649d1383bedcea105313f377c02882fa4948fcd9
+SHA256: 317fbcde58ab27b9197c20b93065830da9338fdc6073f2911508fa860b411f71
+Priority: optional
+Homepage: https://github.com/plengauer/openai
+Description: A commandline interface to the OpenAI API for text-based input and output
+
+Package: philbot
+Version: 2.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-deployment
+Filename: Philbot/pool/main/142026801
+Size: 594
+MD5sum: ead727a105044db2578a441b62988faa
+SHA1: 7b43534372416dff4e4a296ef5fa38155ae82fd3
+SHA256: d3249219fc87843d9d7049915dd4a806ade132aca9e9309090ce4dc0dbb1b480
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot recommended deployment
+
+Package: philbot
+Version: 2.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-recommended | philbot-deployment
+Filename: Philbot/pool/main/142146976
+Size: 592
+MD5sum: 27b99e3c03c6ee8da429ad59895bcdb2
+SHA1: a207328e2fae5e2d3f25319809b7eb472f320d31
+SHA256: 7685bbbe4b3338a24b0068bf961ba1a2547b9bb5ba2b2137efeef4d10b4a0f25
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot
+
+Package: philbot-baremetal
+Version: 1.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125261504
+Size: 5986
+MD5sum: 397e491817ecc057322c7ee9ef23aece
+SHA1: d500fc4fac6a8acdd1cca9a2dc67aa6203ddf3a1
+SHA256: 28ef73454d56695ca1754e24cd5328495d5a03a2ac4bf8801a1ed61cb0107860
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation
+
+Package: philbot-baremetal
+Version: 1.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125263710
+Size: 5972
+MD5sum: 6f882183a72d8c9e2027679c8aeb10c2
+SHA1: b1a4624c89b2b8dd1d7d739794c431f330929295
+SHA256: ac19574cbc8745ea29b60f563ae5aaf010ef22918c38ce1bf50776a782f0967e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation
+
+Package: philbot-baremetal
+Version: 1.0.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125265702
+Size: 5986
+MD5sum: 102c72e925bf6f85ed069867c4502775
+SHA1: 68d48c292d2bce7bfead81d02d4b388e47164c40
+SHA256: 7cb6824861676015165fd42993c266a1444f12d480a2dec88067ace7d1450c18
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.0.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125266958
+Size: 5978
+MD5sum: 3aad4c1ae14ac352ecf7ce2f6beb9ae3
+SHA1: d92ec0ccaf442e29ca56374ce3967c0fb1154175
+SHA256: 613742fde840637154cb4e53b098636dc2f548cf34c343c7381e79862431a0aa
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.0.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125277331
+Size: 5998
+MD5sum: 5c8c51ef60e3502cd13631881e8ea81c
+SHA1: d1305c49900ecf043862113a98715ad10207592b
+SHA256: c2eb5393135225e72f31934070112ee7bb6916cfe8178e8722d0e0eac6a783a4
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125283665
+Size: 3862
+MD5sum: 14fb15b16da0ca03974ad125090708e8
+SHA1: 43d9c183f41c00570a9b31f87392831c887607d9
+SHA256: b6d3a5b4a3dede61d4d0eacbd8c68c623c467f93450e0234bb0b66428b6d295c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.1.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125285610
+Size: 2832
+MD5sum: ce3fa0d4b51d284daae0e4b20cd2641a
+SHA1: ded5fd647f04c0a9858c3cb4fd98a5f47bec0d55
+SHA256: 9f4975011bffb6e3343dc57fd28e96c7354c61f0d583701a7b48b89fe0aea6cd
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.1.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125287321
+Size: 2830
+MD5sum: 77f93ebcbfa5db18907500a160bcfe3a
+SHA1: 1403cce13795e9a2829b4458f1158c5a59042d12
+SHA256: 8519d76b1fde97e0089e5a23e9ce20c5a7d3d8d424096f3c544150aedb9edb5d
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125406926
+Size: 2814
+MD5sum: 1227f5c0a1fc842313b4c06c6e1882c4
+SHA1: 5db3a332c9b860aa97a6438f4c7145b1705f2738
+SHA256: 2d38fb0370ddaaf69f97821790f2c0d542ef2891d101e5852f1182adfafb61bc
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125410255
+Size: 2826
+MD5sum: 715743bbfb14f7c8b6eed4b5cd68682a
+SHA1: 3bd2ed8540dcdbe7a0f7be82e2e3c478c818bebb
+SHA256: e0290615e7637e75b7642e8748c152003d69fcc2f8f98096811beca1236834a1
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.2.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125411161
+Size: 2820
+MD5sum: fbd4c9aa09bc10719609454e74f1035b
+SHA1: 9f470763f1e53eeef427874ddbe64b9e7a7d3f04
+SHA256: 15158586fcfdab6e3e220f8c1a04c1bc84828fe0a4bf252098ecfa3e66b1a3ab
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125488733
+Size: 2824
+MD5sum: 6cf11ef6eb2eec3072f4990bb65bb7e7
+SHA1: d098831c10d4bf09424d5b39ae15543974f5536e
+SHA256: 3434cf1e535bf23f0a65a714af6097b797b7147d1eb2c7bfd2a89c384a8f1069
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/125845604
+Size: 2790
+MD5sum: 5d4fda6cfbfa64aa7bccee8145801349
+SHA1: 4bdd909bcd4d3106aaeb78d336ed34a8460593e2
+SHA256: 7d0183b42758e127b06b642d5f13fc6f4cb0247d1c40ec6002f2688bf57748be
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/126159411
+Size: 2790
+MD5sum: e94a2092adaaea44dceff5e3af735eda
+SHA1: 1f006271ad7a897dac0bc7053e9ad691eec1e159
+SHA256: bea24632362428ae30d36f7968c39acec6c4d3ccee1b669ca576157fa07e6771
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/126160847
+Size: 2792
+MD5sum: 2058793ea3cabcb430174b253e9a631d
+SHA1: 75dcdf718e76d671119c52292ec80f2a68856bbe
+SHA256: a0a1747c3214648daed6d3f7b5809e475e273cbfe15185a07393372f4d8a2d7a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.5.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/126163425
+Size: 2850
+MD5sum: 66941eb18b6a58d9135ebb34890392bb
+SHA1: deaeaa4ca2a234332cd0364efc0163f11c6e8f16
+SHA256: 5fbfe977aca65bd3a2dd24fda2b60e90c877cdcf365d4361aa3136072d0ed6bd
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.5.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/126163990
+Size: 2842
+MD5sum: 244d69e1a3ca50a2c745ef17ec2210f9
+SHA1: d03c48c1b444b84c4aff61c112185f54790b5efd
+SHA256: 5f19dd3a4162ac6f8b3e263ec15a211b0a7e5aac809b579ce037ea637596ae28
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.5.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/128377009
+Size: 2842
+MD5sum: 00025ba12f7bff30085ba93f55b9a987
+SHA1: 8f532eca4b04a3286fb868f2eac333fdc8644522
+SHA256: 73341ec44366bcaed2838ff29c16252164ee6965ae0c575d799f577be8ec09a5
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/132431664
+Size: 3252
+MD5sum: 8ad30a391094cd9fe69949f1dff6f74c
+SHA1: 078eaeddd476bff46c6428bfd9dbf95a5d39f25d
+SHA256: 85f9eef51d2b7014ff794f3b5fd378227624c3f8b390df6a758f571fbda0160e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.6.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Suggests: opentelemetry-bash
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/132439879
+Size: 3266
+MD5sum: 2099785fa18685548f3d2ba09ec860a8
+SHA1: c72a87b4d934b296f4e993f019b06e3095f916ea
+SHA256: 57ff9971977e373364a1254d7f1271e300578f33daaa6a1368c282aad35a986a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.7.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Suggests: opentelemetry-bash
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/132526107
+Size: 3302
+MD5sum: 86f85258dc2f961a5125d4b83feaddeb
+SHA1: 72965c1046eafa5188ac613205b8ab1e15a42bd4
+SHA256: 3c9329a99cf8a8f0834039d3095c0da70514f77e53c60787ad69de48830e6569
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.7.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Suggests: opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/132762891
+Size: 3328
+MD5sum: f796df68cb25054af6a9d9fcd39dc043
+SHA1: c9d5bbad2a5d3d7249b7a66ff9c44dfd3854d5c1
+SHA256: e3b38f289bed123c088009c7c3ea2be37c4a5f3b7846d90f6dbf06904e4b7132
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.7.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Suggests: opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/133476437
+Size: 3350
+MD5sum: 8b3d85935a4b97af215b2f352438489b
+SHA1: 09a78aca1dddfc49e3dada010b278783b4c35ab4
+SHA256: 9367181491864862544644807f924673f70640b117b39eeff40c14c2cb9cc37d
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.8.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent
+Suggests: opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/136751509
+Size: 3436
+MD5sum: 14460949e379af32ecac61ebbd00a3fe
+SHA1: dedbf744a57815ac6bb3b1f4fb3da10ad82bcc36
+SHA256: 928a86f95428ddaa6e1b5d0b6cea846820e000e977d2726f5eb002651adfd2ec
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.9.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/136859787
+Size: 3422
+MD5sum: 8969bce0d0b7f106c005ce0af768ef22
+SHA1: 870b8ea2cc02518d89db306f208b632e6a2b99ea
+SHA256: 93ab9c6d0f0e36392d806eb74351c3e31b29be8b802a608aeb87b202864fe3ae
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.9.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/136949175
+Size: 3578
+MD5sum: 8d5a5f74f197a93355534d3d454c8118
+SHA1: a398f8b7bde32685b3169b7a5866712fdd81ad26
+SHA256: 5088c2c9c16ef655b851921c881767213d7734b8ad8a6337cb3e2954c0920ecc
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 1.9.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/137548815
+Size: 3584
+MD5sum: 60f3891aa5833dbdb53489b4d2d49f86
+SHA1: f9efdf72f5318e09ade10efcbd07dacc655abd7f
+SHA256: fb3193013fd6b0aeaf0e928f5de2e80f3430c9e25ebf743d7b11afceded38503
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/139533223
+Size: 3572
+MD5sum: b49abc10725b6b0e870c85abd0bde77b
+SHA1: 4e92e4b1a87410fdd57a2d0a33c3d33a0e85950e
+SHA256: c913f784715ce29f428e9ae936e9a042592d688b5b1dc450242246893e35de7c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/139604360
+Size: 3652
+MD5sum: 58e99e108ffcd20c40c478356a12e810
+SHA1: 0d735d82ce753f7b5ecdb530198223d4601c1f9f
+SHA256: 9580ec0b7b236216cc77e01f6c816b83d40b7d19d6dfeeb88f0873277a7d97d5
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.0.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/139670561
+Size: 3654
+MD5sum: b2aa6b260fc2b9a4c7c50a8f056951d8
+SHA1: 0d27b4f8afc6fca8c84ad78a23767695ce88ea7f
+SHA256: b812897fc62dc37c3022ad4070dadfdae9de4c5ff1d1d9930e922049226b89a8
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.0.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/139687994
+Size: 3568
+MD5sum: 34f5272becf912f142205915a778e6ab
+SHA1: 87b84c39c89899e647f90f2dd1cd8810c8593693
+SHA256: e59a4f002e3972f9b1aba2ce534846c015763933253feeb191d51f96d024d41d
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/139903815
+Size: 3568
+MD5sum: 99e33ce13cc68d35816481578cc67261
+SHA1: f09f3e3aac7cb31a739008e860ee64d90b0a0a16
+SHA256: 893d0ec960b6a94b515ea3f94e0ebcc3c5e235b0d0828d202724972bba890a20
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141142812
+Size: 3628
+MD5sum: 677e1ee827ea1a401ed0ec9eac336d8e
+SHA1: 3717efadb2ac33bb30ddaec124fccf599612061e
+SHA256: aa46db5b9de42fc0d4fff32f841337625bab8d939c6b16d421fb65aff068379b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141231619
+Size: 3628
+MD5sum: e21d64f97bd0e638e5e3f38124601be2
+SHA1: 68396b26a84453fbcfe0ed216501fa14df68e071
+SHA256: c2ad31f3dd90c7590a80df7607b39271f306ce60c8bf86d3c1589664f7e633b0
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141234428
+Size: 3630
+MD5sum: 47972554618f207edbda029bfa771e60
+SHA1: 5f3862e8b559698806af3c6de3836c3b2b502520
+SHA256: 51246a38cb432cd11d56d9784ef698cfea0b1aec924c047030c0df443013de58
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141236139
+Size: 3640
+MD5sum: 702d7e7aa676c36798a94f71c3e223d6
+SHA1: 0a729b6f4cc14e594cf6b37e9606c69262769dd2
+SHA256: 02f3af3dfbfc583a5667512c859b53c8f86e49461e895738c230e24c8e703881
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141236432
+Size: 3638
+MD5sum: 72ea42cb563dea11fb13996fc4cc3fd5
+SHA1: 1ea48555c865c5eb1b12a1a6c2de63e255025ae8
+SHA256: 8e1175edf9f3bff488d3c70d1edb1c73f50e63cca9bf28fb3cbe29b237928e58
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141258340
+Size: 3628
+MD5sum: daca72216f71dd1d48942e0997f7ebfd
+SHA1: aaee1af131f79dfe9ccb59cba5d6640d505d01bc
+SHA256: 9d1f1986c5da55f7b1bfde6ce6ff517ddb45b9a5d89140ab39ca5aeca39e4208
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.7
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141334538
+Size: 3630
+MD5sum: a5080b51d12084329edce59f2a8be976
+SHA1: 9cdc3a13aa2758be74e706b6443b2298133decc8
+SHA256: 8c5a5a437f58b7d6aa2abf737eccf208bfc81c3ad55b5dea73dc1a52a16da95b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.8
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, wget, tar, jq, philbot-config (>= 3.0.0), ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141642400
+Size: 3628
+MD5sum: 42130ae1056447aea6cce805955cb62d
+SHA1: 5633b1ad4bc01ea815ce97caf01b1bdccf3cfd76
+SHA256: 07b0bdfea5b4429f0a2664536b11510b2fa5ee335fb659e7ebbc5c076133a90f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.1.9
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Filename: Philbot/pool/main/141647346
+Size: 3628
+MD5sum: 899e33daab256f98223e3eb18ba22c80
+SHA1: 3d06f64039a8c8f58010f01e00c04969ce9a9fa9
+SHA256: 28be25afa72ffd1209f2618338478b56b75179121ac65c18fa1d02ac1641add5
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot
+Filename: Philbot/pool/main/141787990
+Size: 3638
+MD5sum: ce4123ee2f114a67389c7eb688f48eb3
+SHA1: ef6baa06694320f6af98808b967ad82d35194b78
+SHA256: b02196c6b1ab52906f76943c4031c083378e8d029fe3f2a24e1e4e63d9530bfa
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot
+Filename: Philbot/pool/main/141974667
+Size: 3632
+MD5sum: 33943f6557e25bbc8031c1b1ed8e41be
+SHA1: 11a354a76502c93a182571985bc57f5f2ebfda23
+SHA256: a0bc0ca2c405fa34b572fada72f6435bdedf6e7bd66d6a4d736fd744e9979703
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/142026808
+Size: 3636
+MD5sum: 52de87ccea9393d7d0457a38f5eae51a
+SHA1: 1da86c31b90175fb00f063bcbddab1d549dbc736
+SHA256: b453d2787de585cb93d610c493e0bbeaa0dea3a4cf22982f964a9af91ccc02e2
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), bash, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/151791478
+Size: 3616
+MD5sum: 154daa696d6bafee6a01617ad25e502e
+SHA1: 32d28f68a8610adc1ca8fd1fccc87679749e563e
+SHA256: 6a5084f17cdc18130d43367a4578a87e25cff414edefa478ddc2b626d5bf993a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.4.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), bash, cron, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155076500
+Size: 3620
+MD5sum: 5575555e904a5aa19f2a60cacc3314fa
+SHA1: 8ea52cb4c6a0144c53d4e948208e925b60f66081
+SHA256: 2af0555fcd0f354c73658f128af286afa86f038550f1ae70b09d5f5ab7e102e8
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), bash, cron, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155365183
+Size: 3614
+MD5sum: 3caffbb993086092ecf30c8c1c12cbe6
+SHA1: 2c467bfacdd53bccbc8df5f6fccb133e60558ebd
+SHA256: ab3a67b780a4326f05f11e7893334737bd2b0be65f959a79fba4def2fc9f8194
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), bash, cron, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155502606
+Size: 3656
+MD5sum: f4ce1a02ca3de4c8ae98949e01165bf8
+SHA1: cdfad887464148c9f53aa56307643d955cc5fc6a
+SHA256: 0d8aa92d4326e243381bdaeea8f4c6fbf1769fde22fd71de2a3b7e7225fb048b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), bash, cron, wget, tar, jq, ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155899123
+Size: 3754
+MD5sum: aef49fc23b730770680225b2fa927299
+SHA1: af366f4c73d77c98aa5009d0d4be7a1cd7dd1962
+SHA256: d3cd01407b16de7a1e45322580c0879467805a286e92ee0b65c746142d6683de
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-baremetal
+Version: 2.6.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, awk, grep, sed, cron, wget, tar, jq, philbot-config (>= 4.0.0), ruby, ruby-bundler, nodejs (>= 20.0.0), npm, python3, python3-pip, python3-venv, libopusfile0, ffmpeg, curl, systemctl, iptables-persistent, opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-containerized, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158121143
+Size: 3786
+MD5sum: 2e086a09b5c697e2a1284ce470587423
+SHA1: 5366f39fedf54f45751d12c8c1a59d76791e5702
+SHA256: a6f34172c36f45cb017f569e9047eaf5b5cb61b60f6b3242fb44edf1c9fddff5
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as baremetal installation, bot will auto-update
+
+Package: philbot-config
+Version: 1.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/125284324
+Size: 3098
+MD5sum: 501ad249d00182cdf5e141a44f23481b
+SHA1: f08747d75b74f7dff118e5d6d96493f64fdc4ba2
+SHA256: 051ca47657bf18e99f3594316fa74a7c7a0aa92b930514b7c4284272dc6fc4c8
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 1.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/125285634
+Size: 1882
+MD5sum: 2a4093809ec556ff669265ee2a898737
+SHA1: a240a0acb8215425711942ceb5850ef9cd870dbf
+SHA256: 5ee5f03d42541d105b1591acafc34273eeb9d80695947916c920d046df5f945f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 1.0.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/125287301
+Size: 1880
+MD5sum: 47bdd7e9e173ab739070a9a2413135a3
+SHA1: f344877f4778498f1f6125de0f7189939bd942c4
+SHA256: 1ef747d25a9154199161e9c9432fc4af96e902dc7b5aa9aba6417254c9cc6d83
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 1.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/125294032
+Size: 1942
+MD5sum: d372b9c80a937de034fa39d34f6cbfec
+SHA1: b7b1fd36a5346a445d18a2fc2458644ce77ddfd5
+SHA256: 33376b2b7442eaf1a3ddb08da95de7a35a2d8d740c3a0b84c9ba8026c56dbe28
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/125406931
+Size: 1950
+MD5sum: 2ae0a54a652ee0f112c857176523a721
+SHA1: d5966f10e1837aec9bd795dfc23b625bd73bb5c8
+SHA256: b97f8998fc91aeec14b91bd3e3886aca38f0fcf972c40d39a2e4ab3bda5f8f0f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/125411150
+Size: 1940
+MD5sum: ef5d2b6813507493b72615d391a5f623
+SHA1: 71a5c769b827d4b7d81479fe077b4a03f79af318
+SHA256: 37e2bb0e523cf83f63ab36a9004ce72a059ad08ffe9d55f47404d2832735fc5f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.0.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/126160940
+Size: 1930
+MD5sum: 0256bebcb0d3df61c9375c40c052671d
+SHA1: 4b2fe62d8338ec428db9958c4fede301ffdb32d0
+SHA256: 68a2f7d09b54c9b513dbba6a0bda8d09f6235ad5ab615f9b517667d8f93686f2
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/128820235
+Size: 1960
+MD5sum: 62069ed67c01b3f36bd5ea924d1b5588
+SHA1: cc062b4b865f1af42d5e97c37063ec107577d502
+SHA256: b159cd6384f7ee38e621bac36759ec95247376752124080fb9e65831b30807f0
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/129127853
+Size: 1972
+MD5sum: b1e3b5f365a39bef46d1d80e728cf36b
+SHA1: 2c300c5a8dfc8850784ff055469e5711e716e7e5
+SHA256: 38fa4525362077a081cd42e39d235b3e7b636bd0075edf4bd8f7522c3c1c9dac
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/129147377
+Size: 1970
+MD5sum: 58abf02400c0f05e35334fbe79457e04
+SHA1: 24aa37f17412de6c99b47ca3eefe5a5f81a9dbb5
+SHA256: fffb04e6fd9d9e8378ff309275df3446f2f68b19ad9ce1011b556bc45e730a52
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/129479724
+Size: 2004
+MD5sum: ebd44fc303b5ebd65c0f17001ba13e52
+SHA1: d2470bf47bb7446a58a368096b692126b56d14b1
+SHA256: 24522f33112f37b1334a87aca6f69dd08d27c65fd7ea33f610c32b794fdd99ca
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/129902389
+Size: 2076
+MD5sum: 4153a176c056a17aae5d6c69c6a775b5
+SHA1: ade459415e89da0e8d9974eadff471a3a02d3759
+SHA256: 11051ef21d02b8ef492ee3737932606efd7e16f938f0dd477c8d2bfd527adfde
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/129951334
+Size: 2074
+MD5sum: c4095227626d9e0c28fb00f5c1f0939d
+SHA1: 5d55cdb782b022f71602ce547055d80bf239ca22
+SHA256: 7491c42c3db9a00e1300424e779f6c11ec53cfe3e5b3924597b98a885ba7302a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/136717772
+Size: 3294
+MD5sum: d8fb359d1babfc0fa14f47c7dbf2fb7d
+SHA1: 4fa25b7aa5993eb950be430363308ffd65050b71
+SHA256: 105db54dc283f06e9d80e3649b95d33782ca176e2817553f1f976786430718ea
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.6.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/136758701
+Size: 3292
+MD5sum: 1d35ef7f7b51b8dc08c6cf5474ddf303
+SHA1: bb0b3b7511b94c4ad67aebf6e33d9f0b9d5acc54
+SHA256: 1e935ee8bf5d981867d74eecfde892f8e77552a096be87e6b9053f9b273bc5d0
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.6.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/136949190
+Size: 3408
+MD5sum: 1679ed50369fcdfab463e97d698510ab
+SHA1: 1ce2aa101c2ff5dfc0a04ac9863be0ee6b3583c0
+SHA256: 6bfd0f2b5b76ac32c0d8a17d539ef97efc42a0651641ddf195921f055ae6d39c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.7.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139440775
+Size: 3654
+MD5sum: 09b120d639efebc529191b3b1dcc1e35
+SHA1: 24fa8a1cbaaf70c371afe3cec3f5d34839a6ffa1
+SHA256: 8712f1f1ca9a09ff8ec86f3570ad8974b280c3102fbc02f4970c3edeea490c05
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139530716
+Size: 4086
+MD5sum: bd023801e38504637fbbe5b64e1ab936
+SHA1: 61cbbc8d74f409a362b609153e7be6bb6df74fcc
+SHA256: 1df09ad7615372d523cef388efd7bedc204e580dcb3da1a10a682bf964cb1bc2
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139536115
+Size: 4094
+MD5sum: 5fff0f0e3c1c2c3326ccdc50003a0f04
+SHA1: 23bc2c57eb234a548ea79a0c0e951de8be5297bb
+SHA256: d8878950c6747e7c3600774b2c375bbb4641b8557114836f04668c8920edc74a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.10
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139656158
+Size: 4182
+MD5sum: c2317317dec448a2794b9940f265abe3
+SHA1: 84df10eedf037599fa1b84aea532369dddff43b8
+SHA256: e2c1e444a4d71ea6d93d894bec4eabb3477c9e80ada77ab71cfc27a3cf2338b7
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.11
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139659129
+Size: 4182
+MD5sum: a8764130e3f09b1cfcc5b4a36e1dfc7a
+SHA1: 191aa4c30dffcaba99369d4b8fc8d837b2fe66b6
+SHA256: 1e92eaf62ea770f94d13de47d7630b38205308154e50672fa40c03181ab7a42c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.12
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139670498
+Size: 4198
+MD5sum: 886a80dbbf9ec576705c286ced16cec8
+SHA1: bd247fa37187c184b34de33984c2b0e29617dc6a
+SHA256: e7ad24f10fcdb88807e4cade542b784619562546003b5c5843d78f4f03b50e74
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139540158
+Size: 4118
+MD5sum: 281f84f09f981268b3951b01fae23cab
+SHA1: 3e25467b868fe15624e550e1aaa58143964d7664
+SHA256: 9ed5ebe6f7d38c1e45c79b52debf8b45283b9c963cc876f720fe76e4969f3710
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139540500
+Size: 4118
+MD5sum: 1dd2076f915714a5f6adfc713fe879ab
+SHA1: ad7dd89562741189af3457155cdf134071ab269a
+SHA256: 20eefcade5aa7a99cd52d7c72d3c21e11b8763ee35bc5a390131ff0fa5ec40f7
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139543357
+Size: 4112
+MD5sum: 2bcf8739cb60119f0435cd25f85c1a59
+SHA1: 107163518dbaf0cb4f3951a96d173042d3011039
+SHA256: 014274a866662b4622cb201bc21cd4b00b013e0f0a27186b69a7afdf5302c246
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139611812
+Size: 4118
+MD5sum: e19b51b1f5589e0bd3379c005b79a17b
+SHA1: 7e2638d4f6e6ca6ab070159d316e195ab3aa1ea4
+SHA256: 33fc2d09412507664f32e17361d286c88147cd8ab7b7ecc738c7f59c6a545091
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139626368
+Size: 4116
+MD5sum: f9c995d53a24f57bac0535c8f3d717e0
+SHA1: e1ec58d3e29003501c2b8965bc722c39a939ea91
+SHA256: 1611094ff5e07f49868140b80ae21cd3f74be31528712cb3ef19d76e29f8c97f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.7
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139652117
+Size: 4182
+MD5sum: ef0eece7e4251cc69f6fd10874536fef
+SHA1: 8d6d381df96a8d67841627168a7a9b8b1d64b422
+SHA256: aee5c8c1f4e342274896336eacbc64615ca15ea7c156c2fd4cf740ef8d670329
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 2.8.8
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139652692
+Size: 4178
+MD5sum: fe56e81a75bb3498471460bb7880887c
+SHA1: 7c8af6ff8fe47807d4354059dca8b3d4822e9cf8
+SHA256: 410b77ccc55a7a5357614c482a6b050147afb37d385cc617a1b462ce6bf69cb0
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139688031
+Size: 4200
+MD5sum: 59bbea2f0c46d324a05f5826a16f7e42
+SHA1: 81f49f4c3f31f95ed4dbdd1a22f63d4322f7b351
+SHA256: 9498df0736c4d56dd38401e3ea86bb2d0242838fe1c1c6d77383bdc7d89ffb75
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139690097
+Size: 4218
+MD5sum: 5a6226e4db741389057c6aec7f3a1d86
+SHA1: 479f7ef0634d0c67ece71af80133a9af299930ba
+SHA256: 1b43c769dd0e0e96d5f90d7a1be4954ceaa53676cc6d7fffa0150f200bc5eaaa
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/139903836
+Size: 4216
+MD5sum: 3281e9de5db93bbf3baf118f599f6051
+SHA1: 6ce519a3c7488ba726de81aae1d7875f0991197c
+SHA256: 049bfe9ffab6c0df4e4b8e1e7b76af66f689bdd20e2e97d638c26bb817a09f59
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141099948
+Size: 4222
+MD5sum: c6a7a86b3db36acdaf2da56b94d5d13b
+SHA1: 12c6c6e34fe63d39b260c7571d614a0aba35631d
+SHA256: a262a50c4b4c2fc4b749a4928041b0fb5d27d26765736c9611b9508a445a3632
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141231835
+Size: 4232
+MD5sum: c62ebb49fe4c4b2b4f11ca5646540560
+SHA1: d61e5e05d65a6f415e5f5972e2abb510a4c30524
+SHA256: 37386ccfc8d201ec697b1362af2bd9a6e50fc4298d7380bc7d6d7d4b06383e41
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141234447
+Size: 4224
+MD5sum: 36b5affafcc1c7ae09622cd8904bc1d2
+SHA1: e0caebde43683cd556932fb85924a871ced91a16
+SHA256: f9122fcff3d34c1e6d460e688c113c801690a555c7e6bf0a6d2d96d197577507
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141235357
+Size: 4228
+MD5sum: 9f5a58b3d8192c0eec304f5de2318645
+SHA1: 789eb47563b69ebaa902122b30997a5b3adfde7b
+SHA256: ac0540f8747185bf6a471fa4692828f4c3cf7601f70826ba74cd4123e87c5f6b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141236619
+Size: 4226
+MD5sum: 31892046695ce586f2822b23b48d9ddb
+SHA1: 8dc0afd19fec47ad94e36979aac6bf3371a9b9e4
+SHA256: e7664df6688634c7da375f1c0cd14b2c35cf949ec218d902234e666dd954be5a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141258323
+Size: 4264
+MD5sum: 9705e461fca8c6634fc51018ca2eb317
+SHA1: e2ed303ca9cf75bab77925a786ea8d8fbfec1c10
+SHA256: 04477f0cd5ec4be7d18af4370abcbf5e37ceca24da42486d035d88b6f6d01826
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141258525
+Size: 4264
+MD5sum: 734c7f25c676c99b09466a886d502991
+SHA1: 2c092d4f4566689e65a7cef606607ac92ab3e289
+SHA256: 444d4fb47eece129f57700e2922a14caef7c414191fca43fd14b4879c8728f01
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.7
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141284942
+Size: 4268
+MD5sum: 620338b3b1362b824281a51fd9cb083e
+SHA1: d96d25e1854001891a9add4c87c542604d8fe3d4
+SHA256: 5abaee3a7fbd46352d2fa0e19bc4820dbba6d2ded9bb9e9f4d45628b4fae6bd4
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.2.8
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141334531
+Size: 4268
+MD5sum: 0c150623801567c17aaae5e295da93be
+SHA1: c7e74cda6c14713584dd5411e95d8b83982b3f49
+SHA256: d7d2b0970b67d45968fcc7a60cfe744a83ec3ae2cd5d3d8f8e786c90a0f263d0
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141647368
+Size: 4234
+MD5sum: 226e03b38a43b3cd97a3fe1cf375eecf
+SHA1: 2f2a5be4864e1c45b92a3edbfffbda3b18015c62
+SHA256: 3100f87264f879832547940091ab0fa79078d6d95c86ba83fa4587b6d1a2380f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.3.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141706746
+Size: 4232
+MD5sum: 4740d41fef3714b77d9e16a8609980e8
+SHA1: 5d624fedc1924637cf7b5a4a7dc5dad56721feb6
+SHA256: d9d368cb491ff8c4d267a804e9f872c49cf20609317217c7c09ef21584b1f88b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.3.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config-impl
+Filename: Philbot/pool/main/141789626
+Size: 592
+MD5sum: 71c61d1081266b45f8ff9349882220af
+SHA1: 883cd803bc032a7fe024c2bd4327122d49dba342
+SHA256: 88419333efb209b2f8a897bb66f8dfd48f61e9557420507ddb4a772a05fc7307
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.3.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config-impl
+Filename: Philbot/pool/main/141797307
+Size: 590
+MD5sum: 4859dbbdd7cf6e17dc47bb8c9eab0bdc
+SHA1: dd53ec9e07d7d9b57b9f28e8b93a05102e9ab21f
+SHA256: 263681ee2fe594fe0fa426e8c6adaec3668bf86f987c9d705c685bb7103c173e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config-implementation
+Filename: Philbot/pool/main/141830818
+Size: 596
+MD5sum: 2a0479fa420ca0c75b614d15bf46beb9
+SHA1: 19357cb885e1ae9e61a377ed71dac261b47a2b22
+SHA256: 01a00230de55bb9ac8a3adddbd7b559f50d2054d88d0cd757cd1f0fb0d83741a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141834482
+Size: 4232
+MD5sum: 1e2259cacff5e1a422e7fefdb55fc604
+SHA1: b8ec7a4548693d3142b6ff4b8f3f6f4baa18f66f
+SHA256: 84efccf8a2e018eee4779b8e3db0ea2c4b8489732fc8242c34944707a1c4f8bb
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141853915
+Size: 4234
+MD5sum: 54ed29cb991234c0997fbb3ddf400f36
+SHA1: 2d370905675e3a8e8b3c01b516dc52af69e753de
+SHA256: d1e0d758b8a1ddd80cbdba69b3dc1f1cefc52d816cf442657aadb1ae12fceebf
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/149651389
+Size: 4858
+MD5sum: 9159d2a26ac0a13118cbb697aaf3aaf6
+SHA1: e0a3244d1133e008f86142ef64a1b43f6d45e5fd
+SHA256: 2ccb3dca90d673750da6a1c1f21198fb262d86c618e8ec988c2c604a5db703c4
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.6.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/149728384
+Size: 4872
+MD5sum: cc2b44dfb4504a81baf4643cc972ca43
+SHA1: 1d244a8b95add8f908ba116b5682708ffb7425fe
+SHA256: 6d10745cff35e6300ebc562bfd67a943111ed9811d67d8b81a304cdf4362ece2
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.6.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/149729119
+Size: 4866
+MD5sum: 402ee1f1a91e8f04ed1aa055f5cf53fa
+SHA1: e4a0ee150f2ca2acf707725e023ef88cf6f5c158
+SHA256: 1ae978f4f32cfe3535be4ca23b5f71fbbe6ef993ee929760663635e3c17489cf
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 3.6.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/149913084
+Size: 4864
+MD5sum: da313347bd8f0ef899fc68af8d0be937
+SHA1: 7a1fc026c9fdf7fbeb8da47dc61ffd0f70b83fac
+SHA256: 8bcc13317e92e2376ab66307ffcb8cb317475f9e3e926c9b50ca63ef7c9b4776
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/151791485
+Size: 4862
+MD5sum: 525bf37247b346b3aa7bea54c77ab6c3
+SHA1: f3fd774f2a308f331a5e2e7c2f597249a2db9cc6
+SHA256: 5d3497e2ccee91c660f6bc670305a3a4b0a5f166c06420bd07f1b117e0266ebb
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/155365324
+Size: 4870
+MD5sum: 1e4f0358c678bfe1513880529dceb878
+SHA1: 3d20e65c6a0fbef0b7b2b426afd9a8c6bbad5ea3
+SHA256: 8e732d9bab0833ed10062181fbc79e166873bb2d80c6895878398ed8fa9a6525
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.1.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/155376166
+Size: 4868
+MD5sum: b105ce7d95de2fae3900c99a520d9967
+SHA1: a91c8955848eb6352a1ef1716b5eefefb9ead373
+SHA256: 498508281b4e47ed8f5d102f84bdf11082e47c204d4aee36e2cb1374e5e5dbc7
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.1.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/158121121
+Size: 4888
+MD5sum: 2006c8bb7cad0b1bc52f78a11954e262
+SHA1: 04b3e52a5054597d22df837a2bfcd7b3fdfc2c5b
+SHA256: 48f8e5814b70a07eafea0a118dc3906f7b4f64455313f80380a556a6d52b4131
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.1.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/158501718
+Size: 4892
+MD5sum: 2ac95b19e726e4d3525e07641ff43bcf
+SHA1: 1835732675a074ba359b7c0827f30a1f5e92bd8f
+SHA256: 2f3365ff90fc5122d0e26cff38a90f9b214ba952350ec2649005183e5c497e06
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/159438728
+Size: 4920
+MD5sum: ef802825fb164b0dcfb91a53f0d1032a
+SHA1: dbd6152f00efc27289ddc5101439805bf2be7105
+SHA256: 2f6c9d0cd0d36dd3209ba61c203456a9ee40fb7899a45c54bbd213a154e988b9
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/159467566
+Size: 4908
+MD5sum: 7196e5621c1c426dc4c5c602deb3c587
+SHA1: db68b1b07aa346cf90a088868d9c534bcb593069
+SHA256: 571df2934e0cd2fb9c716d593753176b8c545ffa620957cd14cb43ac75e9dccf
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.2.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/159468194
+Size: 4892
+MD5sum: 43c3c862190c80d1a1e73e4c5d4541f4
+SHA1: 63aa4d03480e9ae2d6e5c1743d7bad64725032ac
+SHA256: 4355d45c87f9fe14ed76c59a8ad09faa60f5f3f4fd95372c8a6a8ee4d17f3a4b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.2.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/161881358
+Size: 5036
+MD5sum: 8bcd506f0217b7343bf21cf22e61f3e1
+SHA1: 8c60c8fe7d9e58e45330918634f9963079ca3e48
+SHA256: b1e428c8cbf02a4431b603052416e639a8465d7b4da71eb1effeff6f1097b33d
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.3.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/163982110
+Size: 5080
+MD5sum: 1858ee4ffdd35aeb92d765d41d08e416
+SHA1: f7e6a589d93346a98207529402f8f34f2c6f7e7b
+SHA256: c3a2a14932841753a6411cba56b134091a7bfbf5e10bf8a8448f49f0507b6b5c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config
+Version: 4.3.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, coreutils, util-linux, debconf, sed
+Filename: Philbot/pool/main/179479585
+Size: 5098
+MD5sum: 5db431dafb732ad122251f0e2eba47df
+SHA1: 3deeac2fb4047c4fbeefaf2aeda63bcd145d1237
+SHA256: 1573432bcabb7d1a58dae9451774c6247e6116ec656f414a877cddd39550637c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config-impl
+Version: 3.3.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141789625
+Size: 4242
+MD5sum: a1f88c879ef1781cb668aae620f26442
+SHA1: ad1423258fd8b145bcfcef6242ca275db739f20c
+SHA256: bcc3a3b5af0fa44cf64a461a8cdf61626cc66df2aa727d31b2fefd6a4339db56
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config-impl
+Version: 3.3.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141797305
+Size: 4238
+MD5sum: 4b35b95d74da9d3eef2eaa3620d3be56
+SHA1: bd944437bb688ee0a815b8b0f83f0b7ab51ea96e
+SHA256: 42bb41d8ae84833a601637a346fd19b432faf6a2caec00836a20fb0ba5605a27
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-config-implementation
+Version: 3.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash
+Filename: Philbot/pool/main/141831872
+Size: 4242
+MD5sum: ebe8d0b09c267f1df33b3b4681c498bf
+SHA1: 190d16abf6908a1e7a5b09d948dbd98634e5029e
+SHA256: e9641e287f312a50cbdc08dfc210a23554135a7da4dfc757e3ab8d8e237e5933
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot config only
+
+Package: philbot-containerized
+Version: 1.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125261507
+Size: 5046
+MD5sum: 37a444899c605fcad9b7c814de2a7bb8
+SHA1: b07a59fa8538f5f558c3ec2601244d6b577272be
+SHA256: 88dd15491bf8b446860f4ba46363ab79914d36d6c5914fb6ba374235159a1083
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation
+
+Package: philbot-containerized
+Version: 1.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125263698
+Size: 5018
+MD5sum: 2211c382f0507550d7242180b4fd0e95
+SHA1: 6696e8d578e8e9e2e4d238d7f68d1e69ff4c976a
+SHA256: f8a2c598be09f35d0751a35cdffd5bd9ada22e06a4217eb129d158fab9452072
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation
+
+Package: philbot-containerized
+Version: 1.0.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125265692
+Size: 5048
+MD5sum: 4eb75d6632236d916128cf8e11a80921
+SHA1: 68725d684ddfcb0e5b87956e942ade344c9a95f3
+SHA256: 1c82f6720a2c3e795f05f2fe20866f7fdd3c47e488536284de2738d6c092f228
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.0.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125266955
+Size: 5056
+MD5sum: 534101d105c3f37e7d746d42d8733c07
+SHA1: 90edef58366af146c5120d3fb2d1e667c4d2185d
+SHA256: 6c471f55ae70109f487df2f2035a6487ba5e7ab7c2f5c6632132ffb86844142c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.0.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125275715
+Size: 5052
+MD5sum: c488178a1ec7e8a70858818d7139740d
+SHA1: 223e677671820b11154bb4236b576cd061960afb
+SHA256: 4a65b095914b4eb22bd31bcd5610e4e3f453684c86128bc6c51771828a648e8c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.0.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125277320
+Size: 5048
+MD5sum: de285c52fb5ddcd25420e80778b6efa3
+SHA1: fe3e861a7c63e46abc1866b985348b3bea906a0e
+SHA256: a225301776126c7c4ddef210b1519921933d625a92c341c0de4a882c090c2a00
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.0.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125277578
+Size: 5044
+MD5sum: ffdc77764d983caa1d3856fa1f8ca9df
+SHA1: ff02d61711455f3f324e208bd94c9a07bff740b4
+SHA256: 43a99463ed30d260483b5f5b63de32babdecce7c2d6180a6eb7c0d08c3372fa1
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125283661
+Size: 3544
+MD5sum: 3a0def8341e6949826016f09a0539261
+SHA1: ff58d9faf20c6aebfd1b97b6159f852f2f1ca4be
+SHA256: c03bc910f1ea2797ab530ef455185b29ba296086f3402c04106ca57514afe266
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.1.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125283751
+Size: 3534
+MD5sum: 03b4f5de6fd929175889329fca8d17ea
+SHA1: c11b385dce5ad531fbde9700e57ead64483fb3a9
+SHA256: 0d9cacb42b0b37e9f8ac045a61e67e9bb829267e61aacb7896054e7ec0d9325c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.1.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125285583
+Size: 2510
+MD5sum: a5506f4471e7e630edc4fe36cadcc494
+SHA1: 516dd6e494b8449b0fe8c2b0e1921a957f98fd2b
+SHA256: 928f559509254e284afa57eabbab10c6731e2468305a7fb3b4e3800967d66835
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.1.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125287306
+Size: 2510
+MD5sum: 01679e7c0c3a32aab257ecdc7c6513d7
+SHA1: 88113888285b7d96829353d3d68518297b0ca71d
+SHA256: a4ec07f0d48ab1d5cef2eac3d6d73960a032d28646931ca8c9c95d558e224352
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.1.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config, debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125289718
+Size: 2472
+MD5sum: d77ef2983144aa33f6b1a1a00113714d
+SHA1: 34a66bb65a424ec9470013345e64e22df767a65a
+SHA256: 4f4db4b85a3be839479be3eedb8f00b3a89f36df1675b7c1ac928e49b1cd9c8c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.10.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129511901
+Size: 3200
+MD5sum: 2a6d36ff6eceb8bcec388450645d151f
+SHA1: a0ef689538ea96dda1de604e190b4a06275f239d
+SHA256: 24514010d06e2d2530a2e1fdd419250021da52d951bfaba03849c952cd352ab2
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.10.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129527316
+Size: 3224
+MD5sum: 5411e73b852932e4c43d0dd830ad730a
+SHA1: 92c983c0367fa00750fd1bae04f99b908831ed65
+SHA256: c97683e030109da33fc862062e6ebc98c1f06f53314bdd83576ba9326564c981
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.10.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129528526
+Size: 3220
+MD5sum: 793db4b40cb19321ba6666439a1caf7a
+SHA1: 93f3018a564faa40a2cb1f8eb404f952904fd6b7
+SHA256: 7e9c461dc0b5fae2b54211bf798708df6d55a75eb30252e9268c8ce8df33e6f0
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.11.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129902392
+Size: 3258
+MD5sum: 83ca51b33a8ef361e73171a09be1ec35
+SHA1: 71b9ce7a52bf5d7ae95a3fb717f237674a839b88
+SHA256: 4d49eb53d8763c56b06efaf9fdc71dd3344b565359771326b76cb370a787cc1b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.12.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/130383817
+Size: 3284
+MD5sum: d369c36db9b7f00212c15f637c262375
+SHA1: 31aa5be75e14c4b55261373f5b7ad96787d043ee
+SHA256: bac247099dd745664b61118ca4a3721b558a2eda556c1d82d6243b20f695c80d
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.12.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/130584056
+Size: 3292
+MD5sum: 7e9c02141bad6f04239a74daec832e79
+SHA1: 33729f1759eba4c621b3c6ace09567be14c1a2ef
+SHA256: 7dd64e67970fc0e8fcb8b5ca199c39a2d4e556a7975099883350f3a721ad0b06
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.13.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/132431661
+Size: 3282
+MD5sum: 0d733d955243dd39cdc0b428624f3e6d
+SHA1: ac99642f856c0bc3f1ae8dab511937b03d66c147
+SHA256: 9e6d8869c01ad852e894efae83132b3651bae2885b0ca5cbe7295db1e8cf44d4
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.13.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/132459936
+Size: 3288
+MD5sum: d4fb3e50cb04cba35133c769ad6499be
+SHA1: c8842c0e2049f5f370b8ca3934ed8fd9851d6607
+SHA256: 69c455fae1c524ca2a8a100205deb94f1629731125225e6a4a72642f5d8e6374
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.14.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/132522582
+Size: 3292
+MD5sum: ed34a25e0ab546245bd05e71c97aef9d
+SHA1: eac8ee307ed9fc096460a76909f043c9017f75a3
+SHA256: c3231053a72563e9d4b864653bfec993aca3b4fadb86579d9925731cb4ea396b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.15.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/132600354
+Size: 3338
+MD5sum: daaaab90a104afc8754c25c69663b4f6
+SHA1: 2aa2cb0dd1ba866581d53159ebd38070f3d6efd5
+SHA256: f84f7e1c370de5dc6defbde00d56485a6cb80f287142ba27edbedbcf39dd04cf
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.15.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/132762904
+Size: 3356
+MD5sum: a51bdeaca060859e67b7a26b91493c4c
+SHA1: 6de9bfc2813c1e8be8439d305bc11a04efd37228
+SHA256: faafa9f2c22fe08c0df2f88a5f4ded716f9f099245c268214796371b3b1123f9
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.15.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/133476458
+Size: 3368
+MD5sum: 515a33427a605582a3027f60e8e8057e
+SHA1: 48b5e123236f944cdd545533492a277b8fb74e44
+SHA256: 513861a371adfb17bbda0374169bd7650d5d8502c948719d37d1589fbe96ba91
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.15.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-shell (>= 2.4.3)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/133726095
+Size: 3360
+MD5sum: 3d3df3ce6c94bd93dfd33b6229cf0d8f
+SHA1: 9f6d6e09ce79d3f5e27362781e1c6ff3464fe502
+SHA256: afdb6ea6b39da6fb058249b579c6af736826f4182a9e405f930cb37d88283f1e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.15.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/133758849
+Size: 3364
+MD5sum: b65fbc4a3e268098a1ec3a3577317e15
+SHA1: 964406561fad1a84f904eea1645763b9d3a8afab
+SHA256: 4ef664d44a226e913403fb9c95c6455eddd6bcb1cd4de64ea265e3cdc3a638f8
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.16.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/136751448
+Size: 3446
+MD5sum: a52cc41873f76467457a04992aff7af7
+SHA1: 8c3b79ea9c9c84df42b03f44338ef91391986835
+SHA256: 5460c5d76037d6eee6be86df1765f0b00f9197043e0c6199fc1aeb0e5c2a3987
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.17.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/136859778
+Size: 3442
+MD5sum: 506cb565b2d0a18fcb6b997734e8c114
+SHA1: 141280e27713efba6946b43f469e5569959ce100
+SHA256: 5ac2add15f4816407359c8df90cd25f7b79d9e0b2f9fc0ab30dfa2f974c548af
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.17.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/136949165
+Size: 3574
+MD5sum: e9233981b0efb26d3a4e4deab7888947
+SHA1: 330320cd5163de19933e9af674249e5690db8940
+SHA256: 2afb5dbed12376c49b8235f1557569eccb554c6dcce10e16dadf630d5c123071
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.17.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/136953799
+Size: 3578
+MD5sum: bd1154b6afa93e46c8c13a632067f4a5
+SHA1: 799932708ceaffc62ceda2e06c042679d3522f56
+SHA256: 20b71f0c0264315d8c7280acb5ed1b69a69d695d298a7662dac727d93cd5edb4
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.17.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/137073931
+Size: 3568
+MD5sum: 6620195623195a632798c9d36c5f2c58
+SHA1: fd095cbb25c8f4e4d3402e93651b287eaf5729a7
+SHA256: 5fb3adc37f656fdba1bc69e3a3706e3d9fa08476f6a5e515700b1ebef4e85dfb
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.17.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/137548929
+Size: 3570
+MD5sum: 9297df1fc6902a5fa38056ad6cdee511
+SHA1: 8e2427734317f3dbb7b3c2c745abbf38dfd323d2
+SHA256: 5ebb7acd4679ef1d1a4d85221e2612193d82ff698a5364ea9cd794b4d855455f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.18.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139530735
+Size: 3614
+MD5sum: 8dcd32396f42350b2bc7181e99f9a462
+SHA1: 89005841b0960cd4c62439da163d2b8728a4de6c
+SHA256: ac5dea47fa742edaa69c805396656fc25938ebb5595caedb31ce8f83d24d9eec
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125406933
+Size: 2532
+MD5sum: f89b91f7f86b499c499b8355b2f419f3
+SHA1: 3632343ca77d8e97334da560622994008025e597
+SHA256: e02843797bbf229def740a50fdb704bd025aeb1fd56e7dc92989a76bc9d0be97
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125410281
+Size: 2534
+MD5sum: 7c4c4fc514dce849df697253a211b1fd
+SHA1: f863317e2eb6f771ed7e08add54213e93a778d78
+SHA256: 9cbcada099371928e996bb9e10f6ceebe05219f226ad84880470afcea1f0cee4
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.2.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125411128
+Size: 2532
+MD5sum: 6342b433df94d12640d1df3cb27ff7fc
+SHA1: 5e5b7a5f8004a80395f3a4529e762b942de4073a
+SHA256: 9ec38880cf4420a0697d67bb9c7f270d6d3b62d7e8c9289219874ecb7d051945
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.2.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125431747
+Size: 2532
+MD5sum: 5798a51b4d8351ce454aab5976fc6605
+SHA1: 8adfbb049f4b832633fdde94bbce359b3d0b0c3f
+SHA256: 3084dc1a64d753528136a647e1a6dd936b641572f38b61136e0aa30902ff9781
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125488774
+Size: 2534
+MD5sum: 61d7f3d4c61bc2dc01903f8dda0f5b45
+SHA1: e1e9fdf0a9e24481695825dfa083a12446b6a148
+SHA256: 1a311f24b7b2650cd14b5160139f3e201246b05a633e7ac16e9d72f7d8ce3274
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125842732
+Size: 2614
+MD5sum: c12ec51760d9e580c1db247fe9075d5e
+SHA1: 9fab267d0fc1ad8d260a08b9e63a438a1a781c5f
+SHA256: 03896a39b2a60b7bdef63b109a203d9c4a1563539516e2b57025a18e9877bbd1
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125844098
+Size: 2516
+MD5sum: a16104d78b8fee0cd10eafc80f3da83d
+SHA1: c5d8774b7a970168df66c8d4466c10a5d72dad4f
+SHA256: 1d4e61acac16963a7fd499427f61865b1960ca3bf0174b48e2aaa84f03379522
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125845799
+Size: 2518
+MD5sum: decd35062dd32dc781a44d1da7ba878d
+SHA1: 987c14efe221f6f3da7a4c67bfa7ffd33dc1e485
+SHA256: 624653869c90894bf0c5666e41c6e82ccc6808943db489a69cfe8b73e66b9c05
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.5.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125909308
+Size: 2440
+MD5sum: 07a184b365aed0730419b3a73425b672
+SHA1: 5d6a3fa5cb08f77c3825d75eb3b888102243dd8d
+SHA256: 73d9e502406901967f8f1ad27143df80effdac8e8095994d1b288b0e59cc1b50
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/125972674
+Size: 2494
+MD5sum: f94d5eaffc80b0bf3b2e91c7a8924d2b
+SHA1: 27b64b7d8497c26f74e3f8e5c59e42dcba6039ab
+SHA256: 023f054a68e8ec426c2ad316653b33c870a54db95cc656d49aac6dfb8e89849c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.6.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/126163438
+Size: 2508
+MD5sum: 24fce323bd9b97533368f3a18b4e1480
+SHA1: 2e827464ead4a085ed6942de2bd69dfd4657ea84
+SHA256: cd04e06c28ec5d8caf3c68c3315dc35cc088470651f05d221b20240e4b7cfd5e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.6.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.0.0), debconf, bash, wget, docker.io, iptables-persistent
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/128376989
+Size: 2494
+MD5sum: f445276895a64cec6fd8f51f43abeaa8
+SHA1: 7b7ac797149cdfeadeb5458f320818927b9633b1
+SHA256: e7437d8565816a629f75a6000a189c2209e437fd1eb06068ef7e17ae3976a169
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.7.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.2.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129127957
+Size: 2826
+MD5sum: 939e719eb088192b15e0ff11d5894f41
+SHA1: 7509a327c3f82d695906efbb7c5239fdaf447edf
+SHA256: 97e1f3e5dcb472868ffaa7bf4a4e0c074698f1ee15406394e845ac45e490a4a8
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.8.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129147346
+Size: 3034
+MD5sum: e2f0716b96fc8413268e6b2b0aaf1adf
+SHA1: 88880b39bf4227d118e11edd012bc1dd6e295319
+SHA256: 27c4a5e02baa2a0bb0750bd74604fe5f0a48de567c7a39671b4a8a732da2a5da
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.8.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129158133
+Size: 3038
+MD5sum: 56930ae38759ae14bf1e92cfa7995d55
+SHA1: fcdf2d3dfecefba3608780305a4652b77bfb7e4d
+SHA256: 5a6ba99bf793f2b15a79126c1fb891edf7943c52fa76f96526b031f5eee7fd96
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.8.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129162487
+Size: 3102
+MD5sum: eba6d3a47d0e04f159b09c9bf58d83ec
+SHA1: b8906a0fcdc271d90d4732b3e27999c6bdad076c
+SHA256: 4bb56f20b5b7ae59cf02a6a91ad9dffa438dc9341153eb8dacb8927014371264
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.8.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129293295
+Size: 3110
+MD5sum: 5b2608c2786855802e44c953e8404527
+SHA1: c75e501eea46ab7861a4ae7e122a5a2814afeb30
+SHA256: 11eda87c52cc3f0a7700504da2ef8eae50ccc65b4775db4efabfb601acec65eb
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.8.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129327975
+Size: 3110
+MD5sum: db430ba6f8f9649f7a06143bf823bb33
+SHA1: 7adf30522669390877888085c09cb8f8eef21768
+SHA256: 2cc436df99eb06e0bc687397bb26329ab964e89e56b3b834cdc476c26bfcf4ef
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.9.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129479711
+Size: 2910
+MD5sum: 0c256ee6287765212a77b2e1a2e839a8
+SHA1: eefca0acea77c894e3ba0b607c8c17a05d683ac9
+SHA256: 2038f7f0fa373fba24978e1467e736b7bbab1bc63b255387f65b61e0ccdcfe16
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.9.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129503740
+Size: 2902
+MD5sum: 6728d9e7c70802a6ec38bfe86e7e75ee
+SHA1: 21d8f677feb581f20440ebf86c21cd42bae3bb72
+SHA256: d18ba11e1b154d4645b4c83ebec19ccd1c01be0c3182096e892175714cb93d0a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.9.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129504677
+Size: 2922
+MD5sum: a0bda76d36ef1d549e4835459f4a07d4
+SHA1: 20c023440b7ea9c15fa602daca6b704635999e4c
+SHA256: ffb667ebbcd913c3f628a1034de7d3b785b88e9a90c3a3e2328bf1afc703b6b5
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.9.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129508272
+Size: 2912
+MD5sum: 9b1e87f93540de40c877d77d03bcaee6
+SHA1: 31630c1716b007284ab2313172ea85aad48e5c1f
+SHA256: 6ee92309c87baad1fa340eb2b0c0b4a145ff720b7eef0540762bf325f77781ef
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.9.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129508300
+Size: 2908
+MD5sum: 4185d68a6f6872f48410b58b772b1ff7
+SHA1: e4e5731e9b9314a795d0ad98c4f79ae935b2a7c8
+SHA256: c1a8861c22da0eba26981446cc94a35b9124a3211a38e241e1604bb98ccdd1f3
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 1.9.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.4.0), debconf, bash, wget, docker.io, iptables-persistent, jq
+Suggests: opentelemetry-bash
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/129509938
+Size: 2912
+MD5sum: 43b6975f050a01738323eb5f6773164b
+SHA1: bbd023f8c6200d1fcf8576182e245075939ce0b9
+SHA256: a9d0515e7a85933105c309396564fb4f3c7c3f4dedb3699754f47ea7daec6c04
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139533211
+Size: 3604
+MD5sum: 64455ad8819c38ea4d40b2fbcb5ae2d3
+SHA1: 31f2a805ae6c9a9c011bc83da3fa6e17d5668e89
+SHA256: fe95c35ae17b90b100de25625df8807e23a70c3698af6fe132ef544fdb729421
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139604343
+Size: 3690
+MD5sum: df3841c4bce8ec5bb0ff3a780a08b669
+SHA1: 56ca50e951b8f644ee62e25db7872d6c9301c85f
+SHA256: 6f9aa47f49f24456929c3b05609e3751c5be026be63933b6833ace750e3f181a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.0.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139656135
+Size: 3684
+MD5sum: 2cd2ed0cfb3cd9e1ef5cdc89539df744
+SHA1: 0390c6108f225e758ebdd4a8d87180cc761d1e1e
+SHA256: 7d9a2ffe92ed18e9adf0d7dd45bf7d98e223d91ea65a02404d772fd9cffa9b16
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.0.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139659791
+Size: 3694
+MD5sum: 26fd4ba5c76ae3edbe88a1e33f60540b
+SHA1: d34d3e08d4d3ad6ea9e2a1ccb101908bc9810fb8
+SHA256: 76eb38ca452bb5efe24f576e84d56846ce217174bb363b6d7dbeeca22298e65f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.0.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139660414
+Size: 3692
+MD5sum: 5df7c5fd388d5059a936e8b2441fb635
+SHA1: c3b772cb872f36b4cb6cc9cec0ee061de64f670c
+SHA256: e5bdacdd28898ebdbf45754ad232c1dc2e4d22999b37da79bfcec17b754eae1b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.0.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 2.5.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139670479
+Size: 3690
+MD5sum: b6b2175c2c323bf827a85df1df721126
+SHA1: ccee85b0c516f9431f03559ac5686597108181a5
+SHA256: 1054d60dfcfbb96e8d31bda0df500697486eb50701fcf1520d0aa6db7f9b622b
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.0.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139688043
+Size: 3688
+MD5sum: 5a35302aa85c32573add83f76fe937bf
+SHA1: e77bed2f42d89fc357d8f6b0169769ce142954a5
+SHA256: 66d28729cf3682b6fded4c2360f1569e19dd40633e0b2f453e3f1a4e7e2dd71a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139824516
+Size: 3686
+MD5sum: a380f2cdee35d46dd2c5ae85da4236d5
+SHA1: e2b6f86e426c244dfe5a898e7c7139e23fc74185
+SHA256: f609d413c49c3465a5231de029429473d90eb62588053d5e245f1c9862e9cb78
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.10.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158237413
+Size: 4152
+MD5sum: 92332c4391fdc6ca38d431fcab5f0439
+SHA1: c2ad3bd8b38e5a2b465d1861a8bb823edb54510d
+SHA256: 4efc00eee03db8061769bd9a25529b62f6ea1f867e6f9afad7d3009d6667d458
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.10.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158237872
+Size: 4150
+MD5sum: 460cda9fa440d40888568d9a94fb1abc
+SHA1: d193bb00655ff1717dc63bd0523dc1eee93cee9c
+SHA256: 9a7faccab6ed3c89bde626e819cad36f355fcb87e19908ebcdd82c744a10a54c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.11.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158406655
+Size: 4138
+MD5sum: 0b08b8eaa3868c4cd575dcf33f0ada25
+SHA1: 57330c019af2dcf99ba618db2a752537b1aa8993
+SHA256: aa8fa324ee1dface3f7444bb717bf775fe7b043942dbb08cb7dfde7d66a2694a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.11.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158467920
+Size: 4146
+MD5sum: 1b395a917ad8ab0000d5d0e72bd13d96
+SHA1: a3e45e464118070c2958cabba094747397ce2920
+SHA256: 734f90acc1d699934de340f077ea43a32f9d573b45dfc571ca7abb94815e1b9f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.11.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158730201
+Size: 4142
+MD5sum: feb8cbe1688d51daa7912f01906b1699
+SHA1: 77152017721a95c73762ad3bc2421b3a459fbf54
+SHA256: 977bfa055f459bcafd6a3a567539151904d23581eac56d59119d8f57be0d29ff
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.11.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158760800
+Size: 4146
+MD5sum: ed6ce1f81aa08a08f2fcd6ca028f03bc
+SHA1: 21ea0917e85a4ef6e8d31967b29b9df8468f2038
+SHA256: e158c9715aa10f6312c8c543c1a6c237e8be0e666df91a9bfa99b61b49311201
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/159137134
+Size: 4280
+MD5sum: 7f1a29e460e4bbd378d638e766ea8a45
+SHA1: 59be2549056c9ab52cea47d0fa24357d06d2a80e
+SHA256: 64dc1de35b3a87908d25ba808b848dc913e07e392108c283c8af0888636bd5fd
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/159400005
+Size: 4282
+MD5sum: b06d99d374bd29f2bec4d19203753739
+SHA1: 0037013e76645f3899d47243d694366f09ee5ac2
+SHA256: b9138abd432b1aefdb61a745546b000fad26c835e9efec9dd4e15a231531a272
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/159403629
+Size: 4324
+MD5sum: bf2f1ed1cd6d6300575d3f63d79de6b9
+SHA1: a6c0eeabfd2e0ebc7063c9a2dc0cbfed85d71e92
+SHA256: 46e4c1a451c738eae406dfa531034f7e4a9415845cd96a51f660bffe19d6f75c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/159450587
+Size: 4312
+MD5sum: 36dbbca29c8929a28d639d40b44ce4cb
+SHA1: 5cf56950e961c148e5400e7edc03f3bccef4e54a
+SHA256: 76364740854d4d29c388b40d24839959e94e652974a2252a9868b4aeb879ee1d
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/161881370
+Size: 4298
+MD5sum: e36bb20f719e1bb4fb002b7751a3ecfb
+SHA1: 2b1eac01ff7b3a46426b29c1f2cf45f46c22fc5a
+SHA256: 6268dc7a4829daea1a1040e100b2b61e4e6a016eae743f0f04daf919945cb65e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/163343595
+Size: 4296
+MD5sum: 1699cf1a1e42fd8db6d530d6696edd35
+SHA1: f2fe899fbbcde720ebb5c3146c4de8a5ae9595dc
+SHA256: 2c208403c99156dd8d87becad378677bd701dba063b6b2efda48a104435a1772
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/164701541
+Size: 4322
+MD5sum: 5fdee7abfe8be289310ce4f10c5cd141
+SHA1: e0baf8b69c7f695486412a228d6b7b4630c742fe
+SHA256: cf7531d82a55ff039396d4d31a07165c4957d57c70aa8c77c91740ff98097250
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.7
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/164973396
+Size: 4318
+MD5sum: 5791649fa1f1194f26c96270ec77348b
+SHA1: c246b3fb4bb9f081d29529f5a3d1ea8fdde41395
+SHA256: 0dc82dee90cd3cf46c2f72cda80237820efefc2554128d74eeedee5ac54c38fa
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.12.8
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/165304971
+Size: 4328
+MD5sum: 250e5aeab5bb9dbbdc39b539aa333ffd
+SHA1: d94d638684c8dee035565949cb02a0729660d2d6
+SHA256: ff680ac1290d4802b1ab7f6e46d09e2c9f57a3c9e194deca0111f5df3c69ea29
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.13.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/278869149
+Size: 4338
+MD5sum: ccfcfe1f0a598d5c97db1932615b7bea
+SHA1: dbcba21962e4a41f9382e729b4729a7679e78d58
+SHA256: 81b076aafc382480f3e0a2b8644742fbfcfcc5c700a86517512328cce777956e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.13.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/283246116
+Size: 4334
+MD5sum: 2b5180f2c08e96313f461c624bacadbd
+SHA1: 02959932bd29461f4fbbe82ff0390b6027e6398d
+SHA256: a870114a845e05a802d43104caf4c140a771cc9d4e199df038a84a0368f52890
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.14.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, philbot-config (>= 4.0.0), docker.io, iptables-persistent, jq, opentelemetry-shell (>= 3.16.0)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/344382770
+Size: 4336
+MD5sum: dd91d4e7fb4f01486f5508e147d98a08
+SHA1: b727581600ab01099de0f03950acba9f49294247
+SHA256: e1faca2a658ff5ba097a6addc0a3449592f708420d822efcdf2e326e0cb21422
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/139903814
+Size: 3686
+MD5sum: e4de83243fe3ad893a60aa512396a94d
+SHA1: b3e7adc83fe5c0311a4c33492ac3e537315574a2
+SHA256: 7e2ea926fdac190539d6db3e5e712f123ccdbdfa71fc9a44420c6f7d14715ca8
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141142816
+Size: 3784
+MD5sum: e46b3d1f9b5013cf73aea2fd06b27d43
+SHA1: 199e1d3af6b58ce94c161e1a89cf1f7ded0a29d1
+SHA256: d8a29f456260d66ce11f9512990e314d62ae82a70f4c94c62a9be99551a5b70a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.0.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141231618
+Size: 3786
+MD5sum: 95021928b5f4a204ca7e0d4b86c6f9dc
+SHA1: a8942fa4c969a16bdab30767254d45e4adf11497
+SHA256: b3d56b9b4f04cdbefd444dfbd068130b41930c57600af159b250095f4b3535db
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141234413
+Size: 3784
+MD5sum: c71c23feb9bef94803fe3086ae4f223a
+SHA1: 89c71ed971011891b4297464f13f22abe888b223
+SHA256: defa82740fdd564107a433292d8926c24e2efae514f1798ef70bb8a424f129ab
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141236093
+Size: 3792
+MD5sum: ce8fa35c0d7b7215d70f37767066414f
+SHA1: 96a8cc018fb66cf78c8a15f0d2ee5b3d37adb8c8
+SHA256: c0acb860722cbd71a8a427c5ff1d0146497f67e10092dc206e294dece347948f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141236437
+Size: 3794
+MD5sum: 0ea82fd4393ad8d27760931f4dbc064b
+SHA1: df39702fd987ad30ad6ed80be1229b9a2e78659b
+SHA256: 3793cf32d08a19f21e2362e602b3299be4ca403d5487e8f0c1114f7cfe9f59ad
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141258327
+Size: 3782
+MD5sum: 9cbb581fbf435f01385a0fa8ca8b8ccd
+SHA1: 8278ffdddf3c087d23e5da3800f08652d49b30bc
+SHA256: 326caa8e0b1f8022e2c503037a0ccb499618026cfaaf5f09ace51d1b892e816c
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.2.7
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.0.0)
+Depends: debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141334537
+Size: 3788
+MD5sum: 18339731ce4b5db375e6a8cd399a2b1e
+SHA1: 8565b7215a2bc97607d8ae0faf3ba0008f713ace
+SHA256: 7a8e67e12cacd7284a5b32b8d09530211c8022379ed45cf1fc8c78a5807a691e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.3.0)
+Depends: debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Filename: Philbot/pool/main/141647332
+Size: 3928
+MD5sum: 263c8134c2a4a7abd20984666a377b08
+SHA1: 02855d42e6e3ca6226b6991758919283fa91a8a1
+SHA256: 8f81720ba1c637e3b57d0c1901144f4f7f7559cd9e960a29827166988b8f27ad
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: philbot-config (>= 3.3.0)
+Depends: debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot
+Filename: Philbot/pool/main/141788003
+Size: 3938
+MD5sum: 8bca49962d898f5d44f1172753a603b6
+SHA1: 174159319d126be74963b49cab58dffee04bea4f
+SHA256: 0b7371eff4ea082f0444885d7fb44af3c6c32bb8a7de7c5a757009c4708503a5
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.4.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot
+Filename: Philbot/pool/main/141974673
+Size: 3930
+MD5sum: 2efa30d8d28c209c26b7ec13019c0b63
+SHA1: 84f69de5f46e07a526c5922ec8939a101f210289
+SHA256: b848108e7aa2026ca1a307d5ea1a6e1cc4a9494d3638d4df20d68e509b7d1b90
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.4.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot
+Filename: Philbot/pool/main/141974807
+Size: 3932
+MD5sum: b73fbc6225bf4d45ad0006caf22d62b0
+SHA1: 192b2b987cb6b64990751e87359ac928f9c93c2c
+SHA256: a893d979db977205a30f6a6f4337296e8aa0aaec74dd3eb6688b6938cb43b90a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/142026805
+Size: 3938
+MD5sum: 938a232776275eb324689b3f51815ada
+SHA1: 24663b6d03890306287dedecb944b75dfdff44ab
+SHA256: 0507924401d17538bb80816d106bd60f75fe3677c17b52627e62ec98bb98874f
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 3.3.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/148179423
+Size: 3960
+MD5sum: 7ad470e47313901d97988274de514232
+SHA1: 6c6c0e1d11ccc484a2a5bfc81bcabce0a7eb0729
+SHA256: 9864db4d55cb8f6505da260571253d26631978f441978e250e25d272b89cd71a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/151791459
+Size: 3962
+MD5sum: f1a99e41cf7d9782d894617c64f6937b
+SHA1: a19857e6a14c77789d98707922416b3c20a16e9a
+SHA256: 560b7787fdd621babf5af01f34b653d0ab883fbbcf9cca18bbb041bb6eccdfb3
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.6.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155076495
+Size: 3964
+MD5sum: 39494550ba909a06dc6338333c18a1fc
+SHA1: c038bc828614056e900102f3bb4ba1b99c2bcce4
+SHA256: 4bcdb5a61f2e8dc665df5972cea7ecbbb0dc27487b6e843fb4f8dac9eb6b1f1a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.7.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155077972
+Size: 3960
+MD5sum: f4d224be953c21513a1bb0ea26bd1504
+SHA1: 549b6f71d71dc4f996f24b9a20248c6076920895
+SHA256: e9433b96092579b68f8d74c6bd20729b248521ad93f6bdcfa5448d276e60c47a
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155365208
+Size: 3960
+MD5sum: 52c248ede8b0af214b3f57c2f24ecc82
+SHA1: 6a7a9636e40abddbae64a2cc442476f12fb6cc9e
+SHA256: 032b6794cbafc9e2f250f6ecdfc2c758b5170bcb16f1e394c1d4c9bb8cda11b4
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155432237
+Size: 3974
+MD5sum: a77c01faa03350fdf109e758c496e0b1
+SHA1: 834455f227dd612b68d3277eee52a2798684515f
+SHA256: 28b46fe7c0975cc73677bbaf6ff18e87c756fd8ef17dd13031a768676c4d84b6
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.10
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, parallel, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155770824
+Size: 3986
+MD5sum: 8afd5e393b451bf1eb5eb635a37e33a2
+SHA1: aca0db62ef244c5df932befe663c0462b07e85b8
+SHA256: ff6a3b9e22ebbb959a6a77b5b45eda663708ed0582d4095118eb5956b6064e49
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155471203
+Size: 3978
+MD5sum: 25037ccec75ff1314218135eb5affb46
+SHA1: 5e382e2dc89c240e8afc08adb6b1b3841098db43
+SHA256: 3a428eaa3f3ebcd8eb1bf331203a62f1bd0ae135f796de831f3b33558f094b06
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155502660
+Size: 3994
+MD5sum: 7ea8544c8056a8c777231fa05cbb32db
+SHA1: 01804e6dd62a3277d5ced7a841135bd1b59c5209
+SHA256: 08ab80f5d7b4d48286456a49a1ad93807b01d1035388871c1c657ec66905156e
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155506866
+Size: 4002
+MD5sum: 5889969c1f0621d6e764b8490a8fd4f5
+SHA1: 2c835eb4e59324ca251d134bc9950af9722100b2
+SHA256: 3da8af059f50454e0f37cf74263c041fc4864aa778412bead6758914ed266b58
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155511425
+Size: 4010
+MD5sum: 75ba05c0fe388225f6faf4c47f056d3e
+SHA1: 3901b1da074ac8cf102ad377d6641665c851690f
+SHA256: 4d049af9793714d4f18e248c90f041ec062b3bea8d688dd55aae4f5e99428f11
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155514917
+Size: 4006
+MD5sum: 73ba1d185ec659fa802471d879d0b690
+SHA1: 3ef6db3fb36ebc1f5c0a148aed443b67bdda9a6d
+SHA256: 2a657861fb990fa4c5b03a04a501e3d5980e6c0ebe56a82cc62b29696e6fa9f6
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.7
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155615320
+Size: 3994
+MD5sum: fb48215c8f3a2f685e344992ac0b3a67
+SHA1: 97ebb7e870f2849c5fb35973740085a8356a46fe
+SHA256: b2670287e49dd4932bfe7db3564f818c9439385a3c0a188720985aa33bc52257
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.8.8
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155633555
+Size: 3996
+MD5sum: 8f51df75c629ae21942eea26ece71718
+SHA1: 8eefbee7830309b795915185b865ae9bead0676d
+SHA256: 460582f8e788dce832c40de33247fe0d7d5b98e2139530ff7e2e85afba3decac
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.9.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, parallel, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155899120
+Size: 4082
+MD5sum: 3200ad620b25d4a41bc9c380a7282c7f
+SHA1: 0013b7f0953cab0f1bf922c1de06ac8060bc9dae
+SHA256: a915d6acee1723afb54394e21703942d9464476277b0b6929eaf0ab02c16c644
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.9.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, parallel, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/155905593
+Size: 4084
+MD5sum: 32dc48f70e0bdeee5ca8fab1c1433218
+SHA1: f3e202edb93684937cfed67c6fe3ef16d70d140d
+SHA256: db0c8d53c6a98364f179cf17fff9ff1de1ee637ce275b0130250a5cf4e8b6d7d
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.9.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, parallel, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/156156779
+Size: 4082
+MD5sum: 1d7a3b766657a3202f22de2ba58e2ab5
+SHA1: 5722c3508f44e40d14b28f53b042920997f24f74
+SHA256: 96fcc02cae6a835aece1ddac8a8e1f9192fb61a9e4201cb79a19200ae5174212
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.9.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-config (>= 4.0.0), debconf, bash, parallel, cron, wget, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/156458023
+Size: 4072
+MD5sum: 99f30fec8fc1e3275e273fd06b2d6228
+SHA1: c3aa59b34064436dda77b67c63f838d042d33f1a
+SHA256: 076b30deca606d9adf4563fe10ef41d0f09b5021b7a19c00308b553a0af90476
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.9.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158121113
+Size: 4102
+MD5sum: a8fb988dff32259ca5232eccccd6b279
+SHA1: ce25db596987a4faabe55390670ea89527aff5c0
+SHA256: 392cbcab71e3b0505e068de5168fce8c10964fdeb2f0b1c8b825c68f9a69bad3
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-containerized
+Version: 2.9.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, parallel, awk, grep, cron, wget, curl, docker.io, iptables-persistent, jq, opentelemetry-shell (>= 2.6.1)
+Conflicts: philbot-baremetal, philbot-k8s
+Provides: philbot-deployment
+Filename: Philbot/pool/main/158218336
+Size: 4100
+MD5sum: 94c6e3cc81a0430312fda471d20e67e0
+SHA1: 6c4243963a1b7c590572189ed7ea3f4495a634b3
+SHA256: cb35a9bef5654b0cbfb1aba4e0cb180c67ed426c95af137b37146351c1bedf72
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot as containerized installation, bot will auto-update
+
+Package: philbot-recommended
+Version: 2.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-containerized
+Suggests: auto-management
+Provides: philbot
+Filename: Philbot/pool/main/141973149
+Size: 626
+MD5sum: c7ff68527c3a2797eb8415b1c0992666
+SHA1: 44794f8450f2f336d1f908ee607926cfd27e5f46
+SHA256: 47360bb3ced502e9c13a1ad94209f6dea829bb08814a0bdec1fd3eb912129958
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot recommended deployment
+
+Package: philbot-recommended
+Version: 2.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: philbot-containerized
+Suggests: auto-management
+Provides: philbot-deployment
+Filename: Philbot/pool/main/142026804
+Size: 630
+MD5sum: 094b9e4c0c05529adc744cf9524cdcc8
+SHA1: 270f16ab76912414865ab2840f658545033d0e66
+SHA256: a94d63ab0afc53bd037b13d6ac52ddabb2a67016d600c827ebd57921e6b3e2ab
+Priority: extra
+Homepage: https://github.com/plengauer/Philbot
+Description: Philbot recommended deployment
+
 Package: opentelemetry-bash
 Version: 0.0.0
 Architecture: all
@@ -5768,6 +9354,23 @@ Size: 44108754
 MD5sum: b50fe10908fa25999ce7cb7b2c028649
 SHA1: 6832267de2379bc822324bfc6fc8aa01d17c9aa6
 SHA256: 9c321e1dad8f6f88c08cc29d261f78d13a4b0d83ab7a66a7b59cca66b38a4e14
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.58.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/457726206
+Size: 44850352
+MD5sum: 08fa0a193f699f2cc9456f3ab4dd64dd
+SHA1: 6600a9fd767fe5d84ee32faf7351cf23ef3bb3e9
+SHA256: e11a83596dd6717291f5b677f7c3ee4e6dc031464f12f55dfd36dd6f3d966886
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
