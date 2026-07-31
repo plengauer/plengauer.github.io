@@ -399,9 +399,9 @@ jobs:
           set -x
           case distribute in
             distribute)
-              GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} <<< ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+              GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
-                 GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment" <<< ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+                 GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment" <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               done
               ;;
             rotate)
