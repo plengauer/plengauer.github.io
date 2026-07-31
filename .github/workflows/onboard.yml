@@ -395,6 +395,19 @@ jobs:
           done
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
+          curl --fail-with-body --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF
+          {
+            "name": "TEST",
+            "personalAccessToken": false,
+            "scopes": [
+              "logs.ingest",
+              "metrics.ingest",
+              "openTelemetryTrace.ingest"
+            ],
+            "expirationDate": "now+1d"
+          }
+          EOF
+      - run: |
           retention_days="$(cat .github/template/token_retention.days)"
           endpoint=${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
