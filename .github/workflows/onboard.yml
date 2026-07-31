@@ -395,23 +395,18 @@ jobs:
           done
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
-          curl --fail-with-body --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF
-          {
-            "name": "TEST",
-            "personalAccessToken": false,
-            "scopes": [
-              "logs.ingest",
-              "metrics.ingest",
-              "openTelemetryTrace.ingest"
-            ],
-            "expirationDate": "now+1d"
-          }
-          EOF
-      - run: |
-          retention_days="$(cat .github/template/token_retention.days)"
-          endpoint=${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-          [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}
+          case distribute in
+            distribute)
+              GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} <<< ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+              curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
+                 GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment" <<< ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+              done
+              ;;
+            rotate)
+              retention_days="$(cat .github/template/token_retention.days)"
+              endpoint=${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+              created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
+              [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}
           {
             "name": "GitHub ${{ matrix.repository }}",
             "personalAccessToken": false,
@@ -423,9 +418,9 @@ jobs:
             "expirationDate": "now+${retention_days}d"
           }
           EOF
-          curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
-            created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-            [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment"
+              curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
+                created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
+                [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment"
           {
             "name": "GitHub ${{ matrix.repository }} $environment",
             "personalAccessToken": false,
@@ -437,6 +432,9 @@ jobs:
             "expirationDate": "now+${retention_days}d"
           }
           EOF
-          done
+              done
+              ;;
+            *) exit 1 ;;
+          esac
     permissions:
       actions: read
