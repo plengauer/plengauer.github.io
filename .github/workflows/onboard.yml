@@ -369,6 +369,7 @@ jobs:
           OPENAI_SERVICE_TIER: default
           OPENAI_REASONING_EFFORT: xhigh
           DEBUG: 1
+          MEMORY: 10
       - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
         run: |
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
