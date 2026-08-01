@@ -325,7 +325,6 @@ jobs:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
-          __kill_switch: 1
           secrets_to_redact: |-
             ${{ github.token }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
@@ -368,7 +367,6 @@ jobs:
           OPENAI_MODEL: gpt-5.3-codex
           OPENAI_SERVICE_TIER: default
           OPENAI_REASONING_EFFORT: xhigh
-          DEBUG: 1
           MEMORY: 10
       - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
         run: |
