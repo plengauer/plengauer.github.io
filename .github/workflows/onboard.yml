@@ -388,7 +388,15 @@ jobs:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
-          secrets_to_redact: '["${{ github.token }}","${{ secrets.BOT_DT_TOKEN }}","${{ secrets.BOT_GITHUB_TOKEN }}","${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}"]'
+          secrets_to_redact: '${{ github.token }}
+
+            ${{ secrets.BOT_DT_TOKEN }}
+
+            ${{ secrets.BOT_GITHUB_TOKEN }}
+
+            ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+
+            ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
       - run: |
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
