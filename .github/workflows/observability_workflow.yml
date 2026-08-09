@@ -4,7 +4,6 @@ on:
   workflow_run:
     workflows:
       - .github/workflows/copilot-setup-steps.yml
-      - Agentic Maintenance
       - Autobackport
       - Autofix Failed Templates
       - Autorerun
