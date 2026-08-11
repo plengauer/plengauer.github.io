@@ -18,7 +18,7 @@ jobs:
       contents: write
       pull-requests: write
     env:
-      GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - run: |
@@ -27,8 +27,13 @@ jobs:
       - id: push
         run: |
           if [ -z "$(git status --porcelain)" ]; then exit 0; fi
-          user_name="$(gh api user --jq .login)"
-          user_id="$(gh api user --jq .id)"
+          if gh api user --jq .id; then
+            user_id="$(gh api user --jq .id)"
+            user_name="$(gh api user --jq .login)"
+          else
+            user_name="github-actions[bot]"
+            user_id="$(gh api /users/"$user_name" --jq .id)"
+          fi
           git config user.name "$user_name"
           git config user.email "${user_id}+${user_name}@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"

@@ -22,6 +22,7 @@ jobs:
     steps:
       - uses: plengauer/autoversion@badee98ba4eb3a38f99cf8acab7f5510e7e8736f # v5.0.0
         with:
-          github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
+          github_token: ${{ github.token }}
+          copilot_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
           openai_token: ${{ secrets.OPENAI_TOKEN }}
           increments: ${{ github.ref_name == 'main' && 'major;minor' || 'patch' }}
