@@ -19,7 +19,6 @@ on:
       - OpenAI Codex
       - Recompile Agentic Workflows
       - Renovate
-      - Report Failed Workflows
       - Update Package Repository
       - pages-build-deployment
     types:
