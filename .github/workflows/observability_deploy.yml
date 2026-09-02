@@ -16,13 +16,13 @@ jobs:
       pull-requests: write
       actions: read
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@4b71071b2b044a176398118df98bb6b897a8458e # v5.61.4
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5bcdcda002db860a69870d21a21bb5d1e5cf64c3 # v5.61.5
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
           secrets_to_redact: '["${{ github.token }}","${{ secrets.ACTIONS_GITHUB_TOKEN }}","${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}","${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}"]'
-      - uses: plengauer/opentelemetry-github/actions/instrument/deploy@4b71071b2b044a176398118df98bb6b897a8458e # v5.61.4
+      - uses: plengauer/opentelemetry-github/actions/instrument/deploy@5bcdcda002db860a69870d21a21bb5d1e5cf64c3 # v5.61.5
         with:
           github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         env:
