@@ -330,7 +330,6 @@ jobs:
             ${{ secrets.BOT_GITHUB_TOKEN }}
             ${{ secrets.GH_COOKIE }}
             ${{ secrets.GH_PASSWORD }}
-            ${{ secrets.OPENAI_TOKEN }}
       - run: |
           repository="${{ matrix.repository }}"
           [ "${repository%%/*}" = plengauer ] # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
@@ -361,12 +360,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GH_PASSWORD }}
           cookie: ${{ secrets.GH_COOKIE }}
-          openai_token: ${{ secrets.OPENAI_TOKEN }}
-          openai_api_token: ${{ secrets.OPENAI_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         env:
-          OPENAI_MODEL: gpt-5.3-codex
-          OPENAI_SERVICE_TIER: default
-          OPENAI_REASONING_EFFORT: xhigh
           MEMORY: 10
       - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
         run: |
