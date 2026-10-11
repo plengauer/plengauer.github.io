@@ -225,6 +225,8 @@ jobs:
           path: ./other
           repository: ${{ matrix.repository }}
       - id: check
+        env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
         run: |
           path=./self/.github/template/${{ matrix.action }}.check
           [ -x "$path" ] || ! [ -r "$path" ] || exit 0
