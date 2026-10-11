@@ -20,11 +20,11 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@v7.0.0
       - run: |
           gh extension install github/gh-aw
           gh aw compile --approve
-      - uses: plengauer/opentelemetry-github/actions/instrument/deploy-local@48918a17e96079ba32d8379d536c89679ab39340 # v5.63.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/deploy-local@v5.63.0
         with:
           github_token: ${{ env.GH_TOKEN }}
         env:
@@ -43,7 +43,7 @@ jobs:
           git push && echo "pushed=true" >> "$GITHUB_OUTPUT" || echo "pushed=false" >> "$GITHUB_OUTPUT"
       - if: steps.push.outputs.pushed == 'false'
         id: open-pr
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        uses: peter-evans/create-pull-request@v8.1.1
         with:
           token: ${{ env.GH_TOKEN }}
           commit-message: "recompile agentic workflows"
