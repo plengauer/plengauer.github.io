@@ -11,12 +11,6 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@48918a17e96079ba32d8379d536c89679ab39340 # v5.63.0
-        with:
-          secrets_to_redact: '["${{ github.token }}","${{ secrets.ACTIONS_GITHUB_TOKEN }}"]'
-        env:
-          OTEL_EXPORTER_OTLP_ENDPOINT: '${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}'
-          OTEL_EXPORTER_OTLP_HEADERS: '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
       - name: Rerequest dismissed approval
         uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
