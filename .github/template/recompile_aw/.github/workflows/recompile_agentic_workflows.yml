@@ -24,6 +24,12 @@ jobs:
       - run: |
           gh extension install github/gh-aw
           gh aw compile --approve
+      - uses: plengauer/opentelemetry-github/actions/instrument/deploy-local@48918a17e96079ba32d8379d536c89679ab39340 # v5.63.0
+        with:
+          github_token: ${{ env.GH_TOKEN }}
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: '${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}'
+          OTEL_EXPORTER_OTLP_HEADERS: '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
       - id: push
         run: |
           if [ -z "$(git status --porcelain)" ]; then exit 0; fi
