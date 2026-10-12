@@ -26,6 +26,8 @@ jobs:
           secrets_to_redact: |-
             ${{ github.token }}
             ${{ secrets.ACTIONS_GITHUB_TOKEN }}
+            ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+            ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - env:
           GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
