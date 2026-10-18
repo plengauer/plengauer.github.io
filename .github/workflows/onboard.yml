@@ -352,7 +352,7 @@ jobs:
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret delete COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} || true
       - if: ${{ steps.resolve.outputs.rotate == 'true' }}
         id: create
-        uses: plengauer/create-github-finegrained-pat@800063745629adc4a5af840e526596a60c6f8b59 # v0.11.0
+        uses: plengauer/create-github-finegrained-pat@845ce620227a132021fe766d198261fdebf62beb # v0.13.0
         with:
           name: ${{ steps.metadata.outputs.token_name }}
           expiration: ${{ steps.metadata.outputs.token_retention }}
