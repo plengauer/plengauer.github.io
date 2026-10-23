@@ -14,8 +14,6 @@ permissions:
 tools:
   github:
     toolsets: [context, repos, issues, labels]
-  web-search:
-  web-fetch:
 safe-outputs:
   add-labels:
   add-comment:
