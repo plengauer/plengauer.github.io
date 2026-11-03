@@ -5,11 +5,9 @@ on:
     workflows:
       - .github/workflows/copilot-setup-steps.yml
       - Analyze
-      - Autobackport
       - Autofix Failed Templates
       - Autorerun
       - Autotriage
-      - Autoversion
       - Claude
       - CodeQL
       - Copilot
