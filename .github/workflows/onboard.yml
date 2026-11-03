@@ -30,12 +30,15 @@ jobs:
           secrets_to_redact: |-
             ${{ github.token }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - id: dynamic
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
         run: |
-          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.fork == false and .visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .name' -r \
-            | sort -R | head -n 256 | jq -R | jq '"${{ github.repository_owner }}/" + .' | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
+          {
+            gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.fork == false and .owner.login == "${{ github.repository_owner }}") | .name' -r | sort -R | head -n 256 | sed 's|^|${{ github.repository_owner }}/|'
+            cat .github/template/additional_repositories.list
+          } | jq -R | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
     permissions:
       actions: read
 
@@ -200,7 +203,7 @@ jobs:
     permissions:
       actions: read
   deploy-action:
-    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-gh-token, deploy-otel-token ]
+    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-otel-token ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
