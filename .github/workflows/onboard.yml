@@ -321,7 +321,8 @@ jobs:
       matrix:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: true
-      max-parallel: 1 # 3
+      max-parallel: 1
+      if: ${{ github.repository_owner ==  }}
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
@@ -334,9 +335,11 @@ jobs:
             ${{ secrets.BOT_GITHUB_TOKEN }}
             ${{ secrets.GH_COOKIE }}
             ${{ secrets.GH_PASSWORD }}
-      - run: |
+      - id: filter
+        run: |
+          # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
           repository="${{ matrix.repository }}"
-          [ "${repository%%/*}" = plengauer ] # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
+          ( [ "${repository%%/*}" = "${{ github.repository_owner }}" ] && echo true || echo false ) | xargs -0 -I '{}' echo do='{}' >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - id: metadata
         run: |
@@ -344,7 +347,8 @@ jobs:
           echo token_name="GitHub Actions $(echo "${repository#*/} ${{ github.run_id }} ${{ github.run_attempt }}" | md5sum | cut -d - -f 1 | tr -d ' ')" >> "$GITHUB_OUTPUT"
           jq < .github/template/token_permissions.json 'to_entries | .[] | .key + "=" + .value' -r | perl -p -e 'chomp if eof' | tr '\n' ',' | xargs -I '{}' echo token_permissions='{}' >> "$GITHUB_OUTPUT"
           xargs < .github/template/token_retention.days -I '{}' echo token_retention='{}' >> "$GITHUB_OUTPUT"
-      - id: resolve
+      - if: ${{ steps.filter.outputs.do == 'true' }}
+        id: resolve
         run: |
           created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/ACTIONS_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
           ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 80 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
