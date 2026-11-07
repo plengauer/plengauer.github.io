@@ -343,7 +343,7 @@ jobs:
           xargs < .github/template/token_retention.days -I '{}' echo token_retention='{}' >> "$GITHUB_OUTPUT"
       - id: resolve
         run: |
-          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/ACTIONS_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
+          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/COPILOT_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
           ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 80 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
           ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }})) ] && echo true || echo false ) | xargs -0 -I '{}' echo reset='{}' >> "$GITHUB_OUTPUT"
       - if: ${{ steps.resolve.outputs.reset == 'true' }}
@@ -369,7 +369,7 @@ jobs:
           OPENAI_REASONING_EFFORT: xhigh
       - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
         run: |
-          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
+          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
     permissions:
       actions: read
 
