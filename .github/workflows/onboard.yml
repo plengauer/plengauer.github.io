@@ -322,7 +322,6 @@ jobs:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: true
       max-parallel: 1
-      if: ${{ github.repository_owner ==  }}
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
