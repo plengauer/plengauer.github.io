@@ -22,7 +22,7 @@ jobs:
     outputs:
       repositories: ${{ steps.dynamic.outputs.repositories }}
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -30,12 +30,15 @@ jobs:
           secrets_to_redact: |-
             ${{ github.token }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - id: dynamic
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
         run: |
-          gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.fork == false and .visibility == "public" and .owner.login == "${{ github.repository_owner }}") | .name' -r \
-            | sort -R | head -n 256 | jq -R | jq '"${{ github.repository_owner }}/" + .' | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
+          {
+            gh api /users/${{ github.repository_owner }}/repos --paginate | jq '.[] | select(.fork == false and .owner.login == "${{ github.repository_owner }}") | .name' -r | sort -R | head -n 256 | sed 's|^|${{ github.repository_owner }}/|'
+            cat .github/template/additional_repositories.list
+          } | jq -R | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
     permissions:
       actions: read
 
@@ -47,7 +50,7 @@ jobs:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -55,7 +58,7 @@ jobs:
           secrets_to_redact: |-
             ${{ github.token }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
           case "$(curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/default-setup | jq .state -r)" in
             configured) curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/code-scanning/default-setup | jq 'del(.schedule) | del(.updated_at)' > code_scanning.json;;
@@ -86,7 +89,7 @@ jobs:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -94,7 +97,7 @@ jobs:
           secrets_to_redact: |-
             ${{ github.token }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
           [ "$(curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets | jq length)" = 0 ] || exit 0
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }} -d @./.github/template/settings.json -X PATCH
@@ -110,7 +113,7 @@ jobs:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -150,13 +153,13 @@ jobs:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
           secrets_to_redact: '["${{ github.token }}","${{ secrets.BOT_GITHUB_TOKEN }}"]'
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: ${{ matrix.repository }}
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
@@ -187,20 +190,20 @@ jobs:
     outputs:
       actions: ${{ steps.dynamic.outputs.actions }}
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
           secrets_to_redact: '["${{ github.token }}"]'
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
           ls .github/template | while read -r automation; do [ -d .github/template/"$automation" ] && echo "$automation" || true; done | jq -R | jq -cs | xargs -0 -I {} echo 'actions={}' >> "$GITHUB_OUTPUT"
         id: dynamic
     permissions:
       actions: read
   deploy-action:
-    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-gh-token, deploy-otel-token ]
+    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-otel-token ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
@@ -208,18 +211,18 @@ jobs:
         action: ${{ fromJSON(needs.list-actions.outputs.actions) }}
       fail-fast: false
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
           secrets_to_redact: '["${{ github.token }}","${{ secrets.BOT_GITHUB_TOKEN }}"]'
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
           path: ./self
           fetch-depth: 0
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
           path: ./other
@@ -228,7 +231,7 @@ jobs:
         run: |
           path=./self/.github/template/${{ matrix.action }}.check
           [ -x "$path" ] || ! [ -r "$path" ] || exit 0
-          ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ github.token }}" eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT" || true
+          ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ secrets.BOT_GITHUB_TOKEN }}" eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT" || true
       - if: steps.check.outputs.deploy == 'true'
         run: |
           find "$(pwd)"/self/.github/template/${{ matrix.action }} | while read -r file; do
@@ -289,7 +292,7 @@ jobs:
   maintain-gh-cookie:
     runs-on: ubuntu-slim
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -318,30 +321,34 @@ jobs:
       matrix:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: true
-      max-parallel: 1 # 3
+      max-parallel: 1
+      if: ${{ github.repository_owner ==  }}
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
           secrets_to_redact: |-
             ${{ github.token }}
+            ${{ secrets.ACTIONS_GITHUB_TOKEN }}
             ${{ secrets.BOT_GITHUB_TOKEN }}
             ${{ secrets.GH_COOKIE }}
             ${{ secrets.GH_PASSWORD }}
-            ${{ secrets.OPENAI_TOKEN }}
-      - run: |
+      - id: filter
+        run: |
+          # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
           repository="${{ matrix.repository }}"
-          [ "${repository%%/*}" = plengauer ] # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+          ( [ "${repository%%/*}" = "${{ github.repository_owner }}" ] && echo true || echo false ) | xargs -0 -I '{}' echo do='{}' >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - id: metadata
         run: |
           repository='${{ matrix.repository }}'
           echo token_name="GitHub Actions $(echo "${repository#*/} ${{ github.run_id }} ${{ github.run_attempt }}" | md5sum | cut -d - -f 1 | tr -d ' ')" >> "$GITHUB_OUTPUT"
           jq < .github/template/token_permissions.json 'to_entries | .[] | .key + "=" + .value' -r | perl -p -e 'chomp if eof' | tr '\n' ',' | xargs -I '{}' echo token_permissions='{}' >> "$GITHUB_OUTPUT"
           xargs < .github/template/token_retention.days -I '{}' echo token_retention='{}' >> "$GITHUB_OUTPUT"
-      - id: resolve
+      - if: ${{ steps.filter.outputs.do == 'true' }}
+        id: resolve
         run: |
           created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/COPILOT_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
           ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 80 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
@@ -352,7 +359,7 @@ jobs:
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret delete COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} || true
       - if: ${{ steps.resolve.outputs.rotate == 'true' }}
         id: create
-        uses: plengauer/create-github-finegrained-pat@6d641ed19b41a71fa413ac9d1508c1b79a9146a7 # v0.8.1
+        uses: plengauer/create-github-finegrained-pat@845ce620227a132021fe766d198261fdebf62beb # v0.13.0
         with:
           name: ${{ steps.metadata.outputs.token_name }}
           expiration: ${{ steps.metadata.outputs.token_retention }}
@@ -361,12 +368,9 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GH_PASSWORD }}
           cookie: ${{ secrets.GH_COOKIE }}
-          openai_token: ${{ secrets.OPENAI_TOKEN }}
-          openai_api_token: ${{ secrets.OPENAI_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
         env:
-          OPENAI_MODEL: gpt-5.3-codex
-          OPENAI_SERVICE_TIER: default
-          OPENAI_REASONING_EFFORT: xhigh
+          MEMORY: 10
       - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
         run: |
           GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
@@ -381,23 +385,41 @@ jobs:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d8cb00c1ec6a0a9772f30e7c3045d87b9f6609e # v5.58.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
         with:
-          secrets_to_redact: '["${{ github.token }}","${{ secrets.BOT_DT_TOKEN }}","${{ secrets.BOT_GITHUB_TOKEN }}","${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}"]'
+          secrets_to_redact: '${{ github.token }}
+
+            ${{ secrets.BOT_DT_TOKEN }}
+
+            ${{ secrets.BOT_GITHUB_TOKEN }}
+
+            ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+
+            ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
       - run: |
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
+          curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/agents/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --app agents --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
             curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} --env "$environment" <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           done
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
-          retention_days="$(cat .github/template/token_retention.days)"
-          endpoint=${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-          [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}
+          case distribute in
+            distribute)
+              GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
+              GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --app agents --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
+              curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
+                 GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment" <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
+              done
+              ;;
+            rotate)
+              retention_days="$(cat .github/template/token_retention.days)"
+              endpoint=${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+              created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
+              [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }}
           {
             "name": "GitHub ${{ matrix.repository }}",
             "personalAccessToken": false,
@@ -409,9 +431,9 @@ jobs:
             "expirationDate": "now+${retention_days}d"
           }
           EOF
-          curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
-            created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-            [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment"
+              curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
+                created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
+                [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * $retention_days * 80 / 100)) ] || curl --fail --no-progress-meter -H 'Authorization: Api-Token ${{ secrets.BOT_DT_TOKEN }}' -H 'Content-type: application/json' '${{ vars.DYNATRACE_TENANT }}'/api/v2/apiTokens -d @- << EOF | jq .token -r | xargs -0 -I '{}' echo "authorization=Api-Token {}" | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment"
           {
             "name": "GitHub ${{ matrix.repository }} $environment",
             "personalAccessToken": false,
@@ -423,6 +445,9 @@ jobs:
             "expirationDate": "now+${retention_days}d"
           }
           EOF
-          done
+              done
+              ;;
+            *) exit 1 ;;
+          esac
     permissions:
       actions: read

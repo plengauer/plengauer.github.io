@@ -311,6 +311,1148 @@ Priority: optional
 Homepage: https://github.com/plengauer/thefuck-ai
 Description: An AI-powered shell assistent capable of repairing commands
 
+Package: gitaptly
+Version: 1.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125398058
+Size: 2474
+MD5sum: 707e3efeadafb4cf6aad49f338ad6641
+SHA1: 977165990088b0746d62ba0d3d711a4e8e9e2df9
+SHA256: 97149fc8b362c6724a08021b7d79ecee0209b48bcbd51047f6ab3b5ff07eeffc
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.0.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125400174
+Size: 2528
+MD5sum: d9281566b798a6b6b1ef8a52d6ef0876
+SHA1: 2da5e9ed90f302ae2f6304852589a998b8a4546c
+SHA256: 5dd044821e922b663db5401104d9122f3c6fdb2f31364bfe2093443b5423e579
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.0.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125404558
+Size: 2534
+MD5sum: 1053323a4eaae6dda241f65d735fc19b
+SHA1: a701a84a42c9d1ca529d2edac5b28503b5664c24
+SHA256: cf0b9e17eeb36870a7fa62110572336af0bbf7000576aad00ba51290defeff17
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.0.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125405464
+Size: 2548
+MD5sum: 75afeaa59cd5f9974ab232be63409500
+SHA1: 5896323164ea3597faf2894a2f6569f7310aef56
+SHA256: ae6c0e019bfcd80fd4a54fdfbf920ae643aae6021b22629154b9706a30699bbc
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.0.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125421065
+Size: 2614
+MD5sum: 174d5fc7759d6d5d25ebf2ac4511c377
+SHA1: bc2e3a487ef907b264c2bc01028b587e5843e3cb
+SHA256: 8672a419ac5aa37e3a47ef9200c6ab08b91ef7502a4d088c0661fb95324dbe6c
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.0.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125428916
+Size: 2622
+MD5sum: d249d07c0bc040eabea511933323e0a6
+SHA1: f0daafca32ae0cb9a89241fd411574c99877ad5a
+SHA256: 68c04979effa3103f760fb826d17314065f08f188538406a63d2efd43e533cff
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.0.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125431203
+Size: 2658
+MD5sum: 6487da25693e600c9e783885e49eab33
+SHA1: 7f29dd5823071bca91cddbeaf58028e4fabaf5bf
+SHA256: 8c85cdff8b2573faff9c7b842e3028721bd8b4f0047f3828d2529c02012a7658
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125489668
+Size: 2656
+MD5sum: 21d4ea0cdf921fb16900f1566953d3eb
+SHA1: c81e670fbe3d88e8823155b51466f4aa4affe31c
+SHA256: e8b1d98e148f64f352f2dde7b59d31144708608ab987e65546b13e405ae815f7
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125551657
+Size: 2662
+MD5sum: f1af669483125d7f538344d0b327b89a
+SHA1: 0af394d2462c3c99f63abfd08aa2b8584bd75b79
+SHA256: 7d14ab105885a19dc3759babf6b01b2ace9d4343e603c855de96dd33780672e4
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125641082
+Size: 2876
+MD5sum: 657582cff2391cbb1c2b8b1735fb4397
+SHA1: 2e3419cf29ed6d461d1d9b24e30ac574ed126482
+SHA256: a466f17eabe66dc451f56b9caf961ad1f94266ae1db11d3b6aec0dbd2038afdc
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.3.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125682903
+Size: 2920
+MD5sum: 30b9d8f18f68bc9ac22a3289f21b8a08
+SHA1: 0ea3673fa1a6b01e9fef62fcf4ec7a32255a6045
+SHA256: f7305dfd4aa8429ed77ee830df7593bb339ee509f0e1d88905c38ad9fdd8fae8
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125683808
+Size: 2922
+MD5sum: b461d55553f500a812cff08c17e0cfef
+SHA1: e5087042574f932df33908491518a45d79cedfc8
+SHA256: aab423d9ae67d44354b23b4a03e7c65950baaf0154b97d32c034d8f43fb06322
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125741284
+Size: 3106
+MD5sum: 46967ccb8ff0f9a555ed171adadc36d7
+SHA1: cc57d54b474057a3a61c36fbd31b9d1d1356aefd
+SHA256: 05411f8c8f4d27bc1799ac991f127e7e3f2ef7996be4026bb53e06718e894b5d
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125742224
+Size: 3104
+MD5sum: 15a486576fda44ec388c52cf6bf391d0
+SHA1: 960e63e6356fcf2760831506af226c7666647fbc
+SHA256: e32f58f8b356d4f4d28428673d880b80d7d1862f4a06d3b3aaab968751922a6c
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.5.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125744486
+Size: 3122
+MD5sum: bbd1bec2ee7d5cda3260dce21bbd77a9
+SHA1: 4cad1305718113dbcf2613e6fbfb44863839074f
+SHA256: e065e7d34d001f221d3f694f5e06961839674b2f13289e37f2e4bb102f4878da
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.5.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125746513
+Size: 3124
+MD5sum: c087b927870f5e09b5b18ecfbd2c4a54
+SHA1: 97d41bc6cd52fefb8f0ad19d1d36e931443993b3
+SHA256: 8da522255c1bc4b7b2978740a519a3c15ddb254a82e67b129419e64f4a9970ef
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.5.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125746668
+Size: 3122
+MD5sum: befcf5ca31447fd917e6f65b23950557
+SHA1: c5b8cb4cb53423071d5d5be43cea6d4756d25744
+SHA256: 60b617d1f565223b4bf2fcd2ac4262d7c29a474b75567cd4b216f7bc5a77e44d
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 1.5.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125749862
+Size: 3050
+MD5sum: 2ffa76eb1d17384534f1ef39ce81ef23
+SHA1: 930e84d204350131a6bfc1d2288c5ea638a9ce49
+SHA256: b8f8086d35ef460d429eadc0bcc52a732175199de9b37e4b9b29bf803c2fbdc7
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125821189
+Size: 3140
+MD5sum: 6579aa2b80d35102ccb5ab397a6d969b
+SHA1: 32f2db943ad0e74294737563d8be058bec024ef0
+SHA256: b83d7dbd45859feca6816cfeb47919e457d2937e8e63321745c537648efb247c
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125835894
+Size: 3138
+MD5sum: 61a90f0c46a4a8fe8950a760dfba91c4
+SHA1: 78927cf27e4c959d5be2f25858aa66eb85908c6f
+SHA256: aca94be094dac6782c6d520bc295c4be768306cc9b617a2184988522d9daf99e
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.10.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/130083065
+Size: 3988
+MD5sum: 09cc983af555e9e8b292fbf95822d3e5
+SHA1: 100a7e6f8117a28689351ca8212821fe80bb6733
+SHA256: 5390875aeafae734b43a9d5a1f4ede00b804cfacb060a85004e3e2864d39e5dd
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.11.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/130383998
+Size: 4020
+MD5sum: 508ba4393c26177fcc565243c123c6a1
+SHA1: 3a31a0620499dd3b05b86ce43619c80b75af1812
+SHA256: f6deeb1e6660c6379d197f3984cea248e642a07fdcea4a93871e705c2144ea9f
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.11.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/130573818
+Size: 4024
+MD5sum: 040846daeb296950b70355854dffc7ad
+SHA1: 1139a2085e36db6a6676656e44e5a8c6e76c377e
+SHA256: 120699375b617e713bf6e158bfcec63b66f391b5e35e5356d5a3fe8e3712e0f8
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.11.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/130574890
+Size: 4066
+MD5sum: 476a6336fcdfb6dc0b72b514efa3c973
+SHA1: 567f53c7267f425b19bff2d1635e93c69a8ac68e
+SHA256: ae7d548e22756a516094157a954ff8e59d3af07e9c8ae1544bce256c2ef004a6
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.11.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/130582741
+Size: 4034
+MD5sum: 3f5a75f72237b0f38a6b1835b250129a
+SHA1: 1e6cbfb839b82017d195289cb074556db01ffb34
+SHA256: 5b4a4fb561351cb42f17cce9a80a50b3a3dbed89446626c56fb8032b6ed0c17f
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.12.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/131488963
+Size: 4034
+MD5sum: d7e3fcef3767fe885dc001d793403d93
+SHA1: 4230bb4275e44b5726c4efdd40a62eb46f59b7da
+SHA256: b4d38c44efbd428181e9fe5fc0888ff889c46a98472c11f5af464380a84c4b23
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125983791
+Size: 3140
+MD5sum: 95db227ef30f85834d79303f81c37996
+SHA1: 3a5af807e729f41df4f6d493400ac5d9460cc390
+SHA256: 775589f0b5dd9c81737948bb6a43261007ce866e315450fb3759fc0257b84d00
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/125986843
+Size: 3202
+MD5sum: 0466d6daeb960e975da688abaf81a44c
+SHA1: 7c9e3dbec43306501205d94ffdcc96d9149d54a2
+SHA256: bac5371e529c6f2ffa86e256d01421b89e8753356b58bb711e047c7d1bcddcd3
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/126070656
+Size: 3686
+MD5sum: 64e0cf11636ecfd80de7de9d52397cd6
+SHA1: a719c230fcb3593cb4533c91c34a22c5eb7c636e
+SHA256: 6b2c178f13951c5d28c18a6804609942febf2db514024169b5f24ceb4dbb9201
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.3.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/126072284
+Size: 3706
+MD5sum: 846b939fe7e590a6f23f2d2db26124cc
+SHA1: eb50467817efe5a47f0306fcc506e84d7717cb9b
+SHA256: 2ae7e1057b4177dd9d2864eef38646021886f7f2e436dfd19237cebd9c1e82a5
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.3.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/126072632
+Size: 3706
+MD5sum: 2779713094f1d54d4d956f6ffa3b4f68
+SHA1: 2e00ed7ae7b72763f757e0239124177e881ba075
+SHA256: d67e46a380ce7c0d16046e39041ea2b1b830b5908ab43b7265a058fbbc74274c
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.3.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/126247747
+Size: 3708
+MD5sum: 023f219037d037873bbd6630f3a276ea
+SHA1: cb36c8e9f2c6c181b8457cdc4b22701ffd97561c
+SHA256: 555edf6715c4941a4f5b923f9bf8db7375d2764a60afdc0090eda37c95cddfef
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, opentelemetry-bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/126316250
+Size: 3728
+MD5sum: aa4e6dde88b951a3372488baa385a7c2
+SHA1: 52044e628ba91906e69092ce4ea93793f652f338
+SHA256: 55d224d9cae41af09895e5c9f2814c66e088241931e881f6bdf2b2e2ce19836c
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.4.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, opentelemetry-bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Filename: GitAptly/pool/main/126324944
+Size: 3752
+MD5sum: d620b93951411b25be05111342f53431
+SHA1: 1224c1afbca3a854d9aa12d4fdedd2d718807dd2
+SHA256: 8332b338c355868fd0cb64092c8f85719a8eed8aeac26ca5bdee82cb76beb164
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.4.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-bash
+Filename: GitAptly/pool/main/126466402
+Size: 3762
+MD5sum: 13f78318337b9cae410a03fbf6ad515d
+SHA1: ea9e2a4ec3d7b308cc8418d2c5b4b8fc6b3f9296
+SHA256: 3a02f7c3d2d427942a7e2efce40c5608e000a97c7edbcfb48cccaae34ff9ac12
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.4.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-bash (>= 0.1.0)
+Filename: GitAptly/pool/main/126471748
+Size: 3772
+MD5sum: 2a3982f746b30090925767fd8ae8c540
+SHA1: 4ef57bb33a34ea1bc42d53400fdae5d656905fc4
+SHA256: 783e0e98f6ae4ea9973fb7a3997b0b214b161a6cd7b413fd419176d2e3a30cb1
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-bash (>= 0.7.0)
+Filename: GitAptly/pool/main/126865703
+Size: 3786
+MD5sum: 8b10cf5cf555d397e2c9ea34ca626128
+SHA1: 356012fab9cb4f0d343f7430c67c437647e1d1c1
+SHA256: cea7ec824a140ddc7b630dbd2ae3a629f43c20ed930f5fb23fd8cb43a585c919
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-bash (>= 0.7.0)
+Filename: GitAptly/pool/main/127230779
+Size: 3786
+MD5sum: 8848d7e6c4bbf36bc4b2ee3e07bd31e6
+SHA1: 00645fd5df35e29bab53445f911576598e6eba5d
+SHA256: b67c51c6270bbb80b338105b914500139241b549de35076dbf293fbbd183f0f9
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.7.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/127529759
+Size: 3794
+MD5sum: 29c86ec410344fdd94b2cd8aaa99e44e
+SHA1: 42a5921e191c46c8fdfc3aea23277c968a01ee70
+SHA256: 3d863a148577ec4d9642c37f5ef63a2b50ad89632047df84e823ba4a334cab7f
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.8.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/128203023
+Size: 3822
+MD5sum: 1c290def29a496720a68b8cdbeb2b9b9
+SHA1: 8bb6cf87af2ebd70893827faa1268e1949113e35
+SHA256: 8ebc82ff72a1ddaae694051d6a827c694d3cc03f4915600bb4c090e17415de2f
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.8.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/128375591
+Size: 3820
+MD5sum: ce261cd78ef9cd02c5de6b183424b55f
+SHA1: 3c01e63f53e51c09f0cf556dbf5c9049dc21b799
+SHA256: 1dd23bdf1c4e1047da0bbe15f3238f78813109a25d99b95d8069ec746a846b3e
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.8.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/128575851
+Size: 3836
+MD5sum: d05d1a66c7009ef521e5320ffdb0fae6
+SHA1: 0f7c00530debeaa16edd9645ed19a2a192eca202
+SHA256: cdca8582be033ef7c00a0d35ce02468c786633d55d69e33aff4802bef86862cc
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.9.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/129796833
+Size: 3908
+MD5sum: 4aa0016be852b944c151e7e3ad642d27
+SHA1: 7908a69d0f0098cf98fcb5e5188b9bc339b5bb0d
+SHA256: e3d84e07e08c5da056902613f8dc991d72fe6c02023f07910e9520d414974b3b
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.9.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/129861805
+Size: 3918
+MD5sum: 28de562ba17e1cce34507b613251cc6f
+SHA1: ea4eb1b33ad47b991831b20c1528746f673f8744
+SHA256: 7845e564e1f9d8312fdf188872d96b4b674a596065713fbeeb5562cdfc6d62ad
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 2.9.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/129953764
+Size: 3920
+MD5sum: fa36275ece29011c882fa9ed3a28ea9c
+SHA1: 8c67c015216752d822ea5f99a727c007f38515f0
+SHA256: befbdc4e80f5e52fa61ef8177cd7e56d86fedec7648ee03873eeb1fda81b23ec
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.1.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/131661173
+Size: 4068
+MD5sum: 3b9c9f598d7c387c739fc1f30220ce69
+SHA1: f11f8bf233ae521ceb9b1a62fffb7379e5bd456b
+SHA256: dd40601dbd1415fee8dc7b2fbad0bb80949c04467b16fc93b188cdf58c50b2e1
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.1.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/132168978
+Size: 4048
+MD5sum: a5ad5d4e9ea31734ce6e320926685fde
+SHA1: 0a1fcb88c7dcd08203c5d39112d53113556fa2a3
+SHA256: dcbad1c0ca70bb3a69964f41bb0afe3f35776cdf4d19de9d0d96234d6c749288
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.10.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/163120757
+Size: 4712
+MD5sum: 6f878ca114dce5dcce3924e9bbfafd5a
+SHA1: 5894bdab5a281462498fa4e278d66644bbfd3eae
+SHA256: 18c9ec4f56b2b08e320149f00ba17f75c67c84245de97c2003454231ba4326e8
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.11.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/164708871
+Size: 4726
+MD5sum: 3e8a0f0389cfa326187530c124289e78
+SHA1: 214caa261a7dff00241f2f164f5555cf32153305
+SHA256: 81493eb9267139c9756bd1ae6147dfaeae14b95e5be4f17bfe17e622e0136d7f
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.12.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/174073243
+Size: 4722
+MD5sum: 3ad8ba72f2c4faf64e87026aec3cca74
+SHA1: 9b5bc3f0d18447f714c3aa9f7e49a5f446644d10
+SHA256: e2d45e126e9d69164fc42a1bcbcdf40c4be32c9ca94916758111e381c60221bb
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.13.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/176795507
+Size: 4720
+MD5sum: 124d9da2b30e3d3154c04d4bae49ace0
+SHA1: a86aa09a8d072ce7e47fb0ddfcd774603b415a80
+SHA256: abbbf801f84f4030c8999131927b40517c94b60b94639f4588ce3d4926285eb2
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.14.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/178149163
+Size: 4720
+MD5sum: 823c75bcde2444b73f54aaf17f833bfe
+SHA1: 7106ad6323589201ae21354beeb9e76256b63575
+SHA256: 5e2862180f8641c114d548dae5da5d5a15ccfb0f33ef41eacdc5958ab01d12ac
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.15.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/179479578
+Size: 4728
+MD5sum: 023b62ac8f7d66a3ed237e18f08a1deb
+SHA1: b1cc58d1f0d9316e285a1812d9481129db1ec758
+SHA256: c35ec290ab6df53116bff3bf6a8d87d377a264bf91445818e614223ca55d4a29
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/141791239
+Size: 4090
+MD5sum: b403d03b627e6f1a1a3cf7121f8d0e66
+SHA1: 14803a36cc19eebc36bde75dcd9ee8ae7896b6f2
+SHA256: 81180928e5b969698b8f526cbf6c7e568a2470f78f8a85e5482b055a460c6136
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.2.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/141791799
+Size: 4090
+MD5sum: 65e163c0e035944abfcb7d0debec29ec
+SHA1: 43a94d876cf098a619cf98edae632f8c0a2bee68
+SHA256: 884e8266fde0d904a4a0b0fc8ee44557baf12459118873b560f22ace1f6cfacb
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/151730857
+Size: 4046
+MD5sum: e797881230336178deaa908e0ba6594a
+SHA1: 62b20e8700e8a2aaf023e97eca237b3b9256767c
+SHA256: e2c64ef94397226d03b7644520b997e0de0f280126a9f0d2ebe2bf0a9ff69a4c
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.3.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/152956041
+Size: 4030
+MD5sum: 55f654d66c0034be42c1a0f1266e570e
+SHA1: 24bd35d71ddc9f2bf7fa83fabc14531f6824fce8
+SHA256: 1a56bbb7d2196c64ab31cc3b3a4e9baae6869ebebd61dc70781dd6e31e3c11f7
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/153130653
+Size: 4046
+MD5sum: 9f567fcf03fec84c68e8a8ce9951460e
+SHA1: 0bc6527fafd6c28a784be7eb2981b7d2a494113e
+SHA256: e8f7ba41db70aa85a5a5474bad7dede188500b14e9084b5b5a7343641dad3b7a
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.4.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, moreutils, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/153179766
+Size: 4050
+MD5sum: 91084be9a70696b5a88248865d0415ef
+SHA1: c4d175e767af77a37a46f7888df4e019d25c3e80
+SHA256: 48f7b4c54a787414a7df1d7ba6172d546994d9e039bfb7b60a300287bd152a44
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.5.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/155810148
+Size: 4142
+MD5sum: b32b4ffc570f6474e7347ba3b8b7d916
+SHA1: 6beecbaf19ba82c0fe0c078775ddebff9402c7bb
+SHA256: 86d9141ca3d3b91226c87880d87ef52f31c1c8375e672109fab95f7d2c0e7e18
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.5.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/155898090
+Size: 4150
+MD5sum: 86b32d012ac7b99b60e56fc9d120b8e2
+SHA1: 832ab9a21008798111fa945abcc74a65e9706df9
+SHA256: b6d8c56a56ca88a0bb26dfad11a1682c29b12bdec49d0257fb1d0a80063248ae
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.6.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: debconf, bash, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/155899072
+Size: 4278
+MD5sum: a13b2c076ea41175f6979fe0fcede8eb
+SHA1: 81f00b8119dde4a0e75da64825adf88d75207dab
+SHA256: 053bd935ed191821ce4f4f89a74a7f157576002ceb6d018e2e746c42e3b20148
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.6.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 1.0.0)
+Filename: GitAptly/pool/main/158038558
+Size: 4288
+MD5sum: 94dfd24aa97d88b54a41e7f90dc99061
+SHA1: c23fa6ab9da2a13f8243eaa4ef1701290b5887e5
+SHA256: 55a6eea7fad2295eddf4c640b988a305295e3491c9e4b35ab4a25b001ac29f8a
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.7.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 3.16.0)
+Filename: GitAptly/pool/main/158406963
+Size: 4268
+MD5sum: f4af2167e003842a263f9151bbba3fa0
+SHA1: 956a76770310e2564007cf68237e39b05c5b0bb6
+SHA256: e4f4b3b7955bcc7783aee5f16fc412d169b83e4c640c71168fd038ee369617b4
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.7.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 3.16.0)
+Filename: GitAptly/pool/main/159248127
+Size: 4384
+MD5sum: 4b3b5f90e91641f74370d5c3de9a8e2e
+SHA1: d0a680074f6c25622c3951988e5f29d374a18cb0
+SHA256: 3bf88a8e474bcfd598d82f8a010036781d22021e694d05bb7c4543506d71b737
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.7.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.0.0)
+Filename: GitAptly/pool/main/160523457
+Size: 4408
+MD5sum: 11fee868e4c16bc316ef266548c0a0d8
+SHA1: 144d6b15662ffb85c6f66306dd059e609fcbd3b7
+SHA256: 0bd7894dd439ef95dc557d99c66eb5da741bc03c33abf8e3c02190a66bdd6765
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.7.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.0.0)
+Filename: GitAptly/pool/main/160546677
+Size: 4420
+MD5sum: 0607547f5b853157252fdda53bb91d87
+SHA1: 7e067a156995766f5f3cefd64096a5265dd619a1
+SHA256: 9c3c10b1b44516f283af37310a3cc11a3db7c6990155c4ced5e2a0f28e85c07c
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.7.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.0.0)
+Filename: GitAptly/pool/main/160637984
+Size: 4420
+MD5sum: ff1f859e85ef0345e3ba50f60dde71d7
+SHA1: 52b984489feda3a750741fdf9cfd3a8ce8a405e3
+SHA256: ebbdbaa13ada5e243eaa4fc2db176441b37c9edd277a92a0dc6823d672a5534e
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.7.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.0.0)
+Filename: GitAptly/pool/main/160645675
+Size: 4440
+MD5sum: df5224e3cdddbc7619facd23bc1f61dc
+SHA1: f1ce7159f19089a320b0ba1a0a387a7cde940883
+SHA256: 4236cf630237e2ef9e6a922efb38c5456c032538a9cf7e36463ce646a508c095
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.8.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.0.0)
+Filename: GitAptly/pool/main/161504611
+Size: 4442
+MD5sum: a16bd6e1241e7114bde2e8371dfdb2c5
+SHA1: fc5af650a045affd655b1511c54cf6826b1479d5
+SHA256: 03b5d5564bc61bf450e275ec71bce848f488e612c78d872d0fbe8113e8ad311e
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.9.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.0.0)
+Filename: GitAptly/pool/main/161789140
+Size: 4500
+MD5sum: a23a5165fb7181a17bd83e8314fb5373
+SHA1: 9111a1a0fdb762b5092518fe8a9ea8f5afb64258
+SHA256: 3c48c8e6498b4183ff6f3b3fcd8efbea19bda7194412d6088d84f42c99cf8a82
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 3.9.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, python3, python3-pip, python3-venv
+Suggests: opentelemetry-shell (>= 4.0.0)
+Filename: GitAptly/pool/main/161822779
+Size: 4506
+MD5sum: d12cbc07beebe1538963bf27365cdea0
+SHA1: 01d69680dbeb6da7d72c5301371f2061614daa93
+SHA256: c08ab905de829d656d05b8e39120c8b0c0808a3c3cbfb8e65996645d02892af7
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 4.0.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, abom-http
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/179707124
+Size: 4642
+MD5sum: 358bba638535e163ae0c8af16ef195e0
+SHA1: fb68c4120cac27024ac858269960165323200de3
+SHA256: 2806e43a50588a36c182e9d39c8bc32dab30845558fcfdd479fda7b16b42b172
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 4.1.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, abom-http, ncat
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/180883846
+Size: 4530
+MD5sum: 186f35389fbbd78033f770a033b3f277
+SHA1: 3797a7d2ea992564d99f4f9385714dc2cace7598
+SHA256: 943b5b5d631558abecd28748b3ed95594f59ea199b2b7c9d8c7ef8b1486688b9
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 4.2.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, abom-http, ncat
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/182315944
+Size: 4530
+MD5sum: fc8455345fbdc4b5cbb39e5272e83f47
+SHA1: 9b5e0feca2374b2be594e0d3b8ae6f7814cfac44
+SHA256: 2b6e1b4f10eb6d65124e3806c67066c3bd472f6f35f9464806af538be63e4a07
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 4.3.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, abom-http, ncat
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/183780271
+Size: 4528
+MD5sum: 850a37d8fd662f631fdbd137869b0975
+SHA1: e715585889cb45986b8921646a8a43a60e5ed35f
+SHA256: 324857f662308ea8793f70fc0693a68918e35ad24e1eba7bf6af7c4cb8ff0ab5
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 4.4.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, abom-http, ncat
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/186348536
+Size: 4500
+MD5sum: 6994b68041daa6afb86fcee65526c78e
+SHA1: 8e55971f849891616a8efe191a54c2e254e4f273
+SHA256: 5e58d8ade6dec5d28ca0c310beb473cdb62f1c75de5c19636834099c643df139
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
+Package: gitaptly
+Version: 4.4.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Depends: bash, debconf, coreutils, util-linux, findutils, jq, cron, gzip, dpkg-dev, curl, wget, parallel, abom-http, ncat
+Suggests: opentelemetry-shell (>= 4.4.2)
+Filename: GitAptly/pool/main/236754105
+Size: 4560
+MD5sum: 266ec12f111cf98cee6f0eec28117ba3
+SHA1: 1a3b1b98d9a1de8e1f83cb1575416fc3e83dd473
+SHA256: d937cf259cf59ef1252ff0d019c2dc6e301ace836f5e55267450eda5caed4a37
+Priority: extra
+Homepage: https://github.com/plengauer/GitAptly
+Description: A apt-repo-like facade for GitHub releases
+
 Package: openai
 Version: 0.1.0
 Architecture: all
@@ -4600,11 +5742,11 @@ Version: 1.1.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: opentelemetry-shell
-Filename: Thoth/pool/main/129624715
-Size: 708
-MD5sum: f25b6e3022a2455fd00c5d14a821b66a
-SHA1: 11eb93c9ccbcf2de4eed3076fe6c16d11f34f7fb
-SHA256: 5d07a0527f7cfe195ecfe5eefb8984ea9006923a2b6170dd967edaffd1e7ac86
+Filename: Thoth/pool/main/129623794
+Size: 706
+MD5sum: c5cc4ee0d0596332c9f29e1e3b7c55b6
+SHA1: 402d2c2ae1b3df9453f860132b519b4d79be58b0
+SHA256: e235f4a1d30ecd1e3a37f2c74fd472d61d2ec0923a878d548690538e459e3e2c
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-bash
 Description: Generating open-telemetry traces from bash scripts (this is a legacy package deferring all implementation to opentelemetry-shell)
@@ -4614,11 +5756,11 @@ Version: 1.1.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Depends: opentelemetry-shell
-Filename: Thoth/pool/main/129623794
-Size: 706
-MD5sum: c5cc4ee0d0596332c9f29e1e3b7c55b6
-SHA1: 402d2c2ae1b3df9453f860132b519b4d79be58b0
-SHA256: e235f4a1d30ecd1e3a37f2c74fd472d61d2ec0923a878d548690538e459e3e2c
+Filename: Thoth/pool/main/129624715
+Size: 708
+MD5sum: f25b6e3022a2455fd00c5d14a821b66a
+SHA1: 11eb93c9ccbcf2de4eed3076fe6c16d11f34f7fb
+SHA256: 5d07a0527f7cfe195ecfe5eefb8984ea9006923a2b6170dd967edaffd1e7ac86
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-bash
 Description: Generating open-telemetry traces from bash scripts (this is a legacy package deferring all implementation to opentelemetry-shell)
@@ -9258,23 +10400,6 @@ Description: Generate open telemetry traces, metrics, and logs from shell script
 
 Package: opentelemetry-shell
 Version: 5.53.0
-Architecture: all
-Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
-Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar, grep
-Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
-Recommends: strace
-Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/421982502
-Size: 48851366
-MD5sum: dc861f2883c76ba348e8b1b4ca5c31d9
-SHA1: 2f047d0e5d3b59b4dc6092f6bb7015fcae294661
-SHA256: 4b5efc6237bad169240e0084d0d33e6bed174bf3a830853f8688001e59221a65
-Priority: extra
-Homepage: https://github.com/plengauer/opentelemetry-shell
-Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
-
-Package: opentelemetry-shell
-Version: 5.53.0
 Architecture: amd64
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar, grep
@@ -9286,6 +10411,23 @@ Size: 48855406
 MD5sum: 59edf6baeec76eaf53e35ea43dba7f27
 SHA1: a9df50c99ca33a3b6ca3577853c4b5ccdfddc2da
 SHA256: 7bbafa3b289e182f925121e345e47823d5ae3cb101886901adfe26b5e6611463
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.53.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.9), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/421982502
+Size: 48851366
+MD5sum: dc861f2883c76ba348e8b1b4ca5c31d9
+SHA1: 2f047d0e5d3b59b4dc6092f6bb7015fcae294661
+SHA256: 4b5efc6237bad169240e0084d0d33e6bed174bf3a830853f8688001e59221a65
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
@@ -9326,23 +10468,6 @@ Description: Generate open telemetry traces, metrics, and logs from shell script
 
 Package: opentelemetry-shell
 Version: 5.54.0
-Architecture: amd64
-Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
-Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
-Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
-Recommends: strace
-Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/427972234
-Size: 43620236
-MD5sum: 08f0f98293dde0943a2258812f1a5725
-SHA1: 4c9fd4fd7fd28adbd92076670a1992c1f66f8618
-SHA256: 8f6c0af86211fd65d975f9bc3029709f41653218483f4188412d3e5998ed4073
-Priority: extra
-Homepage: https://github.com/plengauer/opentelemetry-shell
-Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
-
-Package: opentelemetry-shell
-Version: 5.54.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
@@ -9354,6 +10479,23 @@ Size: 43615826
 MD5sum: 6ed6d361dd8b11a759cc2c0d5e6c0fbe
 SHA1: 0cd4f82980d2359131bd3cd6ffc9c89f56afa2e6
 SHA256: 29fb22ca92777da09e5c82fa8bd6c63a0a66649a67e46a3695ad4372ebffeee7
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.54.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/427972234
+Size: 43620236
+MD5sum: 08f0f98293dde0943a2258812f1a5725
+SHA1: 4c9fd4fd7fd28adbd92076670a1992c1f66f8618
+SHA256: 8f6c0af86211fd65d975f9bc3029709f41653218483f4188412d3e5998ed4073
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
@@ -9428,6 +10570,23 @@ Description: Generate open telemetry traces, metrics, and logs from shell script
 
 Package: opentelemetry-shell
 Version: 5.56.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/440784088
+Size: 44113680
+MD5sum: 0ddb0244123d13ba80e1bc33dca7e444
+SHA1: 567ea3d9e16f00b9e453349c6f5260cbfa867e79
+SHA256: 302ed73acf46fcacdc0e51ea75514f30177b386f858d2ff661b372432466497a
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.56.0
 Architecture: all
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
@@ -9444,18 +10603,18 @@ Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
 
 Package: opentelemetry-shell
-Version: 5.56.0
+Version: 5.58.0
 Architecture: amd64
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
 Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
 Recommends: strace
 Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/440784088
-Size: 44113680
-MD5sum: 0ddb0244123d13ba80e1bc33dca7e444
-SHA1: 567ea3d9e16f00b9e453349c6f5260cbfa867e79
-SHA256: 302ed73acf46fcacdc0e51ea75514f30177b386f858d2ff661b372432466497a
+Filename: Thoth/pool/main/457726199
+Size: 44855664
+MD5sum: cae807263f71e074375d1bb6aba56a26
+SHA1: 4984e90679de24dacecc13eed62af48d29c6b4e8
+SHA256: c3f1a5de34da498dec27423fc90864ecf59e1a0a475cceecf0a89e9f2cd2d89e
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
@@ -9478,18 +10637,69 @@ Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
 
 Package: opentelemetry-shell
-Version: 5.58.0
+Version: 5.58.1
 Architecture: amd64
 Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
 Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
 Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
 Recommends: strace
 Enhances: ash, dash, bash, busybox
-Filename: Thoth/pool/main/457726199
-Size: 44855664
-MD5sum: cae807263f71e074375d1bb6aba56a26
-SHA1: 4984e90679de24dacecc13eed62af48d29c6b4e8
-SHA256: c3f1a5de34da498dec27423fc90864ecf59e1a0a475cceecf0a89e9f2cd2d89e
+Filename: Thoth/pool/main/470758063
+Size: 45707370
+MD5sum: dcc78c623bc09f06fb8add167063dd29
+SHA1: 899f1269e40a7669fb177697e398c5db788e856b
+SHA256: 1186dfa7979b34ec679bafa0e58c23521f98108ea7bcc58b4473edf0df1eec03
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.58.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/470758074
+Size: 45702774
+MD5sum: d2b5dffe3aca3f000d2285109a781dc0
+SHA1: 576cde5da6b66fb55a631f3b70131e3c08792695
+SHA256: b929ef0b998d393ce63bbd9ce45a0b8a22e4660bc91c7370071129672166400b
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.59.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/467339877
+Size: 45254286
+MD5sum: 3de3bbc13c03217d801fe3bee043008e
+SHA1: 32be97a77fbd16fe10ecebb70dd9df8a0e4669a1
+SHA256: dc2cd773ce0b03406a92e83b2530b567084204cc830cda509e838c09012a9d3a
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.59.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/467339882
+Size: 45248348
+MD5sum: 210b6204b4e5ca475220646afbf5d8cb
+SHA1: 94b77b649b1199919b167a08786e818439744db9
+SHA256: cf234780a24e5403342d9cfade5f178999e1b14cc0dab3cf609c9d02e3f2b75c
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
@@ -9560,6 +10770,584 @@ SHA1: b97682dd655f782cba0c7c262f1cf3b4c064685c
 SHA256: 7e6ff4b983e90d61462ff71e6f2c1c226658b4603bb34d9133983083d0cdcc83
 Priority: extra
 Homepage: https://github.com/plengauer/opentelemetry-bash
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.60.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/507299740
+Size: 45544840
+MD5sum: 661ba5917b4d10e711a80947f61c881e
+SHA1: 983588a05c88cab8fe262432c87833dcfef45926
+SHA256: f12f889371861d22bfd5b148109f065557313ce652f9bde033b53b8e69b392d6
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.60.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/507299742
+Size: 45540026
+MD5sum: a028ec23515c586e2146d8d7f67c72ee
+SHA1: 8db3510c6b59c191434030a437bf38646dd33ff3
+SHA256: 93ff0cd3bac3281cf4f5c74f29378fe67610371109e31ddae326a8433f7f359a
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.60.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/515629256
+Size: 45650762
+MD5sum: 1cb9bf187a7215ef3d53ef989445d447
+SHA1: 30dd462d63fbf619fc1fb863b10b09250018f2e5
+SHA256: 4ea662563597ba8e94df1bf5b040426a94dc704dc7f772659e8c87be8b8f6adb
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.60.1
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/515629240
+Size: 45656074
+MD5sum: 68295bd3956173cb165b055db83596cb
+SHA1: 865bc77bb629565605eace7902885a474e222ad7
+SHA256: a46cd5e9c4103bf25e1423ac441a9f5cbb3c135b329560dd71c598f44916d782
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.60.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/525346919
+Size: 45681128
+MD5sum: be391df7b04349771ba1d1b6d7cc004c
+SHA1: 12e76c94b8e6d4c860399ac64eee44695469e79a
+SHA256: bb492bee197569cf910df0f62668f554d2f3ef822d6547016c9cda7161e0795c
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.60.2
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/525346918
+Size: 45686872
+MD5sum: 1c949e6be0f554519d0514e35faa088c
+SHA1: 42a835b05b933201a14d5c4803a6818017c834eb
+SHA256: e0b6080350661b40a8fabb8bae06902bf25d500675c45872f1be4227d38fdbf4
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/514848573
+Size: 44922446
+MD5sum: c44c449e176b918897e4dc38786b1bf7
+SHA1: 6086fffa45cce4c22f95c3f6255da2b772931170
+SHA256: c064c8d17a7965915e957ee632ed115edcf4ba67700db29ff3be626b0c1d3bc5
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/514848578
+Size: 44928724
+MD5sum: 7d1c86caaff53d4ee6cb65b0fb43321d
+SHA1: 105dadfc29ce50113e77821cd350a1f027af5736
+SHA256: dd9b0c748a9aaf42c53be954147e3357659c1ed3b79c19b016e081f484e6aa88
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.1
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/522209838
+Size: 44942322
+MD5sum: 3962ad6d2009892c85b353b55c1b59af
+SHA1: 3c1885a54350209283899cc0ae42ab06c618261a
+SHA256: 0bbb14ac03c0466920a3c7f68b981987352ea8f2ffb02565ca90ed055b9ad8f4
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/522209846
+Size: 44937180
+MD5sum: 8da2e1a6e5e3e58922d0ad396ab910eb
+SHA1: fc3fde23b1db8c7a82ad673099003d79ab99ed14
+SHA256: f6f90733268ae1867b04f3824a776cb4b20caffdea99ee2a6fc5924e8ffada83
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.2
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/525398420
+Size: 44968766
+MD5sum: 504b57ad6e9ac845caedcb0bbc16fe8c
+SHA1: 1adeb0616f3f8f7937bde2695863d9a629c7e666
+SHA256: 8b494c979d9a96bcd0ecbc0b2312ba10d86ea333f26398622343eb99cd4f2178
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.2
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/525398422
+Size: 44963448
+MD5sum: fe29103025ef7e397ffa3d6377bfd353
+SHA1: ca9c55dd2bccb5e9db8dff16bed9b7a8a36e6c18
+SHA256: f5f5fdf988e21a9211e0630ef60ea2b20ce05b84011430bb3e51a6f3bbaefdbe
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.3
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/538205140
+Size: 44978558
+MD5sum: c65d764a04a91cdf750548e5045c3022
+SHA1: daf4ec42668f0fd5424cd348c5d27fe1a6a43e0c
+SHA256: 55db3da39ee31a4ab625bb1a992ac6758e5bb285f7d6750b4cc046bb14f9ec21
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.3
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/538205144
+Size: 44983972
+MD5sum: fe8565291b0c0f61e297a760144f0123
+SHA1: c47463c46e1b443b4439e7ae0155b399a886effd
+SHA256: a98ae3b9e85feb5cb08887987e1e047f9f71ffa22f599ab43edef3624c635c2a
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.4
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/536971363
+Size: 45150888
+MD5sum: 3d0faa8b0912078a454c746908afe651
+SHA1: cf5fb832170d2f427331789fdd1be2219de3ca4e
+SHA256: cce645ea26792ae1120c2880bf035257b88f1db2a2b37f27ad5412408ae996dd
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.4
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/536971360
+Size: 45145898
+MD5sum: 6b25eaf2b31019ae6ee0d48f2abbad0b
+SHA1: 8272a87c47612c1861f18720882af3ebbe0ddf7d
+SHA256: ce679abdd7b9de2258c0939ed666dca452f3250e160ba9bc53db141848f267d1
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.5
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/539699392
+Size: 45155278
+MD5sum: 0af10c58b9e129b5a49e943ba8172016
+SHA1: b967d48209c7804a16cf1e3c36cd439023461097
+SHA256: 8cb864706bbb02c7d49c7ad12ccf90bb4bfc610fa0ee05cfaff7518fcea53041
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.5
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/539699385
+Size: 45161144
+MD5sum: 14853bc3c6136453152b5352e8ef31b7
+SHA1: 302408920cfe3b7449376b6e6047686fffcd8453
+SHA256: 619225431cae27517a3d5bb852c9dea6831ad463358fb64e68f2078e1363c186
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.6
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/557502817
+Size: 45522726
+MD5sum: 8aa53c21835cce3a24628c6b7529137e
+SHA1: 74bbfe4e5570b5d92daa9bde0d1cadf41c2d46b2
+SHA256: 4123f5fbeaa9bf79e6d8050bd1b563fff7ed2f83144c5c6214cb25fdb9377843
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.61.6
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/557502819
+Size: 45516966
+MD5sum: bb3afeadcd81e00a3af09474d2ab8681
+SHA1: d0387c4567efbe83eeee97c33ebabfc56912ea3f
+SHA256: 995b2e08af0c4e6212c93243d0576ad25b65ed7943530e9bc4ae46ff9a2b005b
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.62.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/540388826
+Size: 45881896
+MD5sum: 5a91cd3bc7a1451233b8a6e3a9c455bd
+SHA1: 0831a421d3ebbf7ab20f699621e571eefcc9ee08
+SHA256: ecc69578c603dadf0f027fb80d5485df965897bb30ff4feeadeb80cf74b6bddc
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.62.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/540388821
+Size: 45887584
+MD5sum: 0f1a1ea3d008472989d7a054c22a710e
+SHA1: c0bcb69b51be7015b88f274c64ee277c5bfb53f6
+SHA256: d7f1c40d0f87bd75189ff688b9c11f377f3db02c78c96f78de356b7815b4c428
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.62.1
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/587960398
+Size: 45895034
+MD5sum: c1db814894e694904f93f974cbcf16e7
+SHA1: 56ae72c42bc495200cced37ca498bf1a53e7624a
+SHA256: 7b6229fc95ef2cd919c424df5b60b2805ceb6c2876a3ba6f61bf30f5ae05cac2
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.62.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/587960404
+Size: 45890394
+MD5sum: f874c2e82cfaeb4ed205013a05304d98
+SHA1: 86f69cc855bb5073cf0a242872af5a69d8cfe956
+SHA256: 81134b7fef07d8e760f847eae756a7de0dd8763fe5b83a542572ca9b7466836c
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.63.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/607445108
+Size: 46211396
+MD5sum: 3a27270c0daa6643417f471d3a96ad66
+SHA1: 156106b394e0b49114ba99f14dc0f850c54fabd1
+SHA256: c8b16fdd6f0932f5ed47b4e25c0543db036ac071c72dd3b99d397b07acf3fe21
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.63.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/607445111
+Size: 46215214
+MD5sum: 2ef031d0ac16e6e5ae1a835580113d2f
+SHA1: 10dce38b66242780266ede0f2626f5e717e979a3
+SHA256: 7816003b534de15e141435169be492bd7659ccc3040c82f30115b6e17a077f41
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.63.1
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/630156726
+Size: 47054064
+MD5sum: 87544590a4efeb88587f272ca4e49517
+SHA1: a5c2cda5a0160aaef77c9f4159663c87c321c285
+SHA256: e056d5eec399d7a9268607c6d1fc3fc6deace31092aa401cf34b976ff3b01f5b
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.63.1
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/630156721
+Size: 47059758
+MD5sum: 429256d198dd2eefe8bc07121f6e2f0d
+SHA1: 11e68a04f2de400afe7872f7e3bfe53594efd50a
+SHA256: 89c0697452e60f56562852c921165187979b0c80fb8a198349d1d50347ccdfc6
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.64.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/656429385
+Size: 69342774
+MD5sum: 30eb3214cbcac8b7cf95dec8e5738891
+SHA1: 23e37e7aa6635839220018bb9581739b903b2692
+SHA256: bed3d37583f85a60dcf81a5982774a5757dedd13a6442134d8d0813ce52eac68
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.64.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/656429380
+Size: 41088146
+MD5sum: e877962876d8ba6f707df26e8815f42f
+SHA1: cdff990ff89c4e3fcd7946f3c7afd1858852aab1
+SHA256: 3490fdcc134bbef28e3a7e2e1ce0a59b228be53f49d65ee85da79e7745bd72eb
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.65.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/684451250
+Size: 41005038
+MD5sum: 886f9f02971b70f46ca89d6f969d5b00
+SHA1: f591209a9178dd99b618f35d94d44bf4fbb5a409
+SHA256: b11746cc831a2150191faeae7ec14ea4e22fd2f13c873014b2739e187ae07f85
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.65.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/684451237
+Size: 71113144
+MD5sum: c2ab6ce72363e8dd467383fc638b5e3e
+SHA1: 2effb984bcc85328ad0cd741df999be5f8bdff78
+SHA256: ab131f6490a18714f00bce72a45ddbb7c1a1aed3cad811628f66030deb59cf3c
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.66.0
+Architecture: all
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/698637330
+Size: 39305704
+MD5sum: da3ad99df6ba4bc0b8ce214bdc404e2b
+SHA1: 0e0974a5430ecf40d2eb2a53bc73bb746e1247ba
+SHA256: 98302b52c13c2b40ae9a82e7ecd7464f3eb31d2dfcd4c423318dbe6384c6a6aa
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
+Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
+
+Package: opentelemetry-shell
+Version: 5.66.0
+Architecture: amd64
+Maintainer: Philipp Lengauer <p.lengauer@gmail.com>
+Pre-Depends: coreutils, util-linux, findutils, python3 (>= 3.10), python3-pip, python3-venv, tar, grep
+Depends: sed, awk, dpkg, procps, jq, xxd, libc-bin
+Recommends: strace, bash-builtins
+Enhances: ash, dash, bash, busybox
+Filename: Thoth/pool/main/698637327
+Size: 70372012
+MD5sum: 6b9312ad4a6a975c13f1bbbc84c75ef0
+SHA1: 73fe8051ccdee0eadbea043e7c55ba2af335ea9b
+SHA256: 65d3ffa787c79a8b25cfc783c0117af6b9a71b353716a29ed3b7a53d94fb9a50
+Priority: extra
+Homepage: https://github.com/plengauer/opentelemetry-shell
 Description: Generate open telemetry traces, metrics, and logs from shell scripts fully automatically
 
 Package: opentelemetry-shell

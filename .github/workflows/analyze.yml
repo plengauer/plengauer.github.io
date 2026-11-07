@@ -1,0 +1,47 @@
+name: "Analyze"
+on:
+  push:
+    branches:
+      - "main"
+      - "release/v*"
+  pull_request:
+    branches:
+      - "main"
+      - "release/v*"
+  schedule:
+    - cron: '0 0 * * *'
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      statuses: write
+      pull-requests: write
+      issues: write
+      actions: read
+      security-events: write
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: |-
+            ${{ github.token }}
+            ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: oxsecurity/megalinter@f2fe8c1cba37091848df3e524066c8c23ef353ed # v10.2.0
+        env:
+          MEGALINTER_CONFIG: .github/mega-linter.yml
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
+          VALIDATE_ALL_CODEBASE: ${{ github.event_name != 'pull_request' }}
+          GITHUB_STATUS_REPORTER: true
+          GITHUB_COMMENT_REPORTER: true
+          SARIF_REPORTER: true
+      - if: always() && github.ref_name == 'main' && hashFiles('megalinter-reports/megalinter-report.sarif') != ''
+        uses: github/codeql-action/upload-sarif@33d7b85da1a04171e211befe2c739303b9a4c066 # v4.39.3
+        with:
+          sarif_file: megalinter-reports/megalinter-report.sarif
+          category: megalinter
