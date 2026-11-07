@@ -145,6 +145,18 @@ jobs:
     permissions:
       actions: read
 
+  deploy-copilot-configuration:
+    needs: list-repositories
+    runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - run: |
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/copilot/cloud-agent/configuration -d @./copilot-configuration.json -X PATCH
+
   deploy-codeowners:
     needs: [ list-repositories, deploy-ruleset, deploy-codescanning ]
     runs-on: ubuntu-slim
