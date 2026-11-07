@@ -146,17 +146,6 @@ jobs:
     permissions:
       actions: read
 
-  deploy-copilot-configuration:
-    needs: list-repositories
-    runs-on: ubuntu-slim
-    strategy:
-      matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - run: |
-
   deploy-codeowners:
     needs: [ list-repositories, deploy-ruleset, deploy-codescanning ]
     runs-on: ubuntu-slim
