@@ -26,4 +26,4 @@ jobs:
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_ONBOARDING_CONFIG_FILE_NAME: .github/renovate.json
         with:
-          token: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
+          token: ${{ github.token }}
