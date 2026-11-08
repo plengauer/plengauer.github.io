@@ -42,12 +42,30 @@ jobs:
     permissions:
       actions: read
 
-  deploy-codescanning:
+  list-my-repositories:
     needs: list-repositories
+    runs-on: ubuntu-slim
+    outputs:
+      repositories: ${{ steps.dynamic.outputs.repositories }}
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: ${{ github.token }}
+      - id: dynamic
+        run: |
+          printf '${{ needs.list-repositories.outputs.repositories }}' | jq .[] -r | grep -E '^${{ github.repository_owner }}/' | jq -R | jq -cs | xargs -0 -I {} echo 'repositories={}' >> "$GITHUB_OUTPUT"
+    permissions:
+      actions: read
+
+  deploy-codescanning:
+    needs: list-my-repositories
     runs-on: ubuntu-slim
     strategy:
       matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
@@ -82,11 +100,11 @@ jobs:
       actions: read
 
   deploy-ruleset:
-    needs: [ list-repositories, deploy-codescanning ]
+    needs: [ list-my-repositories, deploy-codescanning ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
@@ -106,11 +124,11 @@ jobs:
     permissions:
       actions: read
   adjust-ruleset:
-    needs: [ list-repositories, deploy-ruleset ]
+    needs: [ list-my-repositories, deploy-ruleset ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
@@ -146,11 +164,11 @@ jobs:
       actions: read
 
   deploy-codeowners:
-    needs: [ list-repositories, deploy-ruleset, deploy-codescanning ]
+    needs: [ list-my-repositories, deploy-ruleset, deploy-codescanning ]
     runs-on: ubuntu-slim
     strategy:
       matrix: 
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
@@ -315,13 +333,13 @@ jobs:
     permissions:
       actions: read
   deploy-token-gh:
-    needs: [ list-repositories, maintain-gh-cookie ]
+    needs: [ list-my-repositories, maintain-gh-cookie ]
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
       fail-fast: true
-      max-parallel: 1 # 3
+      max-parallel: 1
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
         env:
@@ -334,9 +352,6 @@ jobs:
             ${{ secrets.BOT_GITHUB_TOKEN }}
             ${{ secrets.GH_COOKIE }}
             ${{ secrets.GH_PASSWORD }}
-      - run: |
-          repository="${{ matrix.repository }}"
-          [ "${repository%%/*}" = plengauer ] # as long as one cannot create fine grained tokens for other repos, we should restrict for safety reasons
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - id: metadata
         run: |
@@ -375,11 +390,11 @@ jobs:
       actions: read
 
   deploy-token-otel:
-    needs: list-repositories
+    needs: list-my-repositories
     runs-on: ubuntu-slim
     strategy:
       matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
