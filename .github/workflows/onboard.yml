@@ -307,7 +307,7 @@ jobs:
     permissions:
       actions: read
 
-  maintain-gh-cookie:
+  maintain-cookie-gh:
     runs-on: ubuntu-slim
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
@@ -332,7 +332,7 @@ jobs:
           rm cookies
     permissions:
       actions: read
-  deploy-gh-token:
+  deploy-token-gh:
     needs: [ list-my-repositories, maintain-gh-cookie ]
     runs-on: ubuntu-latest
     strategy:
@@ -389,7 +389,7 @@ jobs:
     permissions:
       actions: read
 
-  deploy-otel-token:
+  deploy-token-otel:
     needs: list-my-repositories
     runs-on: ubuntu-slim
     strategy:
@@ -463,3 +463,19 @@ jobs:
           esac
     permissions:
       actions: read
+
+  deploy-token-claude-code:
+    needs: list-my-repositories
+    runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
+      fail-fast: false
+    steps:
+      - env:
+          CLAUDE_CODE_OAUTH_TOKEN : ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN  }}
+        run: |
+          [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]
+          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ github.repository }}/actions/secrets/CLAUDE_CODE_OAUTH_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
+          [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * 365)) ] 
+          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set CLAUDE_CODE_OAUTH_TOKEN --repo ${{ matrix.repository }} < "$CLAUDE_CODE_OAUTH_TOKEN"
