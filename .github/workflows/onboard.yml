@@ -454,7 +454,7 @@ jobs:
     runs-on: ubuntu-slim
     strategy:
       matrix:
-        repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
       fail-fast: false
     steps:
       - env:
