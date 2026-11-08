@@ -20,7 +20,20 @@ jobs:
         (github.event_name == 'issues' && (contains(github.event.issue.body, '@claude') || contains(github.event.issue.title, '@claude')))
       )
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      workflows: write
+      issues: write
+      pull-requests: write
+      actions: read
+      checks: read
     steps:
       - uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          additional_permissions: |
+            workflows: write
+            actions: read
+            checks: read
+          claude_args:
+            --allowedTools "Bash(*)"
