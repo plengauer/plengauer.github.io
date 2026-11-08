@@ -450,7 +450,7 @@ jobs:
       actions: read
 
   deploy-token-claude-code:
-    needs: list-repositories
+    needs: list-my-repositories
     runs-on: ubuntu-slim
     strategy:
       matrix:
