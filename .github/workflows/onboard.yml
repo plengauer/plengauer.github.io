@@ -475,5 +475,7 @@ jobs:
       - env:
           CLAUDE_CODE_OAUTH_TOKEN : ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN  }}
         run: |
-          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_HEADERS || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-          [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * 365)) ] || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set CLAUDE_CODE_OAUTH_TOKEN  --repo ${{ matrix.repository }} < "$CLAUDE_CODE_OAUTH_TOKEN"
+          [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]
+          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ github.repository }}/actions/secrets/CLAUDE_CODE_OAUTH_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
+          [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -le $((60 * 60 * 24 * 365)) ] 
+          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set CLAUDE_CODE_OAUTH_TOKEN  --repo ${{ matrix.repository }} < "$CLAUDE_CODE_OAUTH_TOKEN"
