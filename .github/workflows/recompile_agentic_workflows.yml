@@ -18,7 +18,7 @@ jobs:
       pull-requests: write
       actions: read
     steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
           OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
@@ -34,7 +34,7 @@ jobs:
         run: |
           gh extension install github/gh-aw
           gh aw compile --approve
-      - uses: plengauer/opentelemetry-github/actions/instrument/deploy-local@5d34a21816f798c24f19857225b018a7f2af731f # v5.66.0
+      - uses: plengauer/opentelemetry-github/actions/instrument/deploy-local@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
         with:
           github_token: ${{ env.GH_TOKEN }}
         env:
@@ -55,7 +55,7 @@ jobs:
           GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
       - if: steps.push.outputs.pushed == 'false'
         id: open-pr
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        uses: peter-evans/create-pull-request@15733dbdfeedb4f7fdb73d13c6f5ac83b710fab8 # v8.1.2
         with:
           token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
           commit-message: "recompile agentic workflows"
