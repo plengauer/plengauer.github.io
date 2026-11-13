@@ -1,10 +1,4 @@
 {
-  "contents": "write",
-  "workflows": "write",
-  "actions": "write",
-  "pull_requests": "write",
-  "issues": "write",
-  "security_events": "write",
   "user_models": "read",
   "user_copilot_requests": "read"
 }
