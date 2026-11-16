@@ -19,7 +19,6 @@ safe-outputs:
   add-comment:
   close-issue:
   assign-to-agent:
-    github-token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
 ---
 
 # Triage New Issues
