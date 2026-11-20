@@ -119,8 +119,9 @@ jobs:
       - run: |
           [ "$(curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets | jq length)" = 0 ] || exit 0
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }} -d @./.github/template/settings.json -X PATCH
-          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/copilot/cloud-agent/configuration -d @./copilot.cloud-agent.json -X PATCH
-          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/copilot/code-review/settings -d @./copilot.code-review.json -X PATCH
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/actions/permissions/workflow -d '{"can_approve_pull_request_reviews":true}' -X PUT
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/copilot/cloud-agent/configuration -d @./.github/template/copilot.coding-agent.json -X PATCH
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/copilot/code-review/settings -d @./.github/template/copilot.code-review.json -X PATCH
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets -d @./.github/template/ruleset.main.json
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets -d @./.github/template/ruleset.release.json
     permissions:
