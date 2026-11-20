@@ -119,6 +119,9 @@ jobs:
       - run: |
           [ "$(curl -s --fail --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets | jq length)" = 0 ] || exit 0
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }} -d @./.github/template/settings.json -X PATCH
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/actions/permissions/workflow -d '{"can_approve_pull_request_reviews":true}' -X PUT
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/copilot/cloud-agent/configuration -d @./.github/template/copilot.coding-agent.json -X PATCH
+          curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/copilot/code-review/settings -d @./.github/template/copilot.code-review.json -X PATCH
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets -d @./.github/template/ruleset.main.json
           curl -s --fail-with-body --header "Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}" https://api.github.com/repos/${{ matrix.repository }}/rulesets -d @./.github/template/ruleset.release.json
     permissions:
@@ -221,7 +224,7 @@ jobs:
     permissions:
       actions: read
   deploy-action:
-    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-token-gh, deploy-token-otel, deploy-token-claude-code ]
+    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-token-otel, deploy-token-claude-code ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
@@ -307,88 +310,6 @@ jobs:
     permissions:
       actions: read
 
-  maintain-cookie-gh:
-    runs-on: ubuntu-slim
-    steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
-        env:
-          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
-        with:
-          secrets_to_redact: |-
-            ${{ github.token }}
-            ${{ secrets.BOT_GITHUB_TOKEN }}
-            ${{ secrets.GH_COOKIE }}
-      - run: |
-          tr <<< '${{ secrets.GH_COOKIE }}' -d ' ' | tr ';' '\n' > cookies
-          curl -v https://github.com/ --header 'cookie: ${{ secrets.GH_COOKIE }}' 2>&1 1> /dev/null \
-            | grep -E '^< set-cookie: ' | cut -d ' ' -f 3- | cut -d ';' -f 1 | while read -r cookie; do
-              sed -i 's/^'"${cookie%%=*}"'=.*$/'"$cookie"'/g' cookies
-              touch modified
-            done
-          if [ -r modified ]; then
-            tr < cookies '\n' ';' | sed 's/;/; /g' | GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set GH_COOKIE --repo ${{ github.repository }}
-          fi
-          rm cookies
-    permissions:
-      actions: read
-  deploy-token-gh:
-    needs: [ list-my-repositories, maintain-cookie-gh ]
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
-      fail-fast: true
-      max-parallel: 1
-    steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
-        env:
-          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
-        with:
-          secrets_to_redact: |-
-            ${{ github.token }}
-            ${{ secrets.ACTIONS_GITHUB_TOKEN }}
-            ${{ secrets.BOT_GITHUB_TOKEN }}
-            ${{ secrets.GH_COOKIE }}
-            ${{ secrets.GH_PASSWORD }}
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - id: metadata
-        run: |
-          repository='${{ matrix.repository }}'
-          echo token_name="GitHub Actions $(echo "${repository#*/} ${{ github.run_id }} ${{ github.run_attempt }}" | md5sum | cut -d - -f 1 | tr -d ' ')" >> "$GITHUB_OUTPUT"
-          jq < .github/template/token_permissions.json 'to_entries | .[] | .key + "=" + .value' -r | perl -p -e 'chomp if eof' | tr '\n' ',' | xargs -I '{}' echo token_permissions='{}' >> "$GITHUB_OUTPUT"
-          xargs < .github/template/token_retention.days -I '{}' echo token_retention='{}' >> "$GITHUB_OUTPUT"
-      - id: resolve
-        run: |
-          created_at="$( ( curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/ACTIONS_GITHUB_TOKEN || echo '{ "updated_at": "1970-01-01" }' ) | jq .updated_at -r)"
-          ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }} * 80 / 100)) ] && echo true || echo false ) | xargs -0 -I '{}' echo rotate='{}' >> "$GITHUB_OUTPUT"
-          ( [ $(( $(date +%s) - $(date +%s -d "$created_at") )) -gt $((60 * 60 * 24 * ${{ steps.metadata.outputs.token_retention }})) ] && echo true || echo false ) | xargs -0 -I '{}' echo reset='{}' >> "$GITHUB_OUTPUT"
-      - if: ${{ steps.resolve.outputs.reset == 'true' }}
-        run: |
-          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret delete ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }} || true
-          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret delete COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} || true
-      - if: ${{ steps.resolve.outputs.rotate == 'true' }}
-        id: create
-        uses: plengauer/create-github-finegrained-pat@845ce620227a132021fe766d198261fdebf62beb # v0.13.0
-        with:
-          name: ${{ steps.metadata.outputs.token_name }}
-          expiration: ${{ steps.metadata.outputs.token_retention }}
-          repositories: ${{ matrix.repository }}
-          permissions: ${{ steps.metadata.outputs.token_permissions }}
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GH_PASSWORD }}
-          cookie: ${{ secrets.GH_COOKIE }}
-          github_token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
-        env:
-          MEMORY: 10
-      - if: ${{ success() && steps.resolve.outputs.rotate == 'true' }}
-        run: |
-          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set ACTIONS_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
-          GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set COPILOT_GITHUB_TOKEN --repo ${{ matrix.repository }} < "${{ steps.create.outputs.token_path }}"
-    permissions:
-      actions: read
-
   deploy-token-otel:
     needs: list-my-repositories
     runs-on: ubuntu-slim
@@ -414,6 +335,7 @@ jobs:
       - run: |
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/agents/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --app agents --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
+          curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/dependabot/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --app dependabot --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
             curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} --env "$environment" <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           done
@@ -423,6 +345,7 @@ jobs:
             distribute)
               GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --app agents --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
+              GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --app dependabot --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
                  GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment" <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               done

@@ -9,8 +9,9 @@ user-rate-limit:
   max-runs-per-window: 2
   window: 60
 permissions:
+  copilot-requests: write
   contents: read
-  issues: read
+  issues: write
 tools:
   github:
     toolsets: [context, repos, issues, labels]
@@ -19,7 +20,6 @@ safe-outputs:
   add-comment:
   close-issue:
   assign-to-agent:
-    github-token: ${{ secrets.ACTIONS_GITHUB_TOKEN }}
 ---
 
 # Triage New Issues
