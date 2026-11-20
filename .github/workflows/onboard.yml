@@ -223,7 +223,7 @@ jobs:
     permissions:
       actions: read
   deploy-action:
-    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-token-gh, deploy-token-otel, deploy-token-claude-code ]
+    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-token-otel, deploy-token-claude-code ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
