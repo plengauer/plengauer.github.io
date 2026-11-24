@@ -223,8 +223,31 @@ jobs:
         id: dynamic
     permissions:
       actions: read
+  deploy-variable-token-broker-url:
+    needs: list-my-repositories
+    runs-on: ubuntu-slim
+    strategy:
+      matrix:
+        repository: ${{ fromJSON(needs.list-my-repositories.outputs.repositories) }}
+      fail-fast: false
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: '["${{ github.token }}","${{ secrets.BOT_GITHUB_TOKEN }}"]'
+      - env:
+          GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
+          TOKEN_BROKER_URL: ${{ vars.TOKEN_BROKER_URL }}
+        run: |
+          [ -n "$TOKEN_BROKER_URL" ]
+          gh variable set TOKEN_BROKER_URL --repo ${{ matrix.repository }} --body "$TOKEN_BROKER_URL"
+    permissions:
+      actions: read
+
   deploy-action:
-    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-token-otel, deploy-token-claude-code ]
+    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-token-otel, deploy-token-claude-code, deploy-variable-token-broker-url ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
@@ -335,7 +358,6 @@ jobs:
       - run: |
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/actions/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/agents/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --app agents --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
-          curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/dependabot/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --app dependabot --repo ${{ matrix.repository }} <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
             curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments/"$environment"/secrets/OTEL_EXPORTER_OTLP_ENDPOINT || GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_ENDPOINT --repo ${{ matrix.repository }} --env "$environment" <<< '${{ vars.DYNATRACE_TENANT }}/api/v2/otlp'
           done
@@ -345,7 +367,6 @@ jobs:
             distribute)
               GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --app agents --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
-              GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --app dependabot --repo ${{ matrix.repository }} <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               curl --fail --no-progress-meter -H 'Authorization: Bearer ${{ secrets.BOT_GITHUB_TOKEN }}' https://api.github.com/repos/${{ matrix.repository }}/environments'?per_page=100' | jq '.environments[].name' -r | while read -r environment; do
                  GH_TOKEN=${{ secrets.BOT_GITHUB_TOKEN }} gh secret set OTEL_EXPORTER_OTLP_HEADERS --repo ${{ matrix.repository }} --env "$environment" <<< '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
               done
