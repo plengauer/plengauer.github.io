@@ -19,11 +19,23 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      security-events: write      
+      security-events: write
+      id-token: write
     steps:
+      - id: broker
+        env:
+          BROKER_URL: https://github-token-broker-152120470600.europe-west1.run.app
+        run: |
+          set -e
+          oidc_jwt="$(curl -sSf -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$BROKER_URL" | sed -n 's/.*"value": *"\([^"]*\)".*/\1/p')"
+          echo "::add-mask::$oidc_jwt"
+          token="$(curl -sSf -X POST "$BROKER_URL/token" -H "Authorization: Bearer $oidc_jwt" | sed -n 's/.*"token": *"\([^"]*\)".*/\1/p')"
+          [ -n "$token" ]
+          echo "::add-mask::$token"
+          echo "token=$token" >> "$GITHUB_OUTPUT"
       - uses: renovatebot/github-action@22e0a16091fc706b04affe6ae53d5e3358ac4023 # v46.1.19
         env:
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_ONBOARDING_CONFIG_FILE_NAME: .github/renovate.json
         with:
-          token: ${{ github.token }}
+          token: ${{ steps.broker.outputs.token }}
