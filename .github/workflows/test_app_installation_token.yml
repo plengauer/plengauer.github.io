@@ -10,6 +10,8 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
         env:
