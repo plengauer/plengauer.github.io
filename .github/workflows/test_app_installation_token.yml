@@ -20,6 +20,9 @@ jobs:
         with:
           secrets_to_redact: |-
             ${{ github.token }}
-      - uses: plengauer/github-token-broker@9f6c6533753f03df2f7bff0bf3691088a147ec61 # main
+      - id: broker
+        uses: plengauer/github-token-broker@9f6c6533753f03df2f7bff0bf3691088a147ec61 # main
         with:
           url: ${{ vars.TOKEN_BROKER_URL }}
+      - run: |
+          [ -n "${{ steps.broker.outputs.token }}" ]
