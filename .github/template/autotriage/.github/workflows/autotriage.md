@@ -12,6 +12,7 @@ permissions:
   copilot-requests: write
   contents: read
   issues: read
+  actions: read
   id-token: write
 tools:
   github:
