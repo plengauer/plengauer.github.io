@@ -1,0 +1,23 @@
+name: "Test App Installation Token"
+
+on:
+  push:
+    paths:
+      - .github/workflows/test_app_installation_token.yml
+  workflow_dispatch:
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
+        env:
+          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
+          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
+        with:
+          secrets_to_redact: |-
+            ${{ github.token }}
+      - uses: plengauer/github-token-broker@9f6c6533753f03df2f7bff0bf3691088a147ec61 # main
+        with:
+          url: ${{ vars.TOKEN_BROKER_URL }}
