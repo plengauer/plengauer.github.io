@@ -28,14 +28,19 @@ jobs:
             if git tag --points-at "$ref" | grep -qE '^v'; then continue; fi
             echo "$ref"
             echo "has_refs=true" >>  "$GITHUB_OUTPUT"
-          done | while read -r ref; do echo \""$ref"\"; done | jq -s | tr -d '\n' | tr -d ' ' | xargs -0 -I {} echo 'refs={}' >> "$GITHUB_OUTPUT"
+          done | while read -r ref; do
+            git for-each-ref --merged "$ref" --sort=-v:refname --format='%(refname:short) %(creatordate:unix)' 'refs/tags/v*.*.0' |
+              awk -v since="$(date -d '90 days ago' +%s)" '{ split(substr($1,2),v,"."); if (NR==1) major=v[1]; if (NR==1 || $2>=since || (v[1]==major-1 && !seen)) print $1; if (v[1]==major-1) seen=1 }' |
+              while read -r tag; do jq -nc --arg ref "$ref" --arg line "${tag%.0}" '{ref:$ref,line:$line}'; done
+          done | jq -s | tr -d '\n' | tr -d ' ' | xargs -0 -I {} echo 'refs={}' >> "$GITHUB_OUTPUT"
 
   backport:
     if: ${{ !github.event.repository.fork && needs.setup.outputs.has_tags && needs.setup.outputs.has_refs }}
     needs: setup
     strategy:
+      fail-fast: false
       matrix:
-        ref: ${{ fromJSON(needs.setup.outputs.refs) }}
+        include: ${{ fromJSON(needs.setup.outputs.refs) }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -59,20 +64,7 @@ jobs:
         if: steps.check_patch.outputs.should_backport == 'true'
         run: |
           set -e
-          current_tag=$(git describe --tags --abbrev=0 ${{ matrix.ref }})
-          if [ -z "${current_tag:-}" ]; then exit 1; fi
-          current_tag_sha=$(git rev-list -n 1 "$current_tag")
-          while read -r tag; do
-            if [ "${#tag}" -gt "${#current_tag}" ]; then
-              current_tag="$tag"
-            fi
-          done < <(git tag --points-at "$current_tag_sha")
-          case "$current_tag" in
-            v*.*.*) current_tag="${current_tag%.*}";;
-            v*.*) ;;
-            v*) exit 2;;
-            *) exit 3;;
-          esac
+          current_tag='${{ matrix.line }}'
           branch_name="release/$current_tag"
           echo name="$branch_name" >> "$GITHUB_OUTPUT"
           if git ls-remote --exit-code --heads origin "$branch_name"; then
@@ -87,7 +79,7 @@ jobs:
           set -e
           git format-patch -1 "${{ matrix.ref }}" --stdout > /tmp/commit.patch
           [ -s /tmp/commit.patch ] || exit 0
-          git apply /tmp/commit.patch || git cherry-pick -n "${{ matrix.ref }}"
+          git apply /tmp/commit.patch || git cherry-pick -n "${{ matrix.ref }}" || { echo "::warning::${{ matrix.ref }} does not apply to ${{ matrix.line }}"; git reset --hard; }
       - id: prepare_pr
         if: steps.check_patch.outputs.should_backport == 'true'
         env:
@@ -106,7 +98,7 @@ jobs:
             ${{ steps.prepare_pr.outputs.commit_title }}
             Co-authored-by: ${{ steps.prepare_pr.outputs.author_name }} <${{ steps.prepare_pr.outputs.author_email }}>
           base: ${{ steps.prepare_branch.outputs.name }}
-          branch: backport/${{ matrix.ref }}
+          branch: backport/${{ matrix.line }}/${{ matrix.ref }}
           title: "${{ steps.prepare_pr.outputs.commit_title }}"
           body: Automated backport of commit ${{ matrix.ref }}
           delete-branch: true
