@@ -203,30 +203,12 @@ jobs:
     permissions:
       actions: read
 
-  list-actions:
-    runs-on: ubuntu-slim
-    outputs:
-      actions: ${{ steps.dynamic.outputs.actions }}
-    steps:
-      - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
-        env:
-          OTEL_EXPORTER_OTLP_ENDPOINT: ${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}
-          OTEL_EXPORTER_OTLP_HEADERS: ${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}
-        with:
-          secrets_to_redact: '["${{ github.token }}"]'
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - run: |
-          ls .github/template | while read -r automation; do [ -d .github/template/"$automation" ] && echo "$automation" || true; done | jq -R | jq -cs | xargs -0 -I {} echo 'actions={}' >> "$GITHUB_OUTPUT"
-        id: dynamic
-    permissions:
-      actions: read
   deploy-action:
-    needs: [ list-repositories, list-actions, deploy-ruleset, deploy-codescanning, deploy-token-gh, deploy-token-otel, deploy-token-claude-code ]
+    needs: [ list-repositories, deploy-ruleset, deploy-codescanning, deploy-token-gh, deploy-token-otel, deploy-token-claude-code ]
     runs-on: ubuntu-slim
     strategy:
       matrix:
         repository: ${{ fromJSON(needs.list-repositories.outputs.repositories) }}
-        action: ${{ fromJSON(needs.list-actions.outputs.actions) }}
       fail-fast: false
     steps:
       - uses: plengauer/opentelemetry-github/actions/instrument/job@af82b8c3e169f06062ac75ffa55f40e221299d36 # v5.67.0
@@ -245,30 +227,30 @@ jobs:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
           path: ./other
           repository: ${{ matrix.repository }}
-      - id: check
+      - id: deploy
         run: |
-          path=./self/.github/template/${{ matrix.action }}.check
-          [ -x "$path" ] || ! [ -r "$path" ] || exit 0
-          ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ secrets.BOT_GITHUB_TOKEN }}" eval "$path" ./other ) && echo deploy=true >> "$GITHUB_OUTPUT" || true
-      - if: steps.check.outputs.deploy == 'true'
-        run: |
-          find "$(pwd)"/self/.github/template/${{ matrix.action }} | while read -r file; do
-            if [ -d "$file" ]; then continue; fi
-            new_file=./other/"${file#*/self/.github/template/${{ matrix.action }}/}"
-            [ -f "$new_file" ] || [ -f "${new_file//yml/yaml}" ] || (mkdir -p "${new_file%/*}" && cp "$file" "$new_file")
-          done
-      - id: check-update
-        if: ${{ steps.check.outputs.deploy == 'true' && github.event_name == 'push' }}
-        run: |
-          ( cd self && git diff --diff-filter=a --relative=".github/template/${{ matrix.action }}" '${{ github.event.before }}'..'${{ github.event.after }}' -- ':(glob).github/template/${{ matrix.action }}/**' > /tmp/template.patch )
-          if [ -s /tmp/template.patch ]; then
-            if ( cd other && git apply --check /tmp/template.patch >&2 ); then
-              ( cd other && git apply /tmp/template.patch )
-            else
-              echo "create_issue=true" >> "$GITHUB_OUTPUT"
+          for action in ./self/.github/template/*/; do
+            action=$(basename "$action")
+            path=./self/.github/template/$action.check
+            [ -x "$path" ] || ! [ -r "$path" ] || continue
+            ( ! [ -x "$path" ] || GITHUB_REPOSITORY="${{ matrix.repository }}" GITHUB_TOKEN="${{ secrets.BOT_GITHUB_TOKEN }}" eval "$path" ./other ) || continue
+            find "$(pwd)"/self/.github/template/"$action" | while read -r file; do
+              if [ -d "$file" ]; then continue; fi
+              new_file=./other/"${file#*/self/.github/template/"$action"/}"
+              [ -f "$new_file" ] || [ -f "${new_file//yml/yaml}" ] || (mkdir -p "${new_file%/*}" && cp "$file" "$new_file")
+            done
+            [ '${{ github.event_name }}' = push ] || continue
+            ( cd self && git diff --diff-filter=a --relative=".github/template/$action" '${{ github.event.before }}'..'${{ github.event.after }}' -- ":(glob).github/template/$action/**" > /tmp/template.patch )
+            if [ -s /tmp/template.patch ]; then
+              if ( cd other && git apply --check /tmp/template.patch >&2 ); then
+                ( cd other && git apply /tmp/template.patch )
+              else
+                cat /tmp/template.patch >> /tmp/failed.patch
+                echo "create_issue=true" >> "$GITHUB_OUTPUT"
+              fi
             fi
-          fi
-      - if: ${{ steps.check-update.outputs.create_issue == 'true' }}
+          done
+      - if: ${{ steps.deploy.outputs.create_issue == 'true' }}
         env:
           GH_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN }}
         run: |
@@ -279,7 +261,7 @@ jobs:
             printf "%s\n\n" "$commit_message"
             printf "See: ${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }}\n\n"
             printf "## Diff\n\n\`\`\`diff\n"
-            cat /tmp/template.patch
+            cat /tmp/failed.patch
             printf "\n\`\`\`\n"
           } > /tmp/issue_body.md
           gh issue create \
@@ -291,9 +273,9 @@ jobs:
         with:
           token: ${{ secrets.BOT_GITHUB_TOKEN }}
           path: ./other
-          commit-message: "Onboard action ${{ matrix.action }}"
-          branch: "automate-onboard-action-${{ matrix.action }}"
-          title: "Onboard action ${{ matrix.action }}"
+          commit-message: "Onboard actions"
+          branch: "automate-onboard-actions"
+          title: "Onboard actions"
           delete-branch: true
       - run: sleep 60
         if: steps.open-pr.outputs.pull-request-number != null
