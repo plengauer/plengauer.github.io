@@ -17,35 +17,47 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    env:
-      GH_TOKEN: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
+      id-token: write
     steps:
+      - id: broker
+        uses: plengauer/github-token-broker@9f6c6533753f03df2f7bff0bf3691088a147ec61 # main
+        with:
+          url: ${{ vars.TOKEN_BROKER_URL }}
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      - run: |
+      - env:
+          GH_TOKEN: ${{ steps.broker.outputs.token }}
+        run: |
           gh extension install github/gh-aw
           gh aw compile --approve
       - uses: plengauer/opentelemetry-github/actions/instrument/deploy-local@a3202770e6f9c17a81f2a7fd1073352b814d99b1 # v5.63.1
         with:
-          github_token: ${{ env.GH_TOKEN }}
+          github_token: ${{ steps.broker.outputs.token }}
         env:
           OTEL_EXPORTER_OTLP_ENDPOINT: '${{ secrets.OTEL_EXPORTER_OTLP_ENDPOINT }}'
           OTEL_EXPORTER_OTLP_HEADERS: '${{ secrets.OTEL_EXPORTER_OTLP_HEADERS }}'
       - id: push
         run: |
           if [ -z "$(git status --porcelain)" ]; then exit 0; fi
-          user_name="$(gh api user --jq .login)"
-          user_id="$(gh api user --jq .id)"
+          if gh api user --jq .id; then
+            user_id="$(gh api user --jq .id)"
+            user_name="$(gh api user --jq .login)"
+          else
+            user_name="github-actions[bot]"
+            user_id="$(gh api /users/"$user_name" --jq .id)"
+          fi
           git config user.name "$user_name"
           git config user.email "${user_id}+${user_name}@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add -A
           git commit -m "recompile agentic workflows"
           git push && echo "pushed=true" >> "$GITHUB_OUTPUT" || echo "pushed=false" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ steps.broker.outputs.token }}
       - if: steps.push.outputs.pushed == 'false'
         id: open-pr
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
-          token: ${{ env.GH_TOKEN }}
+          token: ${{ steps.broker.outputs.token }}
           commit-message: "recompile agentic workflows"
           base: ${{ github.ref_name }}
           branch: "recompile-aw/${{ github.ref_name }}"
@@ -58,4 +70,6 @@ jobs:
       - if: steps.open-pr.outputs.pull-request-number != null
         shell: bash
         run: gh pr merge --squash --auto ${{ steps.open-pr.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ steps.broker.outputs.token }}
         continue-on-error: true

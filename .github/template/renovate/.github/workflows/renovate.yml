@@ -19,11 +19,16 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      security-events: write      
+      security-events: write
+      id-token: write
     steps:
+      - id: broker
+        uses: plengauer/github-token-broker@9f6c6533753f03df2f7bff0bf3691088a147ec61 # main
+        with:
+          url: ${{ vars.TOKEN_BROKER_URL }}
       - uses: renovatebot/github-action@22e0a16091fc706b04affe6ae53d5e3358ac4023 # v46.1.19
         env:
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_ONBOARDING_CONFIG_FILE_NAME: .github/renovate.json
         with:
-          token: ${{ secrets.ACTIONS_GITHUB_TOKEN || github.token }}
+          token: ${{ steps.broker.outputs.token }}
